@@ -485,14 +485,22 @@ def read_lc(dir=''):
 
 	return d
 
-def download_UL(update=False):
+def download_UL(update=False,dir=None):
 
 	import urllib
-	reftime=1484340227.502976 ## Jan 13, 2017 - when this was written  time.time()
 
 	# ### download trigIDs
 	url="http://www.swift.ac.uk/xrt_curves/allcurves2.php"
-	dir='/Users/jracusin/GRBs/'
+	if dir == None:
+		dir='/Users/jracusin/GRBs/'
+	if os.path.exists(dir+'reftime.dat'):
+		fref=open(dir+'reftime.dat','r')
+		reftime=float(fref.read())
+		fref.close()
+	else:
+		reftime=0.
+#	reftime=1484340227.502976 ## Jan 13, 2017 - when this was written  time.time()
+
 	filename=dir+'allcurves2.php'
 	if not os.path.exists(filename) or update:
 		if update: os.remove(filename)	
@@ -543,5 +551,10 @@ def download_UL(update=False):
 				if any("404 page not found" in line for line in lines): 
 					os.remove(dir+file)
 
+
+	fref=open(dir+'reftime.dat','w')
+	reftime=time.time()
+	fref.write(str(reftime))
+	fref.close()
 
 	return grbs,targids
