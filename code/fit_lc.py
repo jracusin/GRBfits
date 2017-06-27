@@ -218,11 +218,12 @@ class grb_object:
 	def keys(self):
 		print(['grb','targid','trigtime','met','lc','p','s'])
 
-def load_data():
+def load_data(dir=None):
 
 	## Read curve.qdp header for GRB name, trigger number, & trigger time
 
-	dir='/Users/jracusin/GRBs/'
+	if dir ==None:
+		dir='/Users/jracusin/GRBs/'
 	grbs,targids=download_UL()
 	mets=[]
 	trigtimes=[]
