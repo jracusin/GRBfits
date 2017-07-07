@@ -19,7 +19,7 @@ import re
 import time
 from scipy.optimize import curve_fit
 
-def fit_the_lc(grbdict=None,lc=None):
+def fit_the_lc(model,p,grbdict=None,lc=None):
 
 	if grbdict:
 		lc=grbdict.lc
@@ -33,11 +33,229 @@ def fit_the_lc(grbdict=None,lc=None):
 	p0=np.array([1.,3.,100.,0.5,1e3,1.2,1e4,2.2])
 	yfit=curve_fit(model,tt,lc['Rate'],p0=p0,sigma=lc['Ratepos'])
 
-
-
 	return	
 
-def plot_lcfit(grbdict=False,lc=False,p=False,resid=True):
+def lc_linfit(x,y,breaks):
+
+	bks=np.hstack((min(x)-1,breaks,max(x)))
+	yfit=[]
+	for i in range(len(bks)-1):
+		w=np.where((x > bks[i]) & (x <= bks[i+1]))
+		m,b = plot.polyfit(np.log10(x[w]), np.log10(y[w]), 1)
+		if i == 0: 
+			norm=10**b
+			p=np.array(norm)
+		yfit=np.append(yfit,10**b*x[w]**m)
+		p=np.hstack((p,-m,bks[i+1]))
+
+	p=p[0:len(p)-1]
+	return p,yfit
+
+def click_initial_conditions(dir=None,lc=None):
+
+	## initial_guess N flares
+	## initial_guess N breaks
+	## get model
+	## do rough fit with breaks only?
+
+	xflares,yflares=initial_guess(dir=dir,lc=lc,flares=True)
+	xbreaks,ybreaks=initial_guess(dir=dir,lc=lc,breaks=True)
+	print(str(len(xflares))+' Flare, '+str(len(xbreaks))+' Breaks')
+	redo='Y'
+	while redo == 'Y':
+		redo=raw_input('Redo Flares? (y/N) ').upper()
+		if redo == 'Y': 
+			xdata,ydata=[[],[]]
+			xflares,yflares=[[],[]]
+			xflares,yflares=initial_guess(dir=dir,lc=lc,flares=True)
+			print(str(len(xflares))+' Flares @ '+str(xflares))
+	redo='Y'
+	while redo == 'Y':
+		redo=raw_input('Redo Breaks? (y/N) ').upper()
+		if redo == 'Y': 
+			xdata,ydata=[[],[]]
+			xbreaks,ybreaks=[[],[]]
+			xbreaks,ybreaks=initial_guess(dir=dir,lc=lc,breaks=True)
+			print(str(len(xbreaks))+' Breaks @ '+str(xbreaks))
+
+	numflares=len(xflares)
+	numbreaks=len(xbreaks)
+	model=fit_models(numflares,numbreaks)
+	print('Model: ' +model)
+
+	p,yfit=lc_linfit(np.array(lc['Time']),np.array(lc['Rate']),xbreaks)
+	print('Initial Guess for Model: '+str(p))
+
+	fig,ax1=plot_lcfit(lc=lc,noshow=True)
+	ax1.plot(np.array(lc['Time']),yfit,color='green')
+	ax1.set_title('Initial Guess Fit')
+	plot.show()
+
+	return
+
+	## plot again with crude fits
+
+class Click:
+
+	def __init__(self, fig=None):
+	
+		"""
+		Constructor
+		
+		Arguments:
+		fig -- a matplotlib figure
+		"""
+	
+		if fig != None:
+			self.fig = fig		
+		else:
+			self.fig = pyplot.get_current_fig_manager().canvas.figure
+		self.nSubPlots = len(self.fig.axes)
+		self.dragFrom = None
+		self.markers = []
+				
+		self.retVal = {'x' : [], 'y' : []}
+
+		self.fig.canvas.mpl_connect('button_press_event', self.onClick)
+
+	def onClick(self, event):
+	
+		"""
+		Process a mouse click event. If a mouse is right clicked within a
+		subplot, the return value is set to a (subPlotNr, xVal, yVal) tuple and
+		the plot is closed. With right-clicking and dragging, the plot can be
+		moved.
+		
+		Arguments:
+		event -- a MouseEvent event
+		"""		
+		
+		if event.button == 1:				
+		
+#			for i in range(self.nSubPlots):
+#				subPlot = self.selectSubPlot(i)								
+			marker = plot.axvline(event.xdata, 0, 1, linestyle='--', \
+				linewidth=2, color='gray')
+			self.markers.append(marker)
+
+			self.fig.canvas.draw()
+			self.retVal['x'] = np.append(self.retVal['x'],event.xdata)
+			self.retVal['y'] = np.append(self.retVal['y'],event.ydata)
+
+		if event.button == 3:
+			plot.close()
+
+	def clearMarker(self):
+	
+		"""Remove marker from retVal and plot"""
+		
+		self.retVal['x'] = []
+		self.retVal['y'] = []
+#		for i in range(self.nSubPlots):
+#			subPlot = self.selectSubPlot(i)
+#		for marker in self.markers:
+#			if marker in subPlot.lines:
+#			marker.lines.remove(marker)				
+		self.markers = []
+		self.fig.canvas.draw()
+
+	def show(self):
+	
+		"""
+		Show the plot
+		
+		Returns:
+		A dictionary with information about the response
+		"""
+		self.clearMarker()
+		plot.show()
+		return self.retVal
+
+def initial_guess(dir=None,lc=None,flares=False,breaks=False):
+
+	if dir != None:
+		lc=read_lc(dir=dir)
+
+	fig,ax1=plot_lcfit(lc=lc,noshow=True)
+	if flares:
+		ax1.set_title('Click guess for FLARES, right click when finished')
+	if breaks:
+		ax1.set_title('Click guess for BREAKS, right click when finished')		
+
+	ylim=ax1.get_ylim()
+
+	cp=Click(fig=fig)
+
+	plot.show()
+	plot.close('all')
+
+	xdata=cp.retVal['x']
+	ydata=cp.retVal['y']
+
+	return xdata,ydata
+
+def fit_models(numflares,numbreaks):
+
+	## norm + numflares*3 + numbreaks*2-1
+	nump=1 + numflares*3 + numbreaks*2-1
+	if numbreaks == 0: nump=nump+2
+
+	if nump == 2: model='pow'
+	if nump == 4: model='bknpow'
+	if nump == 5: model='gauss1_pow'
+	if nump == 6: model='bkn2pow'
+	if nump == 7: model='gauss1_bknpow'
+	if nump == 8: 
+		model='bkn3pow'
+		if numflares == 2: model='gauss2_pow'
+	if nump == 9: model='gauss1_bkn2pow'
+	if nump == 10:
+		model='bkn4pow'
+		if numflares == 2: model='gauss2_bknpow'
+	if nump == 11:
+		if numflares == 3: model='gauss3_pow'
+		if numflares == 1: model='gauss1_bkn3pow'
+	if nump == 12: model='gauss2_bkn2pow'
+	if nump == 13: 
+		if numflares == 3: model='gauss3_bknpow'
+		if numflares == 1: model='gauss1_bkn4pow'
+	if nump == 14: 
+		if numflares == 4: model='gauss4_pow'
+		if numflares == 2: model='gauss2_bkn3pow'
+	if nump == 15: model='gauss3_bkn2pow'
+	if nump == 16:  
+		if numflares == 4: model='gauss4_bknpow'
+		if numflares == 2: model='gauss2_bkn4pow'
+	if nump == 17:  
+		if numflares == 5: model='gauss5_pow'
+		if numflares == 3: model='gauss3_bkn3pow'
+	if nump == 18: model='gauss4_bkn2pow'
+	if nump == 19:  
+		if numflares == 5: model='gauss5_bknpow'
+		if numflares == 3: model='gauss3_bkn4pow'
+	if nump == 20:  
+		if numflares == 6: model='gauss6_pow'
+		if numflares == 4: model='gauss4_bkn3pow'
+	if nump == 21: model='gauss5_bkn2pow'
+	if nump == 22:  
+		if numflares == 6: model='gauss6_bknpow'
+		if numflares == 4: model='gauss4_bkn4pow'
+	if nump == 23:  
+		if numflares == 7: model='gauss7_pow'
+		if numflares == 5: model='gauss5_bkn3pow'
+	if nump == 24: model='gauss6_bkn2pow'
+	if nump == 25:  
+		if numflares == 7: model='gauss7_bknpow'
+		if numflares == 5: model='gauss5_bkn4pow'
+	if nump == 26: model='gauss6_bkn3pow'
+	if nump == 27: model='gauss7_bkn2pow'
+	if nump == 28: model='gauss6_bkn4pow'
+	if nump == 29: model='gauss7_bkn3pow'
+	if nump == 31: model='gauss7_bkn4pow'
+
+	return model
+
+def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 
 ### if no p, plot without
 
@@ -99,6 +317,9 @@ def plot_lcfit(grbdict=False,lc=False,p=False,resid=True):
 	ax1.set_yscale('log')
 	ax1.set_xscale('log')
 	ax1.set_ylabel(r'Count Rate (0.3-10 keV) (erg cm$^{-2}$ s$^{-1}$)')
+#	ylim=ax1.get_ylim()
+#	ax1.set_ylim([10**round(np.log10(ylim[0])-0.5),10**round(np.log10(ylim[1])+0.5)])
+	ax1.yaxis.set_tick_params(right='on',which='both')
 	if resid:
 		ax2.set_xscale('log')
 		ax2.set_xlabel('Time since trigger (s)')
@@ -106,10 +327,12 @@ def plot_lcfit(grbdict=False,lc=False,p=False,resid=True):
 		ax2.set_ylim([0,3])
 	else:
 		ax1.set_xlabel('Time since trigger (s)')
-	plot.show()
-	plot.close('all')
 
-	return
+	if noshow == False:
+		plot.show()
+		plot.close('all')
+
+	return f,ax1
 
 def read_lcfit(dir='',file=''):
 
