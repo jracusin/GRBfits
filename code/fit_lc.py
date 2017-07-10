@@ -19,21 +19,45 @@ import re
 import time
 from scipy.optimize import curve_fit
 
-def fit_the_lc(model,p,grbdict=None,lc=None):
+def fit_the_lc(grbdict=None,lc=None):
 
 	if grbdict:
 		lc=grbdict.lc
-		p=grbdict.lcfit
+#		p=grbdict.lcfit
 	else:
 		if not lc:
 			print('Need to specify either GRB dictionary or lc')
 			return
 
+	p0,model,fmodel,pnames=click_initial_conditions(lc=lc)
+	print('Fitting '+model+':')
 	tt=np.array([lc['Time']+lc['T_-ve'],lc['Time']+lc['T_+ve']])
-	p0=np.array([1.,3.,100.,0.5,1e3,1.2,1e4,2.2])
-	yfit=curve_fit(model,tt,lc['Rate'],p0=p0,sigma=lc['Ratepos'])
+	popt, pcov=curve_fit(fmodel['int'+model],tt,lc['Rate'],p0=p0,sigma=lc['Ratepos'])
+	perr = np.sqrt(np.diag(pcov))
+	plot.close()
 
-	return	
+	print('Result par, val, err:')
+	print(popt)
+	print(perr)
+	yfit=fmodel[model](np.array(lc['Time']),*popt)
+
+
+	r = lc['Rate']- yfit
+	chisq=sum((r/lc['Ratepos'])**2)
+	dof=len(lc['Rate'])+len(p0)
+	p=fit_params(model,pnames,popt,perr,perr,chisq,dof)
+
+	print('Chisq = '+str(chisq/dof))
+	fig,ax1=plot_lcfit(lc=lc,noshow=True)
+	ax1.plot(np.array(lc['Time']),yfit,color='orange')
+
+	plot.show()
+
+	### need to add breaks to plots
+	### need to add stuff to fit_params object
+	### need to write out fit params (add write function to object)
+
+	return	p
 
 def lc_linfit(x,y,breaks):
 
@@ -45,11 +69,13 @@ def lc_linfit(x,y,breaks):
 		if i == 0: 
 			norm=10**b
 			p=np.array(norm)
+			pnames=np.array('norm')
 		yfit=np.append(yfit,10**b*x[w]**m)
 		p=np.hstack((p,-m,bks[i+1]))
+		pnames=np.hstack((pnames,'pow'+str(i+1),'break'+str(i+1)))
 
 	p=p[0:len(p)-1]
-	return p,yfit
+	return p,yfit,pnames
 
 def click_initial_conditions(dir=None,lc=None):
 
@@ -80,10 +106,10 @@ def click_initial_conditions(dir=None,lc=None):
 
 	numflares=len(xflares)
 	numbreaks=len(xbreaks)
-	model=fit_models(numflares,numbreaks)
+	model,fmodel=fit_models(numflares,numbreaks)
 	print('Model: ' +model)
 
-	p,yfit=lc_linfit(np.array(lc['Time']),np.array(lc['Rate']),xbreaks)
+	p,yfit,pnames=lc_linfit(np.array(lc['Time']),np.array(lc['Rate']),xbreaks)
 	print('Initial Guess for Model: '+str(p))
 
 	fig,ax1=plot_lcfit(lc=lc,noshow=True)
@@ -91,7 +117,7 @@ def click_initial_conditions(dir=None,lc=None):
 	ax1.set_title('Initial Guess Fit')
 	plot.show()
 
-	return
+	return p,model,fmodel,pnames
 
 	## plot again with crude fits
 
@@ -194,66 +220,208 @@ def initial_guess(dir=None,lc=None,flares=False,breaks=False):
 
 	return xdata,ydata
 
-def fit_models(numflares,numbreaks):
+def fit_models(numflares,numbreaks,norris=False):
 
 	## norm + numflares*3 + numbreaks*2-1
 	nump=1 + numflares*3 + numbreaks*2-1
 	if numbreaks == 0: nump=nump+2
 
+	if norris:
+		g='norris'
+	else:
+		g='gauss'
+
 	if nump == 2: model='pow'
 	if nump == 4: model='bknpow'
-	if nump == 5: model='gauss1_pow'
+	if nump == 5: model=g+'1_pow'
 	if nump == 6: model='bkn2pow'
-	if nump == 7: model='gauss1_bknpow'
+	if nump == 7: model=g+'1_bknpow'
 	if nump == 8: 
 		model='bkn3pow'
-		if numflares == 2: model='gauss2_pow'
-	if nump == 9: model='gauss1_bkn2pow'
+		if numflares == 2: model=g+'2_pow'
+	if nump == 9: model=g+'1_bkn2pow'
 	if nump == 10:
 		model='bkn4pow'
-		if numflares == 2: model='gauss2_bknpow'
+		if numflares == 2: model=g+'2_bknpow'
 	if nump == 11:
-		if numflares == 3: model='gauss3_pow'
-		if numflares == 1: model='gauss1_bkn3pow'
-	if nump == 12: model='gauss2_bkn2pow'
+		if numflares == 3: model=g+'3_pow'
+		if numflares == 1: model=g+'1_bkn3pow'
+	if nump == 12: model=g+'2_bkn2pow'
 	if nump == 13: 
-		if numflares == 3: model='gauss3_bknpow'
-		if numflares == 1: model='gauss1_bkn4pow'
+		if numflares == 3: model=g+'3_bknpow'
+		if numflares == 1: model=g+'1_bkn4pow'
 	if nump == 14: 
-		if numflares == 4: model='gauss4_pow'
-		if numflares == 2: model='gauss2_bkn3pow'
-	if nump == 15: model='gauss3_bkn2pow'
+		if numflares == 4: model=g+'4_pow'
+		if numflares == 2: model=g+'2_bkn3pow'
+	if nump == 15: model=g+'3_bkn2pow'
 	if nump == 16:  
-		if numflares == 4: model='gauss4_bknpow'
-		if numflares == 2: model='gauss2_bkn4pow'
+		if numflares == 4: model=g+'4_bknpow'
+		if numflares == 2: model=g+'2_bkn4pow'
 	if nump == 17:  
-		if numflares == 5: model='gauss5_pow'
-		if numflares == 3: model='gauss3_bkn3pow'
-	if nump == 18: model='gauss4_bkn2pow'
+		if numflares == 5: model=g+'5_pow'
+		if numflares == 3: model=g+'3_bkn3pow'
+	if nump == 18: model=g+'4_bkn2pow'
 	if nump == 19:  
-		if numflares == 5: model='gauss5_bknpow'
-		if numflares == 3: model='gauss3_bkn4pow'
+		if numflares == 5: model=g+'5_bknpow'
+		if numflares == 3: model=g+'3_bkn4pow'
 	if nump == 20:  
-		if numflares == 6: model='gauss6_pow'
-		if numflares == 4: model='gauss4_bkn3pow'
-	if nump == 21: model='gauss5_bkn2pow'
+		if numflares == 6: model=g+'6_pow'
+		if numflares == 4: model=g+'4_bkn3pow'
+	if nump == 21: model=g+'5_bkn2pow'
 	if nump == 22:  
-		if numflares == 6: model='gauss6_bknpow'
-		if numflares == 4: model='gauss4_bkn4pow'
+		if numflares == 6: model=g+'6_bknpow'
+		if numflares == 4: model=g+'4_bkn4pow'
 	if nump == 23:  
-		if numflares == 7: model='gauss7_pow'
-		if numflares == 5: model='gauss5_bkn3pow'
-	if nump == 24: model='gauss6_bkn2pow'
+		if numflares == 7: model=g+'7_pow'
+		if numflares == 5: model=g+'5_bkn3pow'
+	if nump == 24: model=g+'6_bkn2pow'
 	if nump == 25:  
-		if numflares == 7: model='gauss7_bknpow'
-		if numflares == 5: model='gauss5_bkn4pow'
-	if nump == 26: model='gauss6_bkn3pow'
-	if nump == 27: model='gauss7_bkn2pow'
-	if nump == 28: model='gauss6_bkn4pow'
-	if nump == 29: model='gauss7_bkn3pow'
-	if nump == 31: model='gauss7_bkn4pow'
+		if numflares == 7: model=g+'7_bknpow'
+		if numflares == 5: model=g+'5_bkn4pow'
+	if nump == 26: model=g+'6_bkn3pow'
+	if nump == 27: model=g+'7_bkn2pow'
+	if nump == 28: model=g+'6_bkn4pow'
+	if nump == 29: model=g+'7_bkn3pow'
+	if nump == 31: model=g+'7_bkn4pow'
 
-	return model
+	function_model={
+		'gauss': fit_functions.gauss,
+		# 'norris': fit_functions.norris,
+		'pow': fit_functions.pow,
+		'gauss1_pow': fit_functions.gauss1_pow,
+		'gauss2_pow': fit_functions.gauss2_pow,
+		'gauss3_pow': fit_functions.gauss3_pow,
+		'gauss4_pow': fit_functions.gauss4_pow,
+		'gauss5_pow': fit_functions.gauss5_pow,
+		'gauss6_pow': fit_functions.gauss6_pow,
+		# 'norris1_pow': fit_functions.norris1_pow,
+		# 'norris2_pow': fit_functions.norris2_pow,
+		# 'norris3_pow': fit_functions.norris3_pow,
+		# 'norris4_pow': fit_functions.norris4_pow,
+		# 'norris5_pow': fit_functions.norris5_pow,
+		# 'norris6_pow': fit_functions.norris6_pow,
+		'bknpow': fit_functions.bknpow,
+		'gauss1_bknpow': fit_functions.gauss1_bknpow,
+		'gauss2_bknpow': fit_functions.gauss2_bknpow,
+		'gauss3_bknpow': fit_functions.gauss3_bknpow,
+		'gauss4_bknpow': fit_functions.gauss4_bknpow,
+		'gauss5_bknpow': fit_functions.gauss5_bknpow,
+		'gauss6_bknpow': fit_functions.gauss6_bknpow,
+		# 'norris1_bknpow': fit_functions.norris1_bknpow,
+		# 'norris2_bknpow': fit_functions.norris2_bknpow,
+		# 'norris3_bknpow': fit_functions.norris3_bknpow,
+		# 'norris4_bknpow': fit_functions.norris4_bknpow,
+		# 'norris5_bknpow': fit_functions.norris5_bknpow,
+		# 'norris6_bknpow': fit_functions.norris6_bknpow,
+		'bkn2pow': fit_functions.bkn2pow,
+		'gauss1_bkn2pow': fit_functions.gauss1_bkn2pow,
+		'gauss2_bkn2pow': fit_functions.gauss2_bkn2pow,
+		'gauss3_bkn2pow': fit_functions.gauss3_bkn2pow,
+		'gauss4_bkn2pow': fit_functions.gauss4_bkn2pow,
+		'gauss5_bkn2pow': fit_functions.gauss5_bkn2pow,
+		'gauss6_bkn2pow': fit_functions.gauss6_bkn2pow,
+		# 'norris1_bkn2pow': fit_functions.norris1_bkn2pow,
+		# 'norris2_bkn2pow': fit_functions.norris2_bkn2pow,
+		# 'norris3_bkn2pow': fit_functions.norris3_bkn2pow,
+		# 'norris4_bkn2pow': fit_functions.norris4_bkn2pow,
+		# 'norris5_bkn2pow': fit_functions.norris5_bkn2pow,
+		# 'norris6_bkn2pow': fit_functions.norris6_bkn2pow,
+		'bkn3pow': fit_functions.bkn3pow,
+		'gauss1_bkn3pow': fit_functions.gauss1_bkn3pow,
+		'gauss2_bkn3pow': fit_functions.gauss2_bkn3pow,
+		'gauss3_bkn3pow': fit_functions.gauss3_bkn3pow,
+		'gauss4_bkn3pow': fit_functions.gauss4_bkn3pow,
+		'gauss5_bkn3pow': fit_functions.gauss5_bkn3pow,
+		'gauss6_bkn3pow': fit_functions.gauss6_bkn3pow,
+		# 'norris1_bkn3pow': fit_functions.norris1_bkn3pow,
+		# 'norris2_bkn3pow': fit_functions.norris2_bkn3pow,
+		# 'norris3_bkn3pow': fit_functions.norris3_bkn3pow,
+		# 'norris4_bkn3pow': fit_functions.norris4_bkn3pow,
+		# 'norris5_bkn3pow': fit_functions.norris5_bkn3pow,
+		# 'norris6_bkn3pow': fit_functions.norris6_bkn3pow,
+		'bkn4pow': fit_functions.bkn4pow,
+		'gauss1_bkn4pow': fit_functions.gauss1_bkn4pow,
+		'gauss2_bkn4pow': fit_functions.gauss2_bkn4pow,
+		'gauss3_bkn4pow': fit_functions.gauss3_bkn4pow,
+		'gauss4_bkn4pow': fit_functions.gauss4_bkn4pow,
+		'gauss5_bkn4pow': fit_functions.gauss5_bkn4pow,
+		'gauss6_bkn4pow': fit_functions.gauss6_bkn4pow,
+		# 'norris1_bkn4pow': fit_functions.norris1_bkn4pow,
+		# 'norris2_bkn4pow': fit_functions.norris2_bkn4pow,
+		# 'norris3_bkn4pow': fit_functions.norris3_bkn4pow,
+		# 'norris4_bkn4pow': fit_functions.norris4_bkn4pow,
+		# 'norris5_bkn4pow': fit_functions.norris5_bkn4pow,
+		# 'norris6_bkn4pow': fit_functions.norris6_bkn4pow,
+		### integral functions
+		'intgauss': fit_functions.gauss,
+		'intpow': fit_functions.intpow,
+		'intgauss1_pow': fit_functions.intgauss1_pow,
+		'intgauss2_pow': fit_functions.intgauss2_pow,
+		'intgauss3_pow': fit_functions.intgauss3_pow,
+		'intgauss4_pow': fit_functions.intgauss4_pow,
+		'intgauss5_pow': fit_functions.intgauss5_pow,
+		'intgauss6_pow': fit_functions.intgauss6_pow,
+		# 'intnorris1_pow': fit_functions.intnorris1_pow,
+		# 'intnorris2_pow': fit_functions.intnorris2_pow,
+		# 'intnorris3_pow': fit_functions.intnorris3_pow,
+		# 'intnorris4_pow': fit_functions.intnorris4_pow,
+		# 'intnorris5_pow': fit_functions.intnorris5_pow,
+		# 'intnorris6_pow': fit_functions.intnorris6_pow,
+		'intbknpow': fit_functions.intbknpow,
+		'intgauss1_bknpow': fit_functions.intgauss1_bknpow,
+		'intgauss2_bknpow': fit_functions.intgauss2_bknpow,
+		'intgauss3_bknpow': fit_functions.intgauss3_bknpow,
+		'intgauss4_bknpow': fit_functions.intgauss4_bknpow,
+		'intgauss5_bknpow': fit_functions.intgauss5_bknpow,
+		'intgauss6_bknpow': fit_functions.intgauss6_bknpow,
+		# 'intnorris1_bknpow': fit_functions.intnorris1_bknpow,
+		# 'intnorris2_bknpow': fit_functions.intnorris2_bknpow,
+		# 'intnorris3_bknpow': fit_functions.intnorris3_bknpow,
+		# 'intnorris4_bknpow': fit_functions.intnorris4_bknpow,
+		# 'intnorris5_bknpow': fit_functions.intnorris5_bknpow,
+		# 'intnorris6_bknpow': fit_functions.intnorris6_bknpow,
+		'intbkn2pow': fit_functions.intbkn2pow,
+		'intgauss1_bkn2pow': fit_functions.intgauss1_bkn2pow,
+		'intgauss2_bkn2pow': fit_functions.intgauss2_bkn2pow,
+		'intgauss3_bkn2pow': fit_functions.intgauss3_bkn2pow,
+		'intgauss4_bkn2pow': fit_functions.intgauss4_bkn2pow,
+		'intgauss5_bkn2pow': fit_functions.intgauss5_bkn2pow,
+		'intgauss6_bkn2pow': fit_functions.intgauss6_bkn2pow,
+		# 'intnorris1_bkn2pow': fit_functions.intnorris1_bkn2pow,
+		# 'intnorris2_bkn2pow': fit_functions.intnorris2_bkn2pow,
+		# 'intnorris3_bkn2pow': fit_functions.intnorris3_bkn2pow,
+		# 'intnorris4_bkn2pow': fit_functions.intnorris4_bkn2pow,
+		# 'intnorris5_bkn2pow': fit_functions.intnorris5_bkn2pow,
+		# 'intnorris6_bkn2pow': fit_functions.intnorris6_bkn2pow,
+		'intbkn3pow': fit_functions.intbkn3pow,
+		'intgauss1_bkn3pow': fit_functions.intgauss1_bkn3pow,
+		'intgauss2_bkn3pow': fit_functions.intgauss2_bkn3pow,
+		'intgauss3_bkn3pow': fit_functions.intgauss3_bkn3pow,
+		'intgauss4_bkn3pow': fit_functions.intgauss4_bkn3pow,
+		'intgauss5_bkn3pow': fit_functions.intgauss5_bkn3pow,
+		'intgauss6_bkn3pow': fit_functions.intgauss6_bkn3pow,
+		# 'intnorris1_bkn3pow': fit_functions.intnorris1_bkn3pow,
+		# 'intnorris2_bkn3pow': fit_functions.intnorris2_bkn3pow,
+		# 'intnorris3_bkn3pow': fit_functions.intnorris3_bkn3pow,
+		# 'intnorris4_bkn3pow': fit_functions.intnorris4_bkn3pow,
+		# 'intnorris5_bkn3pow': fit_functions.intnorris5_bkn3pow,
+		# 'intnorris6_bkn3pow': fit_functions.intnorris6_bkn3pow,
+		'intbkn4pow': fit_functions.intbkn4pow,
+		'intgauss1_bkn4pow': fit_functions.intgauss1_bkn4pow,
+		'intgauss2_bkn4pow': fit_functions.intgauss2_bkn4pow,
+		'intgauss3_bkn4pow': fit_functions.intgauss3_bkn4pow,
+		'intgauss4_bkn4pow': fit_functions.intgauss4_bkn4pow,
+		'intgauss5_bkn4pow': fit_functions.intgauss5_bkn4pow,
+		'intgauss6_bkn4pow': fit_functions.intgauss6_bkn4pow,
+		# 'intnorris1_bkn4pow': fit_functions.intnorris1_bkn4pow,
+		# 'intnorris2_bkn4pow': fit_functions.intnorris2_bkn4pow,
+		# 'intnorris3_bkn4pow': fit_functions.intnorris3_bkn4pow,
+		# 'intnorris4_bkn4pow': fit_functions.intnorris4_bkn4pow,
+		# 'intnorris5_bkn4pow': fit_functions.intnorris5_bkn4pow,
+		# 'intnorris6_bkn4pow': fit_functions.intnorris6_bkn4pow,
+	}
+
+	return model,function_model#[model]
 
 def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 
