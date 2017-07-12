@@ -314,6 +314,216 @@ def gauss6_bkn4pow(x,*p):
 
 	return f
 
+def Norris(time, A, t0, t1, t2):
+	
+	p = [100, 250, 90, 100]
+	
+	#pulse amplitude = A
+	A = p[0]
+	#pulse start time = t0
+	t0 = p[1]
+	#pulse rise = t1
+	t1 = p[2]
+	#pulse decay = t2
+	t2 = p[3]
+	
+	L = np.exp(2.0*(t1/t2)**(1./2.))
+	
+	f = A*L*np.exp(((-t1)/(time-t0))-(time-t0)/(t2))
+	
+	return f
+
+def Norris1_pow(x,*p):
+
+	f = Norris(x,p[2:6])+intpow(x,p[0:2])
+
+	return f
+
+def Norris2_pow(x,*p):
+
+	f=Norris(x,p[2:6])+Norris(x,p[6:10])+pow(x,p[0:2])
+
+	return f
+
+def Norris3_pow(x,*p):
+
+	f=Norris(x,p[2:6])+Norris(x,p[6:10])+Norris(x,p[10:14])+pow(x,p[0:2])
+
+	return f
+
+def Norris4_pow(x,*p):
+
+	f=Norris(x,p[2:6])+Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+pow(x,p[0:2])
+
+	return f
+
+def Norris5_pow(x,*p):
+
+	f=Norris(x,p[2:6])+Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+pow(x,p[0:2])
+
+	return f
+
+def Norris6_pow(x,*p):
+
+	f=Norris(x,p[2:6])+Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])\
+		+Norris(x,p[22:26])+pow(x,p[0:2])
+
+	return f
+
+def Norris1_bknpow(x,*p):
+
+	f=Norris(x,p[6:10])+bknpow(x,p[0:4])
+
+	return f
+
+def Norris2_bknpow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+bknpow(x,p[0:4])
+
+	return f
+
+def Norris3_bknpow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+bknpow(x,p[0:4])
+
+	return f
+
+def Norris4_bknpow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+bknpow(x,p[0:4])
+
+	return f
+
+def Norris5_bknpow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])\
+		+bknpow(x,p[0:4])
+
+	return f
+
+def Norris6_bknpow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])\
+		+Norris(x,p[26:30])+bknpow(x,p[0:4])
+
+	return f
+
+"""def Norris1_bkn2pow(x,*p):
+
+	f=Norris(x,p[7:10])+bkn2pow(x,p[0:6])
+
+	return f
+
+def Norris2_bkn2pow(x,*p):
+
+	f=Norris(x,p[7:10])+Norris(x,p[10:13])+bkn2pow(x,p[0:6])
+
+	return f
+
+def Norris3_bkn2pow(x,*p):
+
+	f=Norris(x,p[7:10])+Norris(x,p[10:13])+Norris(x,p[13:16])+bkn2pow(x,p[0:6])
+
+	return f
+
+def Norris4_bkn2pow(x,*p):
+
+	f=Norris(x,p[7:10])+Norris(x,p[10:13])+Norris(x,p[13:16])+Norris(x,p[16:19])+bkn2pow(x,p[0:6])
+
+	return f
+
+def Norris5_bkn2pow(x,*p):
+
+	f=Norris(x,p[7:10])+Norris(x,p[10:13])+Norris(x,p[13:16])+Norris(x,p[16:19])+Norris(x,p[19:22])\
+		+bkn2pow(x,p[0:6])
+
+	return f
+
+def Norris6_bkn2pow(x,*p):
+
+	f=Norris(x,p[7:10])+Norris(x,p[10:13])+Norris(x,p[13:16])+Norris(x,p[16:19])+Norris(x,p[19:22])\
+		+Norris(x,p[22:25])+bkn2pow(x,p[0:6])
+
+	return f
+"""
+
+def Norris1_bkn3pow(x,*p):
+
+	f=Norris(x,p[6:10])+bkn3pow(x,p[0:6])
+
+	return f
+
+def Norris2_bkn3pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+bkn3pow(x,p[0:6])
+
+	return f
+
+def Norris3_bkn3pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+bkn3pow(x,p[0:6])
+
+	return f
+
+def Norris4_bkn3pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+bkn3pow(x,p[0:6])
+
+	return f
+
+def Norris5_bkn3pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])\
+		+bkn3pow(x,p[0:6])
+
+	return f
+
+def Norris6_bkn3pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])\
+		+Norris(x,p[26:30])+bkn3pow(x,p[0:6])
+
+	return f
+
+def Norris1_bkn4pow(x,*p):
+
+	f=Norris(x,p[6:10])+bkn4pow(x,p[0:8])
+
+	return f
+
+def Norris2_bkn4pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+bkn4pow(x,p[0:8])
+
+	return f
+
+def Norris3_bkn4pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+bkn4pow(x,p[0:8])
+
+	return f
+
+def Norris4_bkn4pow(x,*p):
+
+	f=Norris(x,p[6:810])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+bkn4pow(x,p[0:8])
+
+	return f
+
+def Norris5_bkn4pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])\
+		+bkn4pow(x,p[0:8])
+
+	return f
+
+def Norris6_bkn4pow(x,*p):
+
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])\
+		+Norris(x,p[26:30])+bkn4pow(x,p[0:8])
+
+	return f
+
+
 ############ INTEGRAL VERSIONS
 
 def intpow(xx,*p):
