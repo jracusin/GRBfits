@@ -33,7 +33,7 @@ def fit_the_lc(grbdict=None,lc=None,norris=False,dir=None):
  		print('Need to specify either GRB directory or lc')
  		return
 
- 	if dir and (type(lc) != type(None)):
+ 	if dir and (type(lc) == type(None)):
  		lc=read_lc(dir=dir)
 
 
@@ -578,9 +578,9 @@ def write_lcfit(p,dir=None,file=None):
 	f=open(file,'w')
 	nump=len(p.pnames)
 	for i in range(nump):
-		f.write(p.pnames[i]+' '+str(p.par[i])+' '+str(p.perror[i][0])+' '+str(p.perror[i][1]))
-	f.write('Chisq '+str(p.chisq))
-	f.write('dof '+str(p.dof))
+		f.write(p.pnames[i]+' '+str(p.par[i])+' '+str(p.perror[i][0])+' '+str(p.perror[i][1])+'\n')
+	f.write('Chisq '+str(p.chisq)+'\n')
+	f.write('dof '+str(p.dof)+'\n')
 	f.close()
 
 def read_lcfit(dir=None,file=None):
