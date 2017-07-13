@@ -164,172 +164,172 @@ def gauss6_pow(x,*p):
 
 def gauss1_bknpow(x,*p):
 
-	f=gauss(x,p[5:8])+bknpow(x,p[0:4])
+	f=gauss(x,p[4:7])+bknpow(x,p[0:4])
 
 	return f
 
 def gauss2_bknpow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+bknpow(x,p[0:4])
+	f=gauss(x,p[4:7])+gauss(x,p[7:10])+bknpow(x,p[0:4])
 
 	return f
 
 def gauss3_bknpow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+bknpow(x,p[0:4])
+	f=gauss(x,p[4:7])+gauss(x,p[7:10])+gauss(x,p[10:13])+bknpow(x,p[0:4])
 
 	return f
 
 def gauss4_bknpow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+bknpow(x,p[0:4])
+	f=gauss(x,p[4:7])+gauss(x,p[7:10])+gauss(x,p[10:13])+gauss(x,p[13:16])+bknpow(x,p[0:4])
 
 	return f
 
 def gauss5_bknpow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])\
+	f=gauss(x,p[4:7])+gauss(x,p[7:10])+gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])\
 		+bknpow(x,p[0:4])
 
 	return f
 
 def gauss6_bknpow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])\
-		+gauss(x,p[20:23])+bknpow(x,p[0:4])
+	f=gauss(x,p[4:7])+gauss(x,p[7:10])+gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])\
+		+gauss(x,p[19:22])+bknpow(x,p[0:4])
 
 	return f
 
 def gauss1_bkn2pow(x,*p):
 
-	f=gauss(x,p[7:10])+bkn2pow(x,p[0:6])
+	f=gauss(x,p[6:9])+bkn2pow(x,p[0:6])
 
 	return f
 
 def gauss2_bkn2pow(x,*p):
 
-	f=gauss(x,p[7:10])+gauss(x,p[10:13])+bkn2pow(x,p[0:6])
+	f=gauss(x,p[6:9])+gauss(x,p[9:12])+bkn2pow(x,p[0:6])
 
 	return f
 
 def gauss3_bkn2pow(x,*p):
 
-	f=gauss(x,p[7:10])+gauss(x,p[10:13])+gauss(x,p[13:16])+bkn2pow(x,p[0:6])
+	f=gauss(x,p[6:9])+gauss(x,p[9:12])+gauss(x,p[12:15])+bkn2pow(x,p[0:6])
 
 	return f
 
 def gauss4_bkn2pow(x,*p):
 
-	f=gauss(x,p[7:10])+gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])+bkn2pow(x,p[0:6])
+	f=gauss(x,p[6:9])+gauss(x,p[9:12])+gauss(x,p[12:15])+gauss(x,p[15:18])+bkn2pow(x,p[0:6])
 
 	return f
 
 def gauss5_bkn2pow(x,*p):
 
-	f=gauss(x,p[7:10])+gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])+gauss(x,p[19:22])\
+	f=gauss(x,p[6:9])+gauss(x,p[9:12])+gauss(x,p[12:15])+gauss(x,p[15:18])+gauss(x,p[18:21])\
 		+bkn2pow(x,p[0:6])
 
 	return f
 
 def gauss6_bkn2pow(x,*p):
 
-	f=gauss(x,p[7:10])+gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])+gauss(x,p[19:22])\
-		+gauss(x,p[22:25])+bkn2pow(x,p[0:6])
+	f=gauss(x,p[6:9])+gauss(x,p[9:12])+gauss(x,p[12:15])+gauss(x,p[15:18])+gauss(x,p[18:21])\
+		+gauss(x,p[21:24])+bkn2pow(x,p[0:6])
 
 	return f
 
 def gauss1_bkn3pow(x,*p):
 
-	f=gauss(x,p[5:8])+bkn3pow(x,p[0:6])
+	f=gauss(x,p[8:11])+bkn3pow(x,p[0:8])
 
 	return f
 
 def gauss2_bkn3pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+bkn3pow(x,p[0:6])
+	f=gauss(x,p[8:11])+gauss(x,p[11:14])+bkn3pow(x,p[0:8])
 
 	return f
 
 def gauss3_bkn3pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+bkn3pow(x,p[0:6])
+	f=gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+bkn3pow(x,p[0:8])
 
 	return f
 
 def gauss4_bkn3pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+bkn3pow(x,p[0:6])
+	f=gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])+bkn3pow(x,p[0:8])
 
 	return f
 
 def gauss5_bkn3pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])\
-		+bkn3pow(x,p[0:6])
+	f=gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])+gauss(x,p[20:23])\
+		+bkn3pow(x,p[0:8])
 
 	return f
 
 def gauss6_bkn3pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])\
-		+gauss(x,p[20:23])+bkn3pow(x,p[0:6])
+	f=gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])+gauss(x,p[20:23])\
+		+gauss(x,p[23:27])+bkn3pow(x,p[0:8])
 
 	return f
 
 def gauss1_bkn4pow(x,*p):
 
-	f=gauss(x,p[5:8])+bkn4pow(x,p[0:8])
+	f=gauss(x,p[10:13])+bkn4pow(x,p[0:10])
 
 	return f
 
 def gauss2_bkn4pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+bkn4pow(x,p[0:8])
+	f=gauss(x,p[10:13])+gauss(x,p[13:16])+bkn4pow(x,p[0:10])
 
 	return f
 
 def gauss3_bkn4pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+bkn4pow(x,p[0:8])
+	f=gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])+bkn4pow(x,p[0:10])
 
 	return f
 
 def gauss4_bkn4pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+bkn4pow(x,p[0:8])
+	f=gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])+gauss(x,p[19:22])+bkn4pow(x,p[0:10])
 
 	return f
 
 def gauss5_bkn4pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])\
-		+bkn4pow(x,p[0:8])
+	f=gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])+gauss(x,p[19:22])+gauss(x,p[22:25])\
+		+bkn4pow(x,p[0:10])
 
 	return f
 
 def gauss6_bkn4pow(x,*p):
 
-	f=gauss(x,p[5:8])+gauss(x,p[8:11])+gauss(x,p[11:14])+gauss(x,p[14:17])+gauss(x,p[17:20])\
-		+gauss(x,p[20:23])+bkn4pow(x,p[0:8])
+	f=gauss(x,p[10:13])+gauss(x,p[13:16])+gauss(x,p[16:19])+gauss(x,p[19:22])+gauss(x,p[22:25])\
+		+gauss(x,p[25:28])+bkn4pow(x,p[0:10])
 
 	return f
 
-def Norris(time, A, t0, t1, t2):
+def Norris(x, *p):
 	
-	p = [100, 250, 90, 100]
+	#p = [100, 250, 90, 100]
 	
 	#pulse amplitude = A
 	A = p[0]
 	#pulse start time = t0
-	t0 = p[1]
+	ts = p[1]
 	#pulse rise = t1
 	t1 = p[2]
 	#pulse decay = t2
 	t2 = p[3]
 	
-	L = np.exp(2.0*(t1/t2)**(1./2.))
+	L = np.exp(2*(t1/t2)**(1./2.))
 	
-	f = A*L*np.exp(((-t1)/(time-t0))-(time-t0)/(t2))
+	f = A*L*np.exp(-t1/(x-ts)-(x-ts)/t2)
 	
 	return f
 
@@ -372,153 +372,153 @@ def Norris6_pow(x,*p):
 
 def Norris1_bknpow(x,*p):
 
-	f=Norris(x,p[5:9])+bknpow(x,p[0:4])
+	f=Norris(x,p[4:8])+bknpow(x,p[0:4])
 
 	return f
 
 def Norris2_bknpow(x,*p):
 
-	f=Norris(x,p[5:9])+Norris(x,p[9:13])+bknpow(x,p[0:4])
+	f=Norris(x,p[4:8])+Norris(x,p[8:12])+bknpow(x,p[0:4])
 
 	return f
 
 def Norris3_bknpow(x,*p):
 
-	f=Norris(x,p[5:9])+Norris(x,p[9:13])+Norris(x,p[13:17])+bknpow(x,p[0:4])
+	f=Norris(x,p[4:8])+Norris(x,p[8:12])+Norris(x,p[12:16])+bknpow(x,p[0:4])
 
 	return f
 
 def Norris4_bknpow(x,*p):
 
-	f=Norris(x,p[5:9])+Norris(x,p[9:13])+Norris(x,p[13:17])+Norris(x,p[17:21])+bknpow(x,p[0:4])
+	f=Norris(x,p[4:8])+Norris(x,p[8:12])+Norris(x,p[12:16])+Norris(x,p[16:20])+bknpow(x,p[0:4])
 
 	return f
 
 def Norris5_bknpow(x,*p):
 
-	f=Norris(x,p[5:9])+Norris(x,p[9:13])+Norris(x,p[13:17])+Norris(x,p[17:21])+Norris(x,p[21:25])\
+	f=Norris(x,p[4:8])+Norris(x,p[8:12])+Norris(x,p[12:16])+Norris(x,p[16:20])+Norris(x,p[20:24])\
 		+bknpow(x,p[0:4])
 
 	return f
 
 def Norris6_bknpow(x,*p):
 
-	f=Norris(x,p[5:9])+Norris(x,p[9:13])+Norris(x,p[13:17])+Norris(x,p[17:21])+Norris(x,p[21:25])\
-		+Norris(x,p[25:29])+bknpow(x,p[0:4])
+	f=Norris(x,p[4:8])+Norris(x,p[8:12])+Norris(x,p[12:16])+Norris(x,p[16:20])+Norris(x,p[20:24])\
+		+Norris(x,p[24:28])+bknpow(x,p[0:4])
 
 	return f
 
 def Norris1_bkn2pow(x,*p):
 
-	f=Norris(x,p[7:11])+bkn2pow(x,p[0:6])
+	f=Norris(x,p[6:10])+bkn2pow(x,p[0:6])
 
 	return f
 
 def Norris2_bkn2pow(x,*p):
 
-	f=Norris(x,p[7:11])+Norris(x,p[11:15])+bkn2pow(x,p[0:6])
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+bkn2pow(x,p[0:6])
 
 	return f
 
 def Norris3_bkn2pow(x,*p):
 
-	f=Norris(x,p[7:11])+Norris(x,p[11:15])+Norris(x,p[15:19])+bkn2pow(x,p[0:6])
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+bkn2pow(x,p[0:6])
 
 	return f
 
 def Norris4_bkn2pow(x,*p):
 
-	f=Norris(x,p[7:11])+Norris(x,p[11:15])+Norris(x,p[15:19])+Norris(x,p[19:23])+bkn2pow(x,p[0:6])
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+bkn2pow(x,p[0:6])
 
 	return f
 
 def Norris5_bkn2pow(x,*p):
 
-	f=Norris(x,p[7:11])+Norris(x,p[11:15])+Norris(x,p[15:19])+Norris(x,p[19:23])+Norris(x,p[23:27])\
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])\
 		+bkn2pow(x,p[0:6])
 
 	return f
 
 def Norris6_bkn2pow(x,*p):
 
-	f=Norris(x,p[7:11])+Norris(x,p[11:15])+Norris(x,p[15:19])+Norris(x,p[19:23])+Norris(x,p[23:27])\
-		+Norris(x,p[27:31])+bkn2pow(x,p[0:6])
+	f=Norris(x,p[6:10])+Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])\
+		+Norris(x,p[26:30])+bkn2pow(x,p[0:6])
 
 	return f
 
 def Norris1_bkn3pow(x,*p):
 
-	f=Norris(x,p[9:13])+bkn3pow(x,p[0:8])
+	f=Norris(x,p[8:12])+bkn3pow(x,p[0:8])
 
 	return f
 
 def Norris2_bkn3pow(x,*p):
 
-	f=Norris(x,p[9:13])+Norris(x,p[13:17])+bkn3pow(x,p[0:8])
+	f=Norris(x,p[8:12])+Norris(x,p[12:16])+bkn3pow(x,p[0:8])
 
 	return f
 
 def Norris3_bkn3pow(x,*p):
 
-	f=Norris(x,p[9:13])+Norris(x,p[13:17])+Norris(x,p[17:21])+bkn3pow(x,p[0:8])
+	f=Norris(x,p[8:12])+Norris(x,p[12:16])+Norris(x,p[16:20])+bkn3pow(x,p[0:8])
 
 	return f
 
 def Norris4_bkn3pow(x,*p):
 
-	f=Norris(x,p[9:13])+Norris(x,p[13:17])+Norris(x,p[17:21])+Norris(x,p[21:25])+bkn3pow(x,p[0:8])
+	f=Norris(x,p[8:12])+Norris(x,p[12:16])+Norris(x,p[16:20])+Norris(x,p[20:24])+bkn3pow(x,p[0:8])
 
 	return f
 
 def Norris5_bkn3pow(x,*p):
 
-	f=Norris(x,p[9:13])+Norris(x,p[13:17])+Norris(x,p[17:21])+Norris(x,p[21:25])+Norris(x,p[25:29])\
+	f=Norris(x,p[8:12])+Norris(x,p[12:16])+Norris(x,p[16:20])+Norris(x,p[20:24])+Norris(x,p[24:28])\
 		+bkn3pow(x,p[0:8])
 
 	return f
 
 def Norris6_bkn3pow(x,*p):
 
-	f=Norris(x,p[9:13])+Norris(x,p[13:17])+Norris(x,p[17:21])+Norris(x,p[21:25])+Norris(x,p[25:29])\
-		+Norris(x,p[29:33])+bkn3pow(x,p[0:8])
+	f=Norris(x,p[8:12])+Norris(x,p[12:16])+Norris(x,p[16:20])+Norris(x,p[20:24])+Norris(x,p[24:28])\
+		+Norris(x,p[28:32])+bkn3pow(x,p[0:8])
 
 	return f
 
 def Norris1_bkn4pow(x,*p):
 
-	f=Norris(x,p[11:15])+bkn4pow(x,p[0:10])
+	f=Norris(x,p[10:14])+bkn4pow(x,p[0:10])
 
 	return f
 
 def Norris2_bkn4pow(x,*p):
 
-	f=Norris(x,p[11:15])+Norris(x,p[15:19])+bkn4pow(x,p[0:10])
+	f=Norris(x,p[10:14])+Norris(x,p[14:18])+bkn4pow(x,p[0:10])
 
 	return f
 
 def Norris3_bkn4pow(x,*p):
 
-	f=Norris(x,p[11:15])+Norris(x,p[15:19])+Norris(x,p[19:23])+bkn4pow(x,p[0:10])
+	f=Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+bkn4pow(x,p[0:10])
 
 	return f
 
 def Norris4_bkn4pow(x,*p):
 
-	f=Norris(x,p[11:15])+Norris(x,p[15:19])+Norris(x,p[19:23])+Norris(x,p[23:27])+bkn4pow(x,p[0:10])
+	f=Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])+bkn4pow(x,p[0:10])
 
 	return f
 
 def Norris5_bkn4pow(x,*p):
 
-	f=Norris(x,p[11:15])+Norris(x,p[15:19])+Norris(x,p[19:23])+Norris(x,p[23:27])+Norris(x,p[27:31])\
+	f=Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])+Norris(x,p[26:30])\
 		+bkn4pow(x,p[0:10])
 
 	return f
 
 def Norris6_bkn4pow(x,*p):
 
-	f=Norris(x,p[11:15])+Norris(x,p[15:19])+Norris(x,p[19:23])+Norris(x,p[23:27])+Norris(x,p[27:31])\
-		+Norris(x,p[31:35])+bkn4pow(x,p[0:10])
+	f=Norris(x,p[10:14])+Norris(x,p[14:18])+Norris(x,p[18:22])+Norris(x,p[22:26])+Norris(x,p[26:30])\
+		+Norris(x,p[30:34])+bkn4pow(x,p[0:10])
 
 	return f
 
@@ -679,152 +679,167 @@ def intgauss6_pow(xx,*p):
 
 def intgauss1_bknpow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intbknpow(xx,p[0:4])
+	f=intgauss(xx,p[4:7])+intbknpow(xx,p[0:4])
 
 	return f
 
 def intgauss2_bknpow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intbknpow(xx,p[0:4])
+	f=intgauss(xx,p[4:7])+intgauss(xx,p[7:10])+intbknpow(xx,p[0:4])
 
 	return f
 
 def intgauss3_bknpow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intbknpow(xx,p[0:4])
+	f=intgauss(xx,p[4:7])+intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intbknpow(xx,p[0:4])
 
 	return f
 
 def intgauss4_bknpow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intbknpow(xx,p[0:4])
+	f=intgauss(xx,p[4:7])+intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intbknpow(xx,p[0:4])
 
 	return f
 
 def intgauss5_bknpow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])\
+	f=intgauss(xx,p[4:7])+intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])\
 		+intbknpow(xx,p[0:4])
 
 	return f
 
 def intgauss6_bknpow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])\
-		+intgauss(xx,p[20:23])+intbknpow(xx,p[0:4])
+	f=intgauss(xx,p[4:7])+intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])\
+		+intgauss(xx,p[19:22])+intbknpow(xx,p[0:4])
 
 	return f
 
 def intgauss1_bkn2pow(xx,*p):
 
-	f=intgauss(xx,p[7:10])+intbkn2pow(xx,p[0:6])
+	f=intgauss(xx,p[6:9])+intbkn2pow(xx,p[0:6])
 
 	return f
 
 def intgauss2_bkn2pow(xx,*p):
 
-	f=intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intbkn2pow(xx,p[0:6])
+	f=intgauss(xx,p[6:9])+intgauss(xx,p[9:12])+intbkn2pow(xx,p[0:6])
 
 	return f
 
 def intgauss3_bkn2pow(xx,*p):
 
-	f=intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intbkn2pow(xx,p[0:6])
+	f=intgauss(xx,p[6:9])+intgauss(xx,p[9:12])+intgauss(xx,p[12:15])+intbkn2pow(xx,p[0:6])
 
 	return f
 
 def intgauss4_bkn2pow(xx,*p):
 
-	f=intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])+intbkn2pow(xx,p[0:6])
+	f=intgauss(xx,p[6:9])+intgauss(xx,p[9:12])+intgauss(xx,p[12:15])+intgauss(xx,p[15:18])+intbkn2pow(xx,p[0:6])
 
 	return f
 
 def intgauss5_bkn2pow(xx,*p):
 
-	f=intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])+intgauss(xx,p[19:22])\
+	f=intgauss(xx,p[6:9])+intgauss(xx,p[9:12])+intgauss(xx,p[12:15])+intgauss(xx,p[15:18])+intgauss(xx,p[18:21])\
 		+intbkn2pow(xx,p[0:6])
 
 	return f
 
 def intgauss6_bkn2pow(xx,*p):
 
-	f=intgauss(xx,p[7:10])+intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])+intgauss(xx,p[19:22])\
-		+intgauss(xx,p[22:25])+intbkn2pow(xx,p[0:6])
+	f=intgauss(xx,p[6:9])+intgauss(xx,p[9:12])+intgauss(xx,p[12:15])+intgauss(xx,p[15:18])+intgauss(xx,p[18:21])\
+		+intgauss(xx,p[21:24])+intbkn2pow(xx,p[0:6])
 
 	return f
 
 def intgauss1_bkn3pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intbkn3pow(xx,p[0:6])
+	f=intgauss(xx,p[8:11])+intbkn3pow(xx,p[0:8])
 
 	return f
 
 def intgauss2_bkn3pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intbkn3pow(xx,p[0:6])
+	f=intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intbkn3pow(xx,p[0:8])
 
 	return f
 
 def intgauss3_bkn3pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intbkn3pow(xx,p[0:6])
+	f=intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intbkn3pow(xx,p[0:8])
 
 	return f
 
 def intgauss4_bkn3pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intbkn3pow(xx,p[0:6])
+	f=intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])+intbkn3pow(xx,p[0:8])
 
 	return f
 
 def intgauss5_bkn3pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])\
-		+intbkn3pow(xx,p[0:6])
+	f=intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])+intgauss(xx,p[20:23])\
+		+intbkn3pow(xx,p[0:8])
 
 	return f
 
 def intgauss6_bkn3pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])\
-		+intgauss(xx,p[20:23])+intbkn3pow(xx,p[0:6])
+	f=intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])+intgauss(xx,p[20:23])\
+		+intgauss(xx,p[23:26])+intbkn3pow(xx,p[0:8])
 
 	return f
 
 def intgauss1_bkn4pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intbkn4pow(xx,p[0:8])
+	f=intgauss(xx,p[10:13])+intbkn4pow(xx,p[0:10])
 
 	return f
 
 def intgauss2_bkn4pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intbkn4pow(xx,p[0:8])
+	f=intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intbkn4pow(xx,p[0:10])
 
 	return f
 
 def intgauss3_bkn4pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intbkn4pow(xx,p[0:8])
+	f=intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])+intbkn4pow(xx,p[0:10])
 
 	return f
 
 def intgauss4_bkn4pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intbkn4pow(xx,p[0:8])
+	f=intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])+intgauss(xx,p[19:22])+intbkn4pow(xx,p[0:10])
 
 	return f
 
 def intgauss5_bkn4pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])\
-		+intbkn4pow(xx,p[0:8])
+	f=intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])+intgauss(xx,p[19:22])+intgauss(xx,p[22:25])\
+		+intbkn4pow(xx,p[0:10])
 
 	return f
 
 def intgauss6_bkn4pow(xx,*p):
 
-	f=intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intgauss(xx,p[11:14])+intgauss(xx,p[14:17])+intgauss(xx,p[17:20])\
-		+intgauss(xx,p[20:23])+intbkn4pow(xx,p[0:8])
+	f=intgauss(xx,p[10:13])+intgauss(xx,p[13:16])+intgauss(xx,p[16:19])+intgauss(xx,p[19:22])+intgauss(xx,p[22:25])\
+		+intgauss(xx,p[25:28])+intbkn4pow(xx,p[0:10])
+
+	return f
+
+def intNorris(xx,*p):
+
+	#pulse amplitude = A
+	A = p[0]
+	#pulse start time = t0
+	ts = p[1]
+	#pulse rise = t1
+	t1 = p[2]
+	#pulse decay = t2
+	t2 = p[3]
+
+	f=0
 
 	return f
