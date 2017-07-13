@@ -10,6 +10,7 @@ x & xx must be np.array with xx.transpose()
 
 import numpy as np
 import importlib
+import math
 
 def call_function(function,x,*p):
 
@@ -27,7 +28,6 @@ def logmean(x):
 
 def pow(x,*p):
 
-	print p
 	norm=p[0]
 	pow1=p[1]
 
@@ -121,7 +121,7 @@ def gauss(x,*p):
 	center=p[1]
 	width=p[2]
 
-	f=norm*exp(-(t-center)^2/(2*width^2))
+	f=norm*np.exp(-(x-center)**2/(2*width**2))
 
 	return f
 
@@ -139,7 +139,7 @@ def gauss2_pow(x,*p):
 
 def gauss3_pow(x,*p):
 
-	f=gauss(x,p[2:5])+gauss(x,p[5:8])+gauss(x,p[8:11])+pow(x,p[0:2])
+	f=gauss(x,*p[2:5])+gauss(x,*p[5:8])+gauss(x,*p[8:11])+pow(x,*p[0:2])
 
 	return f
 
@@ -631,12 +631,16 @@ def intbkn4pow(xx,*p):
 
 def intgauss(xx,*p):
 
-	f=sqrt(math.pi/2.)*(-p[0])*p[2]*(math.erf((p[1]-xx[1,:])/(sqrt(2)*p[2]))-math.erf((p[1]-xx[0,:])/(sqrt(2)*p[2])))
-	f=f/(xx[1,:]-xx[0,:])
+	x0=xx[0,:]
+	x1=xx[1,:]
+	f=[]
+	for i in range(len(x0)):
+		f=np.append(f,np.sqrt(math.pi/2.)*(-p[0])*p[2]*(math.erf((p[1]-x1[i])/(np.sqrt(2)*p[2]))-math.erf((p[1]-x0[i])/(np.sqrt(2)*p[2]))))
+	f=f/(x1-x0)
 	
 	return f
 
-def intgauss1_pow(x,*p):
+def intgauss1_pow(xx,*p):
 
 	f=intgauss(xx,p[2:5])+intpow(xx,p[0:2])
 
@@ -650,7 +654,7 @@ def intgauss2_pow(xx,*p):
 
 def intgauss3_pow(xx,*p):
 
-	f=intgauss(xx,p[2:5])+intgauss(xx,p[5:8])+intgauss(xx,p[8:11])+intpow(xx,p[0:2])
+	f=intgauss(xx,*p[2:5])+intgauss(xx,*p[5:8])+intgauss(xx,*p[8:11])+intpow(xx,*p[0:2])
 
 	return f
 

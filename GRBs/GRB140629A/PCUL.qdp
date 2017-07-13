@@ -1,0 +1,4 @@
+READ TERR 1 2 
+READ SERR 4
+!Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg 	FracExp 	BGrate  	BGerr   	CorrFact	CtsInSrc	BGInSrc 	Exposure	Sigma   	SNR
+304823.490	23627.810	-40158.631	2.1230e-03	0.0000e+00	0.0000e+00	0.1525  	6.2242e-05	3.0665e-06	2.6931  	1       	0.6055  	9728.3240	0.4920  	inf     

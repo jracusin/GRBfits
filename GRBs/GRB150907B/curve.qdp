@@ -1,0 +1,19 @@
+ ! Swift/XRT lightcurve of trigger: 654803, name: GRB 150907B
+ ! T0 for this burst is Swift MET=463361202.9 s, = 2015 Sep 07 at 23:26:27.777 UT
+ ! Data covers 0.3-10 keV
+ ! The data are in 5 columns:  ! time, time error (+ve), time error (-ve), source count-rate, source error
+ ! For a detailed description of light curve production, see Evans et al. 2007 (A&A, 469, 379 )
+ ! For a detailed description of the file, see
+ ! http://www.swift.ac.uk/xrt_curves/docs.php
+ ! This lightcurve was obtained from http://www.swift.ac.uk/xrt_curves/00654803
+ ! BINMODE: GRB-like (counts)
+
+READ TERR 1 2
+! PC data
+!Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
+3213.895	109.466	-196.426	5.613357e-02	1.501145e-02	-1.501145e-02
+3426.850	124.677	-103.489	1.036907e-01	2.345571e-02	-2.345571e-02
+3670.401	192.033	-118.874	5.557923e-02	1.482399e-02	-1.482399e-02
+4198.023	298.753	-335.589	4.267262e-02	9.210535e-03	-9.210535e-03
+9629.912	1013.255	-820.200	1.067726e-02	3.093439e-03	-3.093439e-03
+22263.921	9975.608	-7752.196	3.717520e-03	1.160481e-03	-1.160481e-03

@@ -1,0 +1,16 @@
+ ! Swift/XRT lightcurve of trigger: 559139, name: GRB 130627B
+ ! Data covers 0.3-10 keV
+ ! The data are in 5 columns:  ! time, time error (+ve), time error (-ve), source count-rate, source error
+ ! For a detailed description of light curve production, see Evans et al. 2007 (A&A, 469, 379 )
+ ! For a detailed description of the file, see
+ ! http://www.swift.ac.uk/xrt_curves/docs.php
+ ! This lightcurve was obtained from http://www.swift.ac.uk/xrt_curves/00559139
+ ! BINMODE: GRB-like (counts)
+
+READ TERR 1 2
+! PC data
+!Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
+7387.201	30444.878	-3673.777	8.056547e-03	1.758883e-03	-1.758883e-03
+NO	NO	NO	NO	NO	NO
+! PC Upper limit
+402850.761	11844.281	-12564.149	1.6925e-03	0.0000e+00	0.0000e+00
