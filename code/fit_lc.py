@@ -19,24 +19,34 @@ import re
 import time
 from scipy.optimize import curve_fit
 
-def fit_the_lc(grbdict=None,lc=None):
+def fit_the_lc(grbdict=None,lc=None,norris=False,dir=None):
 
-	if grbdict:
-		lc=grbdict.lc
-#		p=grbdict.lcfit
-	else:
-		if not lc:
-			print('Need to specify either GRB dictionary or lc')
-			return
+# 	if grbdict:
+# 		lc=grbdict.lc
+# #		p=grbdict.lcfit
+# 	else:
+# 		if not lc:
+# 			print('Need to specify either GRB dictionary or lc')
+# 			return
 
-	p0,model,fmodel,pnames=click_initial_conditions(lc=lc)
+	if not dir and not lc:
+ 		print('Need to specify either GRB directory or lc')
+ 		return
+
+ 	if dir and (type(lc) != type(None)):
+ 		lc=read_lc(dir=dir)
+
+
+	p0,model,fmodel,pnames=click_initial_conditions(lc=lc,norris=norris)
 	print('Fitting '+model+':')
-	tt=np.array([lc['Time']+lc['T_-ve'],lc['Time']+lc['T_+ve']])
-	popt, pcov=curve_fit(fmodel['int'+model],tt,lc['Rate'],p0=p0,sigma=lc['Ratepos'])
+	det=np.where(lc['Ratepos']>0)
+	tt=np.array([lc['Time'][det]+lc['T_-ve'][det],lc['Time'][det]+lc['T_+ve'][det]])
+	popt, pcov=curve_fit(fmodel['int'+model],tt,lc['Rate'][det],p0=p0,sigma=lc['Ratepos'][det])
 	perr = np.sqrt(np.diag(pcov))
 	plot.close()
 
 	print('Result par, val, err:')
+	print(pnames)
 	print(popt)
 	print(perr)
 	yfit=fmodel[model](np.array(lc['Time']),*popt)
@@ -48,18 +58,44 @@ def fit_the_lc(grbdict=None,lc=None):
 	p=fit_params(model,pnames,popt,perr,perr,chisq,dof)
 
 	print('Chisq = '+str(chisq/dof))
-	fig,ax1=plot_lcfit(lc=lc,noshow=True)
-	ax1.plot(np.array(lc['Time']),yfit,color='orange')
+	fig,ax1=plot_lcfit(lc=lc,noshow=True,p=p)
+	# sind=0
+	# ylim=ax1.get_ylim()
 
+	# for s in p.pnames: 
+	# 	if 'break' in s:
+	# 		ax1.plot([p.par[sind],p.par[sind]],ylim,linestyle='--',color='grey')
+	# 	sind=sind+1
+	# ax1.set_ylim(ylim)
+	# ax1.plot(np.array(lc['Time']),yfit,color='orange')
+	# ax1.set_title('Final Fit - Right click to continue')
+	# nump=len(pnames)
+	# for i in range(0,nump):
+	# 	ax1.annotate(pnames[i]+' = '+str(popt[i])+' +/- '+str(perr[i]),xy=(0.03,0.03+0.03*(nump-i)),xycoords='axes fraction',fontsize=8)
+
+	cp=Click(fig=fig)
+
+	plot.savefig(dir+'lc_fit_plot.png', bbox_inches='tight')
 	plot.show()
 
 	### need to add breaks to plots
-	### need to add stuff to fit_params object
 	### need to write out fit params (add write function to object)
+	write_lcfit(p,dir=dir)
+	#need to writeout final plot
+	# need to make it possible to fit flares with gaussians
 
 	return	p
 
-def lc_linfit(x,y,breaks):
+def lc_linfit(xx,yy,breaks,xflares=None,norris=False):
+
+	x=xx
+	y=yy
+	if type(xflares) != type(None):
+		for xf in xflares:
+#			wx=np.where((x<xf*0.9) or (x>xf*1.1))
+			wx=np.append(np.where((x<xf*0.5)),np.where((x>xf*5)))
+			x=x[wx]
+			y=y[wx]
 
 	bks=np.hstack((min(x)-1,breaks,max(x)))
 	yfit=[]
@@ -75,9 +111,18 @@ def lc_linfit(x,y,breaks):
 		pnames=np.hstack((pnames,'pow'+str(i+1),'break'+str(i+1)))
 
 	p=p[0:len(p)-1]
+	pnames=pnames[0:len(pnames)-1]
+	if type(xflares) != type(None):
+		for i in range(1,len(xflares)+1):
+			if norris:
+				#A, t1, t2, ts
+				pnames=np.append(pnames,np.array(['norm'+str(i),'t1_'+str(i),'t2_'+str(i),'ts_'+str(i)]))
+			else:
+				pnames=np.append(pnames,np.array(['norm'+str(i),'center'+str(i),'width'+str(i)]))				
+
 	return p,yfit,pnames
 
-def click_initial_conditions(dir=None,lc=None):
+def click_initial_conditions(dir=None,lc=None,showplot=False,norris=False):
 
 	## initial_guess N flares
 	## initial_guess N breaks
@@ -86,6 +131,7 @@ def click_initial_conditions(dir=None,lc=None):
 
 	xflares,yflares=initial_guess(dir=dir,lc=lc,flares=True)
 	xbreaks,ybreaks=initial_guess(dir=dir,lc=lc,breaks=True)
+
 	print(str(len(xflares))+' Flare, '+str(len(xbreaks))+' Breaks')
 	redo='Y'
 	while redo == 'Y':
@@ -109,17 +155,30 @@ def click_initial_conditions(dir=None,lc=None):
 	model,fmodel=fit_models(numflares,numbreaks)
 	print('Model: ' +model)
 
-	p,yfit,pnames=lc_linfit(np.array(lc['Time']),np.array(lc['Rate']),xbreaks)
+	pflares=[]
+	for i in range(numflares):
+		if norris:
+			## assume A, t1, t2, ts - reorder if not
+			pflares=np.append(pflares,yflares[i],xflares[i],50.,-10)
+		else:
+			pflares=np.append(pflares,[yflares[i],xflares[i],0.2*xflares[i]])
+
+	det=np.where(lc['Ratepos']>0)
+	t=lc['Time'][det]
+	r=lc['Rate'][det]
+
+	p,yfit,pnames=lc_linfit(t,r,xbreaks,xflares=xflares,norris=norris)
+	p=np.append(p,pflares)
 	print('Initial Guess for Model: '+str(p))
 
-	fig,ax1=plot_lcfit(lc=lc,noshow=True)
-	ax1.plot(np.array(lc['Time']),yfit,color='green')
-	ax1.set_title('Initial Guess Fit')
-	plot.show()
+	if showplot:
+		fig,ax1=plot_lcfit(lc=lc,noshow=True)
+		ax1.plot(np.array(lc['Time']),yfit,color='green')
+		ax1.set_title('Initial Guess Fit - Right click to continue')
+		cp=Click(fig=fig)
+		plot.show()
 
 	return p,model,fmodel,pnames
-
-	## plot again with crude fits
 
 class Click:
 
@@ -223,66 +282,70 @@ def initial_guess(dir=None,lc=None,flares=False,breaks=False):
 def fit_models(numflares,numbreaks,norris=False):
 
 	## norm + numflares*3 + numbreaks*2-1
-	nump=1 + numflares*3 + numbreaks*2-1
-	if numbreaks == 0: nump=nump+2
+#	nump=1 + numflares*3 + numbreaks*2+1
+#	if numbreaks == 0: nump=nump+2
 
 	if norris:
 		g='norris'
 	else:
 		g='gauss'
 
-	if nump == 2: model='pow'
-	if nump == 4: model='bknpow'
-	if nump == 5: model=g+'1_pow'
-	if nump == 6: model='bkn2pow'
-	if nump == 7: model=g+'1_bknpow'
-	if nump == 8: 
-		model='bkn3pow'
-		if numflares == 2: model=g+'2_pow'
-	if nump == 9: model=g+'1_bkn2pow'
-	if nump == 10:
-		model='bkn4pow'
-		if numflares == 2: model=g+'2_bknpow'
-	if nump == 11:
-		if numflares == 3: model=g+'3_pow'
-		if numflares == 1: model=g+'1_bkn3pow'
-	if nump == 12: model=g+'2_bkn2pow'
-	if nump == 13: 
-		if numflares == 3: model=g+'3_bknpow'
-		if numflares == 1: model=g+'1_bkn4pow'
-	if nump == 14: 
-		if numflares == 4: model=g+'4_pow'
-		if numflares == 2: model=g+'2_bkn3pow'
-	if nump == 15: model=g+'3_bkn2pow'
-	if nump == 16:  
-		if numflares == 4: model=g+'4_bknpow'
-		if numflares == 2: model=g+'2_bkn4pow'
-	if nump == 17:  
-		if numflares == 5: model=g+'5_pow'
-		if numflares == 3: model=g+'3_bkn3pow'
-	if nump == 18: model=g+'4_bkn2pow'
-	if nump == 19:  
-		if numflares == 5: model=g+'5_bknpow'
-		if numflares == 3: model=g+'3_bkn4pow'
-	if nump == 20:  
-		if numflares == 6: model=g+'6_pow'
-		if numflares == 4: model=g+'4_bkn3pow'
-	if nump == 21: model=g+'5_bkn2pow'
-	if nump == 22:  
-		if numflares == 6: model=g+'6_bknpow'
-		if numflares == 4: model=g+'4_bkn4pow'
-	if nump == 23:  
-		if numflares == 7: model=g+'7_pow'
-		if numflares == 5: model=g+'5_bkn3pow'
-	if nump == 24: model=g+'6_bkn2pow'
-	if nump == 25:  
-		if numflares == 7: model=g+'7_bknpow'
-		if numflares == 5: model=g+'5_bkn4pow'
-	if nump == 26: model=g+'6_bkn3pow'
-	if nump == 27: model=g+'7_bkn2pow'
-	if nump == 28: model=g+'6_bkn4pow'
-	if nump == 29: model=g+'7_bkn3pow'
-	if nump == 31: model=g+'7_bkn4pow'
+	if numbreaks == 0: model='pow'
+	if numbreaks > 0: model='bkn'+str(numbreaks)+'pow'
+	if numflares > 0: model=g+str(numflares)+'_'+model
+
+	# if nump == 2: model='pow'
+	# if nump == 4: model='bknpow'
+	# if nump == 5: model=g+'1_pow'
+	# if nump == 6: model='bkn2pow'
+	# if nump == 7: model=g+'1_bknpow'
+	# if nump == 8: 
+	# 	model='bkn3pow'
+	# 	if numflares == 2: model=g+'2_pow'
+	# if nump == 9: model=g+'1_bkn2pow'
+	# if nump == 10:
+	# 	model='bkn4pow'
+	# 	if numflares == 2: model=g+'2_bknpow'
+	# if nump == 11:
+	# 	if numflares == 3: model=g+'3_pow'
+	# 	if numflares == 1: model=g+'1_bkn3pow'
+	# if nump == 12: model=g+'2_bkn2pow'
+	# if nump == 13: 
+	# 	if numflares == 3: model=g+'3_bknpow'
+	# 	if numflares == 1: model=g+'1_bkn4pow'
+	# if nump == 14: 
+	# 	if numflares == 4: model=g+'4_pow'
+	# 	if numflares == 2: model=g+'2_bkn3pow'
+	# if nump == 15: model=g+'3_bkn2pow'
+	# if nump == 16:  
+	# 	if numflares == 4: model=g+'4_bknpow'
+	# 	if numflares == 2: model=g+'2_bkn4pow'
+	# if nump == 17:  
+	# 	if numflares == 5: model=g+'5_pow'
+	# 	if numflares == 3: model=g+'3_bkn3pow'
+	# if nump == 18: model=g+'4_bkn2pow'
+	# if nump == 19:  
+	# 	if numflares == 5: model=g+'5_bknpow'
+	# 	if numflares == 3: model=g+'3_bkn4pow'
+	# if nump == 20:  
+	# 	if numflares == 6: model=g+'6_pow'
+	# 	if numflares == 4: model=g+'4_bkn3pow'
+	# if nump == 21: model=g+'5_bkn2pow'
+	# if nump == 22:  
+	# 	if numflares == 6: model=g+'6_bknpow'
+	# 	if numflares == 4: model=g+'4_bkn4pow'
+	# if nump == 23:  
+	# 	if numflares == 7: model=g+'7_pow'
+	# 	if numflares == 5: model=g+'5_bkn3pow'
+	# if nump == 24: model=g+'6_bkn2pow'
+	# if nump == 25:  
+	# 	if numflares == 7: model=g+'7_bknpow'
+	# 	if numflares == 5: model=g+'5_bkn4pow'
+	# if nump == 26: model=g+'6_bkn3pow'
+	# if nump == 27: model=g+'7_bkn2pow'
+	# if nump == 28: model=g+'6_bkn4pow'
+	# if nump == 29: model=g+'7_bkn3pow'
+	# if nump == 31: model=g+'7_bkn4pow'
 
 	function_model={
 		'gauss': fit_functions.gauss,
@@ -466,7 +529,7 @@ def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 
 			if p:
 				if resid: 
-					yfit=fit_functions.call_function(p.model,lc['Time'][w],p)
+					yfit=fit_functions.call_function(p.model,lc['Time'][w],*p.par)
 					res=lc['Rate'][w]/yfit
 					ax2.errorbar(lc['Time'][w],res,xerr=[-lc['T_-ve'][w],lc['T_+ve'][w]],\
 						yerr=yerr/yfit,linestyle='None',capsize=0,fmt='none',ecolor=color[t],\
@@ -477,10 +540,14 @@ def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 	if p:
 		print(p.model)
 #		yfit=getattr(importlib.import_module('fit_functions'),p.model)(lc['Time'],p.par)
-		yfit=fit_functions.call_function(p.model,lc['Time'],p)
-		ax1.plot(lc['Time'],yfit,color='green')
+		t=np.append(np.array(lc['Time']),p.par[2+np.arange(p.numbreaks)*2])
+		t.sort()
+		yfit=fit_functions.call_function(p.model,t,*p.par)
+		ax1.plot(t,yfit,color='green',label=p.model+' fit')
+		nump=len(p.pnames)
+		for i in range(0,nump):
+		 	ax1.annotate(p.pnames[i]+' = '+str(round(p.par[i],2))+' +/- '+str(round(p.perror[i][0],2)),xy=(0.02,0.02+0.05*(nump-i)),xycoords='axes fraction',fontsize=8)
 
-		
 	ax1.legend(loc="upper right")
 	ax1.set_yscale('log')
 	ax1.set_xscale('log')
@@ -502,7 +569,21 @@ def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 
 	return f,ax1
 
-def read_lcfit(dir='',file=''):
+def write_lcfit(p,dir=None,file=None):
+
+	if not dir:
+		dir='./'
+	if not file:
+		file=dir+'lc_fit_out_py_int1.dat'
+	f=open(file,'w')
+	nump=len(p.pnames)
+	for i in range(nump):
+		f.write(p.pnames[i]+' '+str(p.par[i])+' '+str(p.perror[i][0])+' '+str(p.perror[i][1]))
+	f.write('Chisq '+str(p.chisq))
+	f.write('dof '+str(p.dof))
+	f.close()
+
+def read_lcfit(dir=None,file=None):
 
 	if not file: file=dir+'lc_fit_out_idl_int9.dat'
 	if not os.path.exists(file):
@@ -536,58 +617,7 @@ def read_lcfit(dir='',file=''):
 		nump=len(par)
 		nf=len([p for p in pnames if 'g' in p])
 		model='nofit'
-		if nump == 2: model='pow'
-		if nump == 4: model='bknpow'
-		if nump == 5: model='gauss1_pow'
-		if nump == 6: model='bkn2pow'
-		if nump == 7: model='gauss1_bknpow'
-		if nump == 8: 
-			model='bkn3pow'
-			if nf == 2: model='gauss2_pow'
-		if nump == 9: model='gauss1_bkn2pow'
-		if nump == 10:
-			model='bkn4pow'
-			if nf == 2: model='gauss2_bknpow'
-		if nump == 11:
-			if nf == 3: model='gauss3_pow'
-			if nf == 1: model='gauss1_bkn3pow'
-		if nump == 12: model='gauss2_bkn2pow'
-		if nump == 13: 
-			if nf == 3: model='gauss3_bknpow'
-			if nf == 1: model='gauss1_bkn4pow'
-		if nump == 14: 
-			if nf == 4: model='gauss4_pow'
-			if nf == 2: model='gauss2_bkn3pow'
-		if nump == 15: model='gauss3_bkn2pow'
-		if nump == 16:  
-			if nf == 4: model='gauss4_bknpow'
-			if nf == 2: model='gauss2_bkn4pow'
-		if nump == 17:  
-			if nf == 5: model='gauss5_pow'
-			if nf == 3: model='gauss3_bkn3pow'
-		if nump == 18: model='gauss4_bkn2pow'
-		if nump == 19:  
-			if nf == 5: model='gauss5_bknpow'
-			if nf == 3: model='gauss3_bkn4pow'
-		if nump == 20:  
-			if nf == 6: model='gauss6_pow'
-			if nf == 4: model='gauss4_bkn3pow'
-		if nump == 21: model='gauss5_bkn2pow'
-		if nump == 22:  
-			if nf == 6: model='gauss6_bknpow'
-			if nf == 4: model='gauss4_bkn4pow'
-		if nump == 23:  
-			if nf == 7: model='gauss7_pow'
-			if nf == 5: model='gauss5_bkn3pow'
-		if nump == 24: model='gauss6_bkn2pow'
-		if nump == 25:  
-			if nf == 7: model='gauss7_bknpow'
-			if nf == 5: model='gauss5_bkn4pow'
-		if nump == 26: model='gauss6_bkn3pow'
-		if nump == 27: model='gauss7_bkn2pow'
-		if nump == 28: model='gauss6_bkn4pow'
-		if nump == 29: model='gauss7_bkn3pow'
-		if nump == 31: model='gauss7_bkn4pow'
+		model,fmodel=fit_models(nump,nf)
 
 		p=fit_params(model,pnames,par,pneg,ppos,chisq,dof)
 	
@@ -793,15 +823,27 @@ class fit_params:
 		self.perror=perror
 		self.chisq=chisq
 		self.dof=dof
+		if 'pow' not in model: 
+			bk=re.split('bkn|pow',model)
+			wbk='bkn' in bk
+			self.numbreaks=int(bk[wbk+1])
+		else:
+			self.numbreaks=0
+		if ('gauss' in model) or ('norris' in model):
+			fl=re.split('gauss|norris|_',model)
+			self.numflares=int(fl[1])
+		else:
+			self.numflares=0
 
 	def list(self):
-		print('Model = ',self.model)
-		print('Pname = ',self.pnames)
-		print('Par = ',self.par)
-		print('Perror = ',self.perror)
-		print('Chisq = ',self.chisq)
-		print('DOF = ',self.dof)
-
+		print('model = ',self.model)
+		print('pnames = ',self.pnames)
+		print('par = ',self.par)
+		print('perror = ',self.perror)
+		print('chisq = ',self.chisq)
+		print('dof = ',self.dof)
+		print('numflares = ',self.numflares)
+		print('numbreaks = ',self.numbreaks)
 	### to make list of object: plist=[fit_params(count) for count in xrange(n)]
 
 def read_curve(file):

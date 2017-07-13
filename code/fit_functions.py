@@ -28,7 +28,6 @@ def logmean(x):
 
 def pow(x,*p):
 
-	print p
 	norm=p[0]
 	pow1=p[1]
 
