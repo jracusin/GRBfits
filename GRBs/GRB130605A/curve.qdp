@@ -1,0 +1,39 @@
+ ! Swift/XRT lightcurve of trigger: 557508, name: GRB 130605A
+ ! Data covers 0.3-10 keV
+ ! The data are in 5 columns:  ! time, time error (+ve), time error (-ve), source count-rate, source error
+ ! For a detailed description of light curve production, see Evans et al. 2007 (A&A, 469, 379 )
+ ! For a detailed description of the file, see
+ ! http://www.swift.ac.uk/xrt_curves/docs.php
+ ! This lightcurve was obtained from http://www.swift.ac.uk/xrt_curves/00557508
+ ! BINMODE: GRB-like (counts)
+
+READ TERR 1 2
+! WTSLEW data
+!Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
+82.57642887701	3.87378914485971	-3.75777185320629	9.5406850601668	1.13231446153507	-1.13232077499637
+NO	NO	NO	NO	NO
+! WT data
+!Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
+98.965	2.229	-2.680	6.352129e+00	1.180822e+00	-1.180822e+00
+105.399	4.157	-4.205	3.456483e+00	6.991136e-01	-6.991138e-01
+113.691	4.521	-4.135	3.456219e+00	6.728601e-01	-6.728603e-01
+121.682	3.555	-3.471	4.219874e+00	8.293229e-01	-8.293232e-01
+129.827	3.514	-4.590	3.658808e+00	7.190580e-01	-7.190582e-01
+139.894	7.060	-6.552	2.059153e+00	4.375995e-01	-4.375997e-01
+151.786	6.191	-4.833	2.503986e+00	5.375509e-01	-5.375511e-01
+162.918	4.230	-4.941	3.077195e+00	6.539479e-01	-6.539481e-01
+173.154	7.565	-6.006	1.795084e+00	4.432515e-01	-4.432516e-01
+184.654	3.439	-3.935	3.541632e+00	8.008441e-01	-8.008443e-01
+192.360	4.619	-4.266	2.825830e+00	6.671957e-01	-6.671959e-01
+NO	NO	NO	NO	NO
+! PC data
+!Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
+4575.322	100.144	-102.948	8.680633e-02	2.248431e-02	-2.248431e-02
+4952.532	262.007	-277.066	3.235683e-02	8.472224e-03	-8.472224e-03
+5582.153	306.855	-367.614	2.613514e-02	6.821310e-03	-6.821310e-03
+6106.677	253.694	-217.670	3.995071e-02	1.010738e-02	-1.010738e-02
+11164.602	1355.042	-939.138	1.198504e-02	2.653386e-03	-2.653386e-03
+23143.838	16112.166	-7151.090	4.334822e-03	7.869654e-04	-7.869654e-04
+NO	NO	NO	NO	NO	NO
+! PC Upper limit
+60216.020	14296.365	-2320.008	3.6254e-03	0.0000e+00	0.0000e+00

@@ -1,0 +1,29 @@
+ ! Swift/XRT lightcurve of trigger: 512164, name: GRB 120121A
+ ! Data covers 0.3-10 keV
+ ! The data are in 5 columns:  ! time, time error (+ve), time error (-ve), source count-rate, source error
+ ! For a detailed description of light curve production, see Evans et al. 2007 (A&A, 469, 379 )
+ ! For a detailed description of the file, see
+ ! http://www.swift.ac.uk/xrt_curves/docs.php
+ ! This lightcurve was obtained from http://www.swift.ac.uk/xrt_curves/00512164
+ ! BINMODE: GRB-like (counts)
+
+READ TERR 1 2
+! WTSLEW data
+!Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
+108.051792891803	3.72387209337697	-3.65496193258603	2.54533032372264	0.599949803972364	-0.599966170332597
+NO	NO	NO	NO	NO
+! PC data
+!Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
+154.600	30.663	-24.497	4.054192e-01	9.086784e-02	-9.086784e-02
+230.475	47.559	-45.211	2.536850e-01	5.542058e-02	-5.542058e-02
+375.199	123.478	-97.165	9.992090e-02	2.268922e-02	-2.268922e-02
+599.974	119.346	-101.297	1.002072e-01	2.275424e-02	-2.275424e-02
+809.881	110.024	-90.561	8.232508e-02	2.166308e-02	-2.166308e-02
+1040.973	112.112	-121.068	7.115135e-02	1.860414e-02	-1.860414e-02
+1264.663	144.167	-111.578	6.356760e-02	1.697074e-02	-1.697074e-02
+1494.425	147.579	-85.595	1.330920e-01	2.542920e-02	-2.542920e-02
+5402.034	421.375	-466.212	2.000076e-02	5.295310e-03	-5.295310e-03
+6499.654	930.620	-676.245	1.473622e-02	3.433017e-03	-3.433017e-03
+16004.429	8753.827	-5293.002	3.875640e-03	1.017823e-03	-1.017823e-03
+34095.163	7991.734	-6018.952	2.923641e-03	7.746930e-04	-7.746930e-04
+46193.244	1673.554	-778.585	3.217215e-03	1.640375e-03	-1.244144e-03
