@@ -152,14 +152,16 @@ def click_initial_conditions(dir=None,lc=None,showplot=False,norris=False):
 
 	numflares=len(xflares)
 	numbreaks=len(xbreaks)
-	model,fmodel=fit_models(numflares,numbreaks)
+	model,fmodel=fit_models(numflares,numbreaks,norris=norris)
 	print('Model: ' +model)
 
 	pflares=[]
 	for i in range(numflares):
 		if norris:
-			## assume A, t1, t2, ts - reorder if not
-			pflares=np.append(pflares,yflares[i],xflares[i],50.,-10)
+			## assume A, ts, t1, t2 
+			t2=1.
+			ts=xflares[i]*0.5
+			pflares=np.append(pflares,[yflares[i],ts,(xflares[i]-ts)**2/t2,t2])
 		else:
 			pflares=np.append(pflares,[yflares[i],xflares[i],0.2*xflares[i]])
 
@@ -286,7 +288,7 @@ def fit_models(numflares,numbreaks,norris=False):
 #	if numbreaks == 0: nump=nump+2
 
 	if norris:
-		g='norris'
+		g='Norris'
 	else:
 		g='gauss'
 
@@ -349,7 +351,7 @@ def fit_models(numflares,numbreaks,norris=False):
 
 	function_model={
 		'gauss': fit_functions.gauss,
-		# 'norris': fit_functions.norris,
+		'Norris': fit_functions.Norris,
 		'pow': fit_functions.pow,
 		'gauss1_pow': fit_functions.gauss1_pow,
 		'gauss2_pow': fit_functions.gauss2_pow,
@@ -357,12 +359,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'gauss4_pow': fit_functions.gauss4_pow,
 		'gauss5_pow': fit_functions.gauss5_pow,
 		'gauss6_pow': fit_functions.gauss6_pow,
-		# 'norris1_pow': fit_functions.norris1_pow,
-		# 'norris2_pow': fit_functions.norris2_pow,
-		# 'norris3_pow': fit_functions.norris3_pow,
-		# 'norris4_pow': fit_functions.norris4_pow,
-		# 'norris5_pow': fit_functions.norris5_pow,
-		# 'norris6_pow': fit_functions.norris6_pow,
+		'Norris1_pow': fit_functions.Norris1_pow,
+		'Norris2_pow': fit_functions.Norris2_pow,
+		'Norris3_pow': fit_functions.Norris3_pow,
+		'Norris4_pow': fit_functions.Norris4_pow,
+		'Norris5_pow': fit_functions.Norris5_pow,
+		'Norris6_pow': fit_functions.Norris6_pow,
 		'bknpow': fit_functions.bknpow,
 		'gauss1_bknpow': fit_functions.gauss1_bknpow,
 		'gauss2_bknpow': fit_functions.gauss2_bknpow,
@@ -370,12 +372,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'gauss4_bknpow': fit_functions.gauss4_bknpow,
 		'gauss5_bknpow': fit_functions.gauss5_bknpow,
 		'gauss6_bknpow': fit_functions.gauss6_bknpow,
-		# 'norris1_bknpow': fit_functions.norris1_bknpow,
-		# 'norris2_bknpow': fit_functions.norris2_bknpow,
-		# 'norris3_bknpow': fit_functions.norris3_bknpow,
-		# 'norris4_bknpow': fit_functions.norris4_bknpow,
-		# 'norris5_bknpow': fit_functions.norris5_bknpow,
-		# 'norris6_bknpow': fit_functions.norris6_bknpow,
+		'Norris1_bknpow': fit_functions.Norris1_bknpow,
+		'Norris2_bknpow': fit_functions.Norris2_bknpow,
+		'Norris3_bknpow': fit_functions.Norris3_bknpow,
+		'Norris4_bknpow': fit_functions.Norris4_bknpow,
+		'Norris5_bknpow': fit_functions.Norris5_bknpow,
+		'Norris6_bknpow': fit_functions.Norris6_bknpow,
 		'bkn2pow': fit_functions.bkn2pow,
 		'gauss1_bkn2pow': fit_functions.gauss1_bkn2pow,
 		'gauss2_bkn2pow': fit_functions.gauss2_bkn2pow,
@@ -383,12 +385,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'gauss4_bkn2pow': fit_functions.gauss4_bkn2pow,
 		'gauss5_bkn2pow': fit_functions.gauss5_bkn2pow,
 		'gauss6_bkn2pow': fit_functions.gauss6_bkn2pow,
-		# 'norris1_bkn2pow': fit_functions.norris1_bkn2pow,
-		# 'norris2_bkn2pow': fit_functions.norris2_bkn2pow,
-		# 'norris3_bkn2pow': fit_functions.norris3_bkn2pow,
-		# 'norris4_bkn2pow': fit_functions.norris4_bkn2pow,
-		# 'norris5_bkn2pow': fit_functions.norris5_bkn2pow,
-		# 'norris6_bkn2pow': fit_functions.norris6_bkn2pow,
+		'Norris1_bkn2pow': fit_functions.Norris1_bkn2pow,
+		'Norris2_bkn2pow': fit_functions.Norris2_bkn2pow,
+		'Norris3_bkn2pow': fit_functions.Norris3_bkn2pow,
+		'Norris4_bkn2pow': fit_functions.Norris4_bkn2pow,
+		'Norris5_bkn2pow': fit_functions.Norris5_bkn2pow,
+		'Norris6_bkn2pow': fit_functions.Norris6_bkn2pow,
 		'bkn3pow': fit_functions.bkn3pow,
 		'gauss1_bkn3pow': fit_functions.gauss1_bkn3pow,
 		'gauss2_bkn3pow': fit_functions.gauss2_bkn3pow,
@@ -396,12 +398,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'gauss4_bkn3pow': fit_functions.gauss4_bkn3pow,
 		'gauss5_bkn3pow': fit_functions.gauss5_bkn3pow,
 		'gauss6_bkn3pow': fit_functions.gauss6_bkn3pow,
-		# 'norris1_bkn3pow': fit_functions.norris1_bkn3pow,
-		# 'norris2_bkn3pow': fit_functions.norris2_bkn3pow,
-		# 'norris3_bkn3pow': fit_functions.norris3_bkn3pow,
-		# 'norris4_bkn3pow': fit_functions.norris4_bkn3pow,
-		# 'norris5_bkn3pow': fit_functions.norris5_bkn3pow,
-		# 'norris6_bkn3pow': fit_functions.norris6_bkn3pow,
+		'Norris1_bkn3pow': fit_functions.Norris1_bkn3pow,
+		'Norris2_bkn3pow': fit_functions.Norris2_bkn3pow,
+		'Norris3_bkn3pow': fit_functions.Norris3_bkn3pow,
+		'Norris4_bkn3pow': fit_functions.Norris4_bkn3pow,
+		'Norris5_bkn3pow': fit_functions.Norris5_bkn3pow,
+		'Norris6_bkn3pow': fit_functions.Norris6_bkn3pow,
 		'bkn4pow': fit_functions.bkn4pow,
 		'gauss1_bkn4pow': fit_functions.gauss1_bkn4pow,
 		'gauss2_bkn4pow': fit_functions.gauss2_bkn4pow,
@@ -409,12 +411,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'gauss4_bkn4pow': fit_functions.gauss4_bkn4pow,
 		'gauss5_bkn4pow': fit_functions.gauss5_bkn4pow,
 		'gauss6_bkn4pow': fit_functions.gauss6_bkn4pow,
-		# 'norris1_bkn4pow': fit_functions.norris1_bkn4pow,
-		# 'norris2_bkn4pow': fit_functions.norris2_bkn4pow,
-		# 'norris3_bkn4pow': fit_functions.norris3_bkn4pow,
-		# 'norris4_bkn4pow': fit_functions.norris4_bkn4pow,
-		# 'norris5_bkn4pow': fit_functions.norris5_bkn4pow,
-		# 'norris6_bkn4pow': fit_functions.norris6_bkn4pow,
+		'Norris1_bkn4pow': fit_functions.Norris1_bkn4pow,
+		'Norris2_bkn4pow': fit_functions.Norris2_bkn4pow,
+		'Norris3_bkn4pow': fit_functions.Norris3_bkn4pow,
+		'Norris4_bkn4pow': fit_functions.Norris4_bkn4pow,
+		'Norris5_bkn4pow': fit_functions.Norris5_bkn4pow,
+		'Norris6_bkn4pow': fit_functions.Norris6_bkn4pow,
 		### integral functions
 		'intgauss': fit_functions.gauss,
 		'intpow': fit_functions.intpow,
@@ -424,12 +426,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'intgauss4_pow': fit_functions.intgauss4_pow,
 		'intgauss5_pow': fit_functions.intgauss5_pow,
 		'intgauss6_pow': fit_functions.intgauss6_pow,
-		# 'intnorris1_pow': fit_functions.intnorris1_pow,
-		# 'intnorris2_pow': fit_functions.intnorris2_pow,
-		# 'intnorris3_pow': fit_functions.intnorris3_pow,
-		# 'intnorris4_pow': fit_functions.intnorris4_pow,
-		# 'intnorris5_pow': fit_functions.intnorris5_pow,
-		# 'intnorris6_pow': fit_functions.intnorris6_pow,
+		'intNorris1_pow': fit_functions.intNorris1_pow,
+		'intNorris2_pow': fit_functions.intNorris2_pow,
+		'intNorris3_pow': fit_functions.intNorris3_pow,
+		'intNorris4_pow': fit_functions.intNorris4_pow,
+		'intNorris5_pow': fit_functions.intNorris5_pow,
+		'intNorris6_pow': fit_functions.intNorris6_pow,
 		'intbknpow': fit_functions.intbknpow,
 		'intgauss1_bknpow': fit_functions.intgauss1_bknpow,
 		'intgauss2_bknpow': fit_functions.intgauss2_bknpow,
@@ -437,12 +439,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'intgauss4_bknpow': fit_functions.intgauss4_bknpow,
 		'intgauss5_bknpow': fit_functions.intgauss5_bknpow,
 		'intgauss6_bknpow': fit_functions.intgauss6_bknpow,
-		# 'intnorris1_bknpow': fit_functions.intnorris1_bknpow,
-		# 'intnorris2_bknpow': fit_functions.intnorris2_bknpow,
-		# 'intnorris3_bknpow': fit_functions.intnorris3_bknpow,
-		# 'intnorris4_bknpow': fit_functions.intnorris4_bknpow,
-		# 'intnorris5_bknpow': fit_functions.intnorris5_bknpow,
-		# 'intnorris6_bknpow': fit_functions.intnorris6_bknpow,
+		'intNorris1_bknpow': fit_functions.intNorris1_bknpow,
+		'intNorris2_bknpow': fit_functions.intNorris2_bknpow,
+		'intNorris3_bknpow': fit_functions.intNorris3_bknpow,
+		'intNorris4_bknpow': fit_functions.intNorris4_bknpow,
+		'intNorris5_bknpow': fit_functions.intNorris5_bknpow,
+		'intNorris6_bknpow': fit_functions.intNorris6_bknpow,
 		'intbkn2pow': fit_functions.intbkn2pow,
 		'intgauss1_bkn2pow': fit_functions.intgauss1_bkn2pow,
 		'intgauss2_bkn2pow': fit_functions.intgauss2_bkn2pow,
@@ -450,12 +452,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'intgauss4_bkn2pow': fit_functions.intgauss4_bkn2pow,
 		'intgauss5_bkn2pow': fit_functions.intgauss5_bkn2pow,
 		'intgauss6_bkn2pow': fit_functions.intgauss6_bkn2pow,
-		# 'intnorris1_bkn2pow': fit_functions.intnorris1_bkn2pow,
-		# 'intnorris2_bkn2pow': fit_functions.intnorris2_bkn2pow,
-		# 'intnorris3_bkn2pow': fit_functions.intnorris3_bkn2pow,
-		# 'intnorris4_bkn2pow': fit_functions.intnorris4_bkn2pow,
-		# 'intnorris5_bkn2pow': fit_functions.intnorris5_bkn2pow,
-		# 'intnorris6_bkn2pow': fit_functions.intnorris6_bkn2pow,
+		'intNorris1_bkn2pow': fit_functions.intNorris1_bkn2pow,
+		'intNorris2_bkn2pow': fit_functions.intNorris2_bkn2pow,
+		'intNorris3_bkn2pow': fit_functions.intNorris3_bkn2pow,
+		'intNorris4_bkn2pow': fit_functions.intNorris4_bkn2pow,
+		'intNorris5_bkn2pow': fit_functions.intNorris5_bkn2pow,
+		'intNorris6_bkn2pow': fit_functions.intNorris6_bkn2pow,
 		'intbkn3pow': fit_functions.intbkn3pow,
 		'intgauss1_bkn3pow': fit_functions.intgauss1_bkn3pow,
 		'intgauss2_bkn3pow': fit_functions.intgauss2_bkn3pow,
@@ -463,12 +465,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'intgauss4_bkn3pow': fit_functions.intgauss4_bkn3pow,
 		'intgauss5_bkn3pow': fit_functions.intgauss5_bkn3pow,
 		'intgauss6_bkn3pow': fit_functions.intgauss6_bkn3pow,
-		# 'intnorris1_bkn3pow': fit_functions.intnorris1_bkn3pow,
-		# 'intnorris2_bkn3pow': fit_functions.intnorris2_bkn3pow,
-		# 'intnorris3_bkn3pow': fit_functions.intnorris3_bkn3pow,
-		# 'intnorris4_bkn3pow': fit_functions.intnorris4_bkn3pow,
-		# 'intnorris5_bkn3pow': fit_functions.intnorris5_bkn3pow,
-		# 'intnorris6_bkn3pow': fit_functions.intnorris6_bkn3pow,
+		'intNorris1_bkn3pow': fit_functions.intNorris1_bkn3pow,
+		'intNorris2_bkn3pow': fit_functions.intNorris2_bkn3pow,
+		'intNorris3_bkn3pow': fit_functions.intNorris3_bkn3pow,
+		'intNorris4_bkn3pow': fit_functions.intNorris4_bkn3pow,
+		'intNorris5_bkn3pow': fit_functions.intNorris5_bkn3pow,
+		'intNorris6_bkn3pow': fit_functions.intNorris6_bkn3pow,
 		'intbkn4pow': fit_functions.intbkn4pow,
 		'intgauss1_bkn4pow': fit_functions.intgauss1_bkn4pow,
 		'intgauss2_bkn4pow': fit_functions.intgauss2_bkn4pow,
@@ -476,12 +478,12 @@ def fit_models(numflares,numbreaks,norris=False):
 		'intgauss4_bkn4pow': fit_functions.intgauss4_bkn4pow,
 		'intgauss5_bkn4pow': fit_functions.intgauss5_bkn4pow,
 		'intgauss6_bkn4pow': fit_functions.intgauss6_bkn4pow,
-		# 'intnorris1_bkn4pow': fit_functions.intnorris1_bkn4pow,
-		# 'intnorris2_bkn4pow': fit_functions.intnorris2_bkn4pow,
-		# 'intnorris3_bkn4pow': fit_functions.intnorris3_bkn4pow,
-		# 'intnorris4_bkn4pow': fit_functions.intnorris4_bkn4pow,
-		# 'intnorris5_bkn4pow': fit_functions.intnorris5_bkn4pow,
-		# 'intnorris6_bkn4pow': fit_functions.intnorris6_bkn4pow,
+		'intNorris1_bkn4pow': fit_functions.intNorris1_bkn4pow,
+		'intNorris2_bkn4pow': fit_functions.intNorris2_bkn4pow,
+		'intNorris3_bkn4pow': fit_functions.intNorris3_bkn4pow,
+		'intNorris4_bkn4pow': fit_functions.intNorris4_bkn4pow,
+		'intNorris5_bkn4pow': fit_functions.intNorris5_bkn4pow,
+		'intNorris6_bkn4pow': fit_functions.intNorris6_bkn4pow,
 	}
 
 	return model,function_model#[model]
@@ -617,7 +619,7 @@ def read_lcfit(dir=None,file=None):
 		nump=len(par)
 		nf=len([p for p in pnames if 'g' in p])
 		model='nofit'
-		model,fmodel=fit_models(nump,nf)
+		model,fmodel=fit_models(nump,nf,norris=norris)
 
 		p=fit_params(model,pnames,par,pneg,ppos,chisq,dof)
 	
@@ -829,8 +831,8 @@ class fit_params:
 			self.numbreaks=int(bk[wbk+1])
 		else:
 			self.numbreaks=0
-		if ('gauss' in model) or ('norris' in model):
-			fl=re.split('gauss|norris|_',model)
+		if ('gauss' in model) or ('Norris' in model):
+			fl=re.split('gauss|Norris|_',model)
 			self.numflares=int(fl[1])
 		else:
 			self.numflares=0
