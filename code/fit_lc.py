@@ -18,8 +18,80 @@ import fit_functions
 import re
 import time
 from scipy.optimize import curve_fit
+from scipy import stats
+import glob
 
-def fit_the_lc(grbdict=None,lc=None,norris=False,dir=None):
+def fit_lcs(dir=None):
+	# see which GRBs not yet fit and fit them
+	# norris differentiate
+
+	if dir==None:
+		dir=''
+		nd,d=grbfits_status()
+	else:
+		nd=[dir]
+		g=dir
+
+	print("Let's fit GRB LCs")
+	for g in nd:
+		print(g)
+		if dir=='': dir=g+'/'
+		gtitle=re.split('/',g)[0]
+		lc=read_lc(dir=dir)
+		fig,ax1=plot_lcfit(lc=lc,noshow=True)
+		ax1.set_title(gtitle+' - Right click to continue')
+
+		cp=Click(fig=fig)
+		plot.show()
+		dofit='Y'
+		dofit=raw_input('Fit LC? (Y/n/s) ').upper()
+		if dofit=='S': return
+		if dofit=='N':
+			write_lcfit(0,nofit=True,dir=dir)
+		else:
+			redo='Y'
+			ft=None
+			while redo == 'Y':
+				p,ft=fit_the_lc(dir=dir,ft=ft)
+#				print ft
+				redo=raw_input('Redo the fit? (y/N) ').upper()
+
+def ftest(chisq1,chisq2,oldterms,numpoints,addterms):
+
+	df=numpoints-(oldterms+addterms)
+	f=(chisq1-chisq2)/(chisq2/df)
+
+	p=1.-stats.f.cdf(f,1,df)
+
+	sig=stats.norm.ppf((1.+(1-p))/2.)
+	## need to convert to prob, sig
+	return f,p,sig
+
+def grbfits_status(dir=None):
+	if not dir:
+		cwd=os.getcwd()
+		if 'GRBfits/GRBs' not in cwd:	
+			print('You should be in the GRBfits/GRBs/ directory')
+			return
+
+	grbs=glob.glob('GRB*')
+
+	dg=glob.glob('GRB*/lc_fit_out_py_int1.dat')
+	donegrbs=[]
+	for g in dg:
+		splits=re.split('/',g)
+		donegrbs=np.append(donegrbs,splits[0])
+
+	notdonegrbs=[]
+	for g in grbs:
+		if g not in donegrbs:
+			notdonegrbs=np.append(notdonegrbs,g)
+
+	print('Done GRBs = '+str(len(donegrbs)))
+	print('Not Done GRBs = '+str(len(notdonegrbs)))
+	return notdonegrbs,donegrbs
+
+def fit_the_lc(grbdict=None,lc=None,norris=True,dir=None,ft=None):
 
 # 	if grbdict:
 # 		lc=grbdict.lc
@@ -34,14 +106,19 @@ def fit_the_lc(grbdict=None,lc=None,norris=False,dir=None):
  		return
 
  	if dir and (type(lc) == type(None)):
- 		lc=read_lc(dir=dir)
+ 		lc=read_lc(dir=dir+'/')
 
+ 	if not dir:
+ 		dir=''
 
 	p0,model,fmodel,pnames=click_initial_conditions(lc=lc,norris=norris)
 	print('Fitting '+model+':')
 	det=np.where(lc['Ratepos']>0)
 	tt=np.array([lc['Time'][det]+lc['T_-ve'][det],lc['Time'][det]+lc['T_+ve'][det]])
-	popt, pcov=curve_fit(fmodel['int'+model],tt,lc['Rate'][det],p0=p0,sigma=lc['Ratepos'][det])
+	t=np.array(lc['Time'][det])
+	rate=lc['Rate'][det]
+#	popt, pcov=curve_fit(fmodel[model],t,lc['Rate'][det],p0=p0,sigma=lc['Ratepos'][det])
+	popt, pcov=curve_fit(fmodel['int'+model],tt,rate,p0=p0,sigma=lc['Ratepos'][det])
 	perr = np.sqrt(np.diag(pcov))
 	plot.close()
 
@@ -49,15 +126,24 @@ def fit_the_lc(grbdict=None,lc=None,norris=False,dir=None):
 	print(pnames)
 	print(popt)
 	print(perr)
-	yfit=fmodel[model](np.array(lc['Time']),*popt)
+	yfit=fmodel[model](t,*popt)
 
 
-	r = lc['Rate']- yfit
-	chisq=sum((r/lc['Ratepos'])**2)
-	dof=len(lc['Rate'])+len(p0)
+	chisq=sum(((yfit-rate)/lc['Ratepos'][det])**2)
+	dof=len(rate)-len(p0)
+	
 	p=fit_params(model,pnames,popt,perr,perr,chisq,dof)
 
-	print('Chisq = '+str(chisq/dof))
+	print('Num data = '+str(len(rate)))
+	print('Chisq/dof = '+str(round(chisq,2))+' / '+str(dof)+' = '+str(chisq/dof))
+	ftnew=np.array([chisq,len(rate),len(popt)])
+
+	if type(ft) != type(None):
+		ftresults=ftest(ft[0],ftnew[0],ft[2],ft[1],ftnew[2]-ft[2])
+		print('F-test: f = '+str(ftresults[0])+', p = '+str(ftresults[1])+', sig = '+str(ftresults[2]))
+	
+	ft=ftnew
+
 	fig,ax1=plot_lcfit(lc=lc,noshow=True,p=p)
 	# sind=0
 	# ylim=ax1.get_ylim()
@@ -73,18 +159,19 @@ def fit_the_lc(grbdict=None,lc=None,norris=False,dir=None):
 	# for i in range(0,nump):
 	# 	ax1.annotate(pnames[i]+' = '+str(popt[i])+' +/- '+str(perr[i]),xy=(0.03,0.03+0.03*(nump-i)),xycoords='axes fraction',fontsize=8)
 
+	plot.savefig(dir+'lc_fit_plot.png', bbox_inches='tight')
+
 	cp=Click(fig=fig)
 
-	plot.savefig(dir+'lc_fit_plot.png', bbox_inches='tight')
 	plot.show()
 
 	### need to add breaks to plots
 	### need to write out fit params (add write function to object)
-	write_lcfit(p,dir=dir)
+	write_lcfit(p,dir=dir+'/')
 	#need to writeout final plot
 	# need to make it possible to fit flares with gaussians
 
-	return	p
+	return p,ft
 
 def lc_linfit(xx,yy,breaks,xflares=None,norris=False):
 
@@ -93,7 +180,7 @@ def lc_linfit(xx,yy,breaks,xflares=None,norris=False):
 	if type(xflares) != type(None):
 		for xf in xflares:
 #			wx=np.where((x<xf*0.9) or (x>xf*1.1))
-			wx=np.append(np.where((x<xf*0.5)),np.where((x>xf*5)))
+			wx=np.append(np.where((x<xf*0.7)),np.where((x>xf*3)))
 			x=x[wx]
 			y=y[wx]
 
@@ -116,7 +203,7 @@ def lc_linfit(xx,yy,breaks,xflares=None,norris=False):
 		for i in range(1,len(xflares)+1):
 			if norris:
 				#A, t1, t2, ts
-				pnames=np.append(pnames,np.array(['norm'+str(i),'t1_'+str(i),'t2_'+str(i),'ts_'+str(i)]))
+				pnames=np.append(pnames,np.array(['norm'+str(i),'ts_'+str(i),'t1_'+str(i),'t2_'+str(i)]))
 			else:
 				pnames=np.append(pnames,np.array(['norm'+str(i),'center'+str(i),'width'+str(i)]))				
 
@@ -135,7 +222,7 @@ def click_initial_conditions(dir=None,lc=None,showplot=False,norris=False):
 	print(str(len(xflares))+' Flare, '+str(len(xbreaks))+' Breaks')
 	redo='Y'
 	while redo == 'Y':
-		redo=raw_input('Redo Flares? (y/N) ').upper()
+		redo=raw_input('Redo flares guesses? (y/N) ').upper()
 		if redo == 'Y': 
 			xdata,ydata=[[],[]]
 			xflares,yflares=[[],[]]
@@ -143,7 +230,7 @@ def click_initial_conditions(dir=None,lc=None,showplot=False,norris=False):
 			print(str(len(xflares))+' Flares @ '+str(xflares))
 	redo='Y'
 	while redo == 'Y':
-		redo=raw_input('Redo Breaks? (y/N) ').upper()
+		redo=raw_input('Redo breaks guesses? (y/N) ').upper()
 		if redo == 'Y': 
 			xdata,ydata=[[],[]]
 			xbreaks,ybreaks=[[],[]]
@@ -159,9 +246,11 @@ def click_initial_conditions(dir=None,lc=None,showplot=False,norris=False):
 	for i in range(numflares):
 		if norris:
 			## assume A, ts, t1, t2 
-			t2=1.
-			ts=xflares[i]*0.5
-			pflares=np.append(pflares,[yflares[i],ts,(xflares[i]-ts)**2/t2,t2])
+			width=xflares[i]*1.3
+			t2=xflares[i]/4.
+			t1=((((width/t2)**2)-9)/12.)**2*t2
+			ts=xflares[i]-np.sqrt(t1*t2)
+			pflares=np.append(pflares,[yflares[i]/5.,ts,t1,t2])
 		else:
 			pflares=np.append(pflares,[yflares[i],xflares[i],0.2*xflares[i]])
 
@@ -171,11 +260,13 @@ def click_initial_conditions(dir=None,lc=None,showplot=False,norris=False):
 
 	p,yfit,pnames=lc_linfit(t,r,xbreaks,xflares=xflares,norris=norris)
 	p=np.append(p,pflares)
-	print('Initial Guess for Model: '+str(p))
+	print('Initial Guess for Model: ')
+	print(pnames)
+	print(p)
 
 	if showplot:
 		fig,ax1=plot_lcfit(lc=lc,noshow=True)
-		ax1.plot(np.array(lc['Time']),yfit,color='green')
+		ax1.plot(np.array(t),yfit,color='green')
 		ax1.set_title('Initial Guess Fit - Right click to continue')
 		cp=Click(fig=fig)
 		plot.show()
@@ -293,7 +384,8 @@ def fit_models(numflares,numbreaks,norris=False):
 		g='gauss'
 
 	if numbreaks == 0: model='pow'
-	if numbreaks > 0: model='bkn'+str(numbreaks)+'pow'
+	if numbreaks == 1: model='bknpow'
+	if numbreaks > 1: model='bkn'+str(numbreaks)+'pow'
 	if numflares > 0: model=g+str(numflares)+'_'+model
 
 	# if nump == 2: model='pow'
@@ -571,18 +663,21 @@ def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 
 	return f,ax1
 
-def write_lcfit(p,dir=None,file=None):
+def write_lcfit(p,dir=None,file=None,nofit=False):
 
 	if not dir:
 		dir='./'
 	if not file:
 		file=dir+'lc_fit_out_py_int1.dat'
 	f=open(file,'w')
-	nump=len(p.pnames)
-	for i in range(nump):
-		f.write(p.pnames[i]+' '+str(p.par[i])+' '+str(p.perror[i][0])+' '+str(p.perror[i][1])+'\n')
-	f.write('Chisq '+str(p.chisq)+'\n')
-	f.write('dof '+str(p.dof)+'\n')
+	if nofit==False:
+		nump=len(p.pnames)
+		for i in range(nump):
+			f.write(p.pnames[i]+' '+str(p.par[i])+' '+str(p.perror[i][0])+' '+str(p.perror[i][1])+'\n')
+		f.write('Chisq '+str(p.chisq)+'\n')
+		f.write('dof '+str(p.dof)+'\n')
+	else:
+		f.write('no fit\n')
 	f.close()
 
 def read_lcfit(dir=None,file=None):

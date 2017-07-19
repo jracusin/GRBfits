@@ -328,9 +328,15 @@ def Norris(x, *p):
 	#pulse decay = t2
 	t2 = p[3]
 	
-	L = np.exp(2*(t1/t2)**(1./2.))
+	L = np.exp(2*(t1/t2)**0.5)
 	
 	f = A*L*np.exp(-t1/(x-ts)-(x-ts)/t2)
+	if type(x)!=float:
+		f[x<=ts]=0
+	elif x<=ts:
+		f=0
+#	w=np.where(x<=ts)[0]
+#	f[w]=0.
 	
 	return f
 
@@ -842,7 +848,13 @@ def intNorris(xx,*p):
 
 	f=np.zeros(len(xx[0]))
 	for i in range(len(xx[0])):
-		f[i]=integrate.quad(Norris,xx[0][i],xx[1][i],args=(A,ts,t1,t2))[0]
+		if xx[1][i]>ts:
+			if xx[0][i]<ts:
+				xx[0][i]=ts+0.01
+			f[i]=integrate.quad(Norris,xx[0][i],xx[1][i],args=(A,ts,t1,t2))[0]
+
+
+	f=f/(xx[1]-xx[0])
 
 	return f
 
