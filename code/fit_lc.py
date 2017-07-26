@@ -55,6 +55,7 @@ def fit_lcs(dir=None):
 				p,ft=fit_the_lc(dir=dir,ft=ft)
 #				print ft
 				redo=raw_input('Redo the fit? (y/N) ').upper()
+		dir=''
 
 def ftest(chisq1,chisq2,oldterms,numpoints,addterms):
 
