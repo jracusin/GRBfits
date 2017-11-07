@@ -21,13 +21,15 @@ from scipy.optimize import curve_fit
 from scipy import stats
 import glob
 
-def fit_lcs(dir=None):
+def fit_lcs(dir=None,review=False,norris=True):
 	# see which GRBs not yet fit and fit them
 	# norris differentiate
 
 	if dir==None:
 		dir=''
 		nd,d=grbfits_status()
+		if review==True:
+			nd=d
 	else:
 		nd=[dir]
 		g=dir
@@ -38,23 +40,30 @@ def fit_lcs(dir=None):
 		if dir=='': dir=g+'/'
 		gtitle=re.split('/',g)[0]
 		lc=read_lc(dir=dir)
-		fig,ax1=plot_lcfit(lc=lc,noshow=True)
+		if os.path.exists(dir+'lc_fit_out_py_int1.dat'):
+			p=read_lcfit(dir=dir,norris=norris)
+		else: p={}
+		resid=True
+		if p=={}: resid=False
+
+		fig,ax1=plot_lcfit(lc=lc,noshow=True,p=p,resid=resid)
 		ax1.set_title(gtitle+' - Right click to continue')
 
 		cp=Click(fig=fig)
 		plot.show()
-		dofit='Y'
-		dofit=raw_input('Fit LC? (Y/n/s) ').upper()
-		if dofit=='S': return
-		if dofit=='N':
+		dofit=raw_input('Fit LC? (Y/n/s/x) ').upper()
+		if dofit=='X':
 			write_lcfit(0,nofit=True,dir=dir)
-		else:
+		if dofit=='S': return
+		if (dofit!='N') & (dofit!='S') & (dofit!='X'):
+#		if dofit=='Y':
 			redo='Y'
 			ft=None
 			while redo == 'Y':
-				p,ft=fit_the_lc(dir=dir,ft=ft)
+				p,ft=fit_the_lc(dir=dir,ft=ft,norris=norris)
 #				print ft
 				redo=raw_input('Redo the fit? (y/N) ').upper()
+
 		dir=''
 
 def ftest(chisq1,chisq2,oldterms,numpoints,addterms):
@@ -128,7 +137,6 @@ def fit_the_lc(grbdict=None,lc=None,norris=True,dir=None,ft=None):
 	print(popt)
 	print(perr)
 	yfit=fmodel[model](t,*popt)
-
 
 	chisq=sum(((yfit-rate)/lc['Ratepos'][det])**2)
 	dof=len(rate)-len(p0)
@@ -581,7 +589,7 @@ def fit_models(numflares,numbreaks,norris=False):
 
 	return model,function_model#[model]
 
-def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
+def plot_lcfit(grbdict=None,lc=None,p={},resid=True,noshow=False):
 
 ### if no p, plot without
 
@@ -593,7 +601,7 @@ def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 			print('Need to specify GRB dictionary or lc')
 			return
 
-	if p:
+	if p != {}:
 		if resid: 
 			f,(ax1,ax2) = plot.subplots(2,sharex=True)
 	else: 
@@ -622,7 +630,7 @@ def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 				yerr=yerr,ecolor=color[t],linestyle='None',\
 				capsize=0,label=noleg+xrttype[t],uplims=uplims,fmt='none')
 
-			if p:
+			if p != {}:
 				if resid: 
 					yfit=fit_functions.call_function(p.model,lc['Time'][w],*p.par)
 					res=lc['Rate'][w]/yfit
@@ -632,13 +640,15 @@ def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 					ax2.plot(tlim,[1,1],linestyle='--',color='black')
 					f.subplots_adjust(hspace=0)
 
-	if p:
+	if p != {}:
 		print(p.model)
 #		yfit=getattr(importlib.import_module('fit_functions'),p.model)(lc['Time'],p.par)
-		t=np.append(np.array(lc['Time']),p.par[2+np.arange(p.numbreaks)*2])
-		t.sort()
+		if p.numbreaks>0: 
+			t=np.append(np.array(lc['Time']),p.par[2+np.arange(p.numbreaks)*2])
+			t.sort()
+		else: t=np.array(lc['Time'])
 		yfit=fit_functions.call_function(p.model,t,*p.par)
-		ax1.plot(t,yfit,color='green',label=p.model+' fit')
+		ax1.plot(t,yfit,color='green',label=p.model+' fit',linestyle='--')
 		nump=len(p.pnames)
 		for i in range(0,nump):
 		 	ax1.annotate(p.pnames[i]+' = '+str(round(p.par[i],2))+' +/- '+str(round(p.perror[i][0],2)),xy=(0.02,0.02+0.05*(nump-i)),xycoords='axes fraction',fontsize=8)
@@ -647,8 +657,10 @@ def plot_lcfit(grbdict=None,lc=None,p=None,resid=True,noshow=False):
 	ax1.set_yscale('log')
 	ax1.set_xscale('log')
 	ax1.set_ylabel(r'Count Rate (0.3-10 keV) (erg cm$^{-2}$ s$^{-1}$)')
-#	ylim=ax1.get_ylim()
-#	ax1.set_ylim([10**round(np.log10(ylim[0])-0.5),10**round(np.log10(ylim[1])+0.5)])
+	ylim=[min(lc['Rate']-lc['Rateneg']),max(lc['Rate']+lc['Ratepos'])]
+	ax1.set_ylim([10**round(np.log10(ylim[0])-0.5),10**round(np.log10(ylim[1])+0.5)])
+	xlim=[min(lc['Time']-lc['T_-ve']),max(lc['Time']+lc['T_+ve'])]
+	ax1.set_xlim([10**round(np.log10(xlim[0])-0.5),10**round(np.log10(xlim[1])+0.5)])
 	ax1.yaxis.set_tick_params(right='on',which='both')
 	if resid:
 		ax2.set_xscale('log')
@@ -681,43 +693,49 @@ def write_lcfit(p,dir=None,file=None,nofit=False):
 		f.write('no fit\n')
 	f.close()
 
-def read_lcfit(dir=None,file=None):
+def read_lcfit(dir=None,file=None,norris=True):
 
-	if not file: file=dir+'lc_fit_out_idl_int9.dat'
+	if not file: file=dir+'lc_fit_out_py_int1.dat'
 	if not os.path.exists(file):
 		print('No fit file: '+file)
-		p=0
+		p={}
 	else:
 		f=open(file,'r')
 		lines=f.readlines()
-		pnames=[]
-		par=[]
-		pneg=[]
-		ppos=[]
-		chisq=[]
-		dof=[]
-		go=0
-		for line in lines:
-			tmp=line.split()
-			if tmp[0] == 'no': break
-			if len(tmp) > 2:
-				pnames.append(tmp[0])
-				par.append(float(tmp[1]))
-				pneg.append(float(tmp[2]))
-				ppos.append(float(tmp[3]))
-			if (len(tmp) == 2) & go==0:
-				chisq=float(tmp[1])
-				go=1
-			if (len(tmp) == 2) & (go==1):
-				dof=float(tmp[1])
-				continue
+		if 'no fit' in lines[0]:
+			p={}
+		else:
+			pnames=[]
+			par=[]
+			pneg=[]
+			ppos=[]
+			chisq=[]
+			dof=[]
+			go=0
+			nbreak=0
+			for line in lines:
+				tmp=line.split()
+				if tmp[0] == 'no': break
+				if len(tmp) > 2:
+					pnames.append(tmp[0])
+					par.append(float(tmp[1]))
+					pneg.append(float(tmp[2]))
+					ppos.append(float(tmp[3]))
+				if (len(tmp) == 2) & go==0:
+					chisq=float(tmp[1])
+					go=1
+				if (len(tmp) == 2) & (go==1):
+					dof=float(tmp[1])
+					continue
+				if 'break' in line:
+					nbreak=nbreak+1
 
-		nump=len(par)
-		nf=len([p for p in pnames if 'g' in p])
-		model='nofit'
-		model,fmodel=fit_models(nump,nf,norris=norris)
-
-		p=fit_params(model,pnames,par,pneg,ppos,chisq,dof)
+			nump=len(par)
+			nf=len([xp for xp in pnames if ('center' in xp) or ('ts' in xp)])
+			model='nofit'
+			if 'center1' in pnames: norris=False
+			model,fmodel=fit_models(nf,nbreak,norris=norris)
+			p=fit_params(model,pnames,par,pneg,ppos,chisq,dof)
 	
 	return p
 
@@ -743,7 +761,7 @@ def load_data(dir=None):
 
 	if dir ==None:
 		dir='/Users/jracusin/GRBs/'
-	grbs,targids=download_UL()
+	grbs,targids=download_UL(dir=dir)
 	mets=[]
 	trigtimes=[]
 	i=0
@@ -812,7 +830,7 @@ def load_data(dir=None):
 
 class specfit_params:
 
-	def __init__(self,mode,galnh,nh,nh_err_neg,nh_err_pos,gamma,gamma_err_neg,gamma_err_pos,\
+	def __init__(self,mode,galnh,nh,nh_err_neg,nh_err_pos,z_abs,gamma,gamma_err_neg,gamma_err_pos,\
 		flux,flux_err_neg,flux_err_pos,unabs_flux,unabs_flux_err_neg,unabs_flux_err_pos,\
 		cstat,dof,rate,corr,ontime):
 
@@ -820,6 +838,7 @@ class specfit_params:
 		self.galnh=galnh
 		self.nh=nh
 		self.nh_err=[nh_err_neg,nh_err_pos]
+		self.z_abs=z_abs
 		self.gamma=gamma
 		self.gamma_err=[gamma_err_neg,gamma_err_pos]
 		self.flux=flux
@@ -848,63 +867,72 @@ def read_specfit(dir=''):
 #			print(file)
 			f=open(dir+file,'r')
 			lines=f.readlines()
-			l=0
-			mode=modes[i]
-			for line in lines:
-				tmp=re.split('\n|\t| |,|\(|\)|=|:',line)
-				tmp=filter(None,tmp)
-#				print tmp
-				if l == 0: galnh=float(tmp[1])
-				if l == 1: 
-					nh=float(tmp[1])
-					nh_err_neg=0
-					nh_err_pos=0
-					if float(tmp[2]) != 0.: 
-						nh_err_neg=nh-float(tmp[2])
-					if float(tmp[3]) != 0.: 
-						nh_err_pos=float(tmp[3])-nh
-				if l == 2:
-					gamma=float(tmp[1])
-					gamma_err_neg=0
-					gamma_err_pos=0
-					if float(tmp[2]) != 0.:
-						gamma_err_neg=gamma-float(tmp[2])
-					if float(tmp[3]) != 0.:
-						gamma_err_pos=float(tmp[3])-gamma
-				if l == 3:
-					flux=float(tmp[2])
-					flux_err_neg=1.
-					flux_err_pos=1.
-					if float(tmp[3]) != 1.:
-						flux_err_neg=flux-float(tmp[3])
-					if float(tmp[4]) != 1.:
-						flux_err_pos=float(tmp[4])-flux
-				if l == 4:
-					unabs_flux=float(tmp[2])
-					unabs_flux_err_neg=1.
-					unabs_flux_err_pos=1.
-					if float(tmp[3]) != 1.:
-						unabs_flux_err_neg=unabs_flux-float(tmp[3])
-					if float(tmp[4]) != 1.:
-						unabs_flux_err_pos=float(tmp[4])-unabs_flux
-				if l == 5:
-					cstat=float(tmp[1])
-					dof=float(tmp[3])
-				if l == 6:
-					rate=float(tmp[3])
-				if l == 7:
-					corr=float(tmp[2])
-				if l == 8:
-					ontime=tmp[1]
+			if len(lines)>0:
+				l=0
+				mode=modes[i]
+				z_abs=0
+				for line in lines:
+					addline=0
+					tmp=re.split('\n|\t| |,|\(|\)|=|:',line)
+					tmp=filter(None,tmp)
+	#				print tmp
+					if l == 0: galnh=float(tmp[1]) # gal_nh
+					if l == 1:  # excess_nh
+						nh=float(tmp[1])
+						nh_err_neg=0
+						nh_err_pos=0
+						if float(tmp[2]) != 0.: 
+							nh_err_neg=nh-float(tmp[2])
+						if float(tmp[3]) != 0.: 
+							nh_err_pos=float(tmp[3])-nh
+					if l == 2: # z or gamma
+						if tmp[0]=='z_abs':
+							addline=1
+							z_abs=float(tmp[1])
+							continue
+						else:					
+							addline=0
+							gamma=float(tmp[1])
+							gamma_err_neg=0
+							gamma_err_pos=0
+							if float(tmp[2]) != 0.:
+								gamma_err_neg=gamma-float(tmp[2])
+							if float(tmp[3]) != 0.:
+								gamma_err_pos=float(tmp[3])-gamma
+					if l == 3+addline: #gamma or obs flux
+						flux=float(tmp[2])
+						flux_err_neg=1.
+						flux_err_pos=1.
+						if float(tmp[3]) != 1.:
+							flux_err_neg=flux-float(tmp[3])
+						if float(tmp[4]) != 1.:
+							flux_err_pos=float(tmp[4])-flux
+					if l == 4+addline: #obs flux or unabs flux
+						unabs_flux=float(tmp[2])
+						unabs_flux_err_neg=1.
+						unabs_flux_err_pos=1.
+						if float(tmp[3]) != 1.:
+							unabs_flux_err_neg=unabs_flux-float(tmp[3])
+						if float(tmp[4]) != 1.:
+							unabs_flux_err_pos=float(tmp[4])-unabs_flux
+					if l == 5+addline:
+						cstat=float(tmp[1])
+						dof=float(tmp[3])
+					if l == 6+addline:
+						rate=float(tmp[3])
+					if l == 7+addline:
+						corr=float(tmp[2])
+					if l == 8+addline:
+						ontime=tmp[1]
 
-				l=l+1
+					l=l+1
 
-			s=specfit_params(mode,galnh,nh,nh_err_neg,nh_err_pos,gamma,gamma_err_neg,gamma_err_pos,\
-				flux,flux_err_neg,flux_err_pos,unabs_flux,unabs_flux_err_neg,unabs_flux_err_pos,\
-				cstat,dof,rate,corr,ontime)
-			i=i+1
-			#spec.append(s)  ## list
-			spec[mode]=s
+				s=specfit_params(mode,galnh,nh,nh_err_neg,nh_err_pos,z_abs,gamma,gamma_err_neg,gamma_err_pos,\
+					flux,flux_err_neg,flux_err_pos,unabs_flux,unabs_flux_err_neg,unabs_flux_err_pos,\
+					cstat,dof,rate,corr,ontime)
+				i=i+1
+				#spec.append(s)  ## list
+				spec[mode]=s
 
 	## make list of specfit objects
 
@@ -921,10 +949,13 @@ class fit_params:
 		self.perror=perror
 		self.chisq=chisq
 		self.dof=dof
-		if 'pow' not in model: 
+		if 'pow' in model: 
 			bk=re.split('bkn|pow',model)
 			wbk='bkn' in bk
-			self.numbreaks=int(bk[wbk+1])
+			if wbk != False:
+				self.numbreaks=int(bk[wbk+1])
+			else:
+				self.numbreaks=0
 		else:
 			self.numbreaks=0
 		if ('gauss' in model) or ('Norris' in model):
@@ -932,7 +963,6 @@ class fit_params:
 			self.numflares=int(fl[1])
 		else:
 			self.numflares=0
-
 	def list(self):
 		print('model = ',self.model)
 		print('pnames = ',self.pnames)

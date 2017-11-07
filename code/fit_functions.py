@@ -128,7 +128,7 @@ def gauss(x,*p):
 
 def gauss1_pow(x,*p):
 
-	f=gauss(x,*p[2:5])+intpow(x,*p[0:2])
+	f=gauss(x,*p[2:5])+pow(x,*p[0:2])
 
 	return f
 
