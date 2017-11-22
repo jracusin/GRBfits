@@ -21,7 +21,7 @@ from scipy.optimize import curve_fit
 from scipy import stats
 import glob
 
-def fit_lcs(dir=None,review=False,norris=True):
+def fit_lcs(dir=None,review=False,norris=True,start=0):
 	# see which GRBs not yet fit and fit them
 	# norris differentiate
 
@@ -34,9 +34,14 @@ def fit_lcs(dir=None,review=False,norris=True):
 		nd=[dir]
 		g=dir
 
+	i=start
+	nd=nd[start:]
+	print('Starting with ',start)
+
 	print("Let's fit GRB LCs")
 	for g in nd:
 		print(g)
+		print(i)
 		if dir=='': dir=g+'/'
 		gtitle=re.split('/',g)[0]
 		lc=read_lc(dir=dir)
@@ -63,7 +68,8 @@ def fit_lcs(dir=None,review=False,norris=True):
 				p,ft=fit_the_lc(dir=dir,ft=ft,norris=norris)
 #				print ft
 				redo=raw_input('Redo the fit? (y/N) ').upper()
-
+				if redo=='S': return
+		i=i+1
 		dir=''
 
 def ftest(chisq1,chisq2,oldterms,numpoints,addterms):
@@ -643,12 +649,25 @@ def plot_lcfit(grbdict=None,lc=None,p={},resid=True,noshow=False):
 	if p != {}:
 		print(p.model)
 #		yfit=getattr(importlib.import_module('fit_functions'),p.model)(lc['Time'],p.par)
-		if p.numbreaks>0: 
+		btime=[]
+		print p.numbreaks
+		if p.numbreaks>1: 
 			t=np.append(np.array(lc['Time']),p.par[2+np.arange(p.numbreaks)*2])
+			btime=np.append(btime,p.par[2+np.arange(p.numbreaks)*2])
 			t.sort()
-		else: t=np.array(lc['Time'])
+		else:
+			if p.numbreaks==1:
+				t=np.append(np.array(lc['Time']),p.par[2])
+				btime=np.append(btime,p.par[2])
+				t.sort()
+			else: t=np.array(lc['Time'])
+
 		yfit=fit_functions.call_function(p.model,t,*p.par)
 		ax1.plot(t,yfit,color='green',label=p.model+' fit',linestyle='--')
+
+		for b in btime:
+			ax1.plot([b,b],[1e-5,1e5],color='purple',linestyle=':')
+
 		nump=len(p.pnames)
 		for i in range(0,nump):
 		 	ax1.annotate(p.pnames[i]+' = '+str(round(p.par[i],2))+' +/- '+str(round(p.perror[i][0],2)),xy=(0.02,0.02+0.05*(nump-i)),xycoords='axes fraction',fontsize=8)
@@ -952,10 +971,13 @@ class fit_params:
 		if 'pow' in model: 
 			bk=re.split('bkn|pow',model)
 			wbk='bkn' in bk
-			if wbk != False:
-				self.numbreaks=int(bk[wbk+1])
+			if 'bknpow' in model:
+				self.numbreaks=1
 			else:
-				self.numbreaks=0
+				if wbk != False:
+					self.numbreaks=int(bk[wbk+1])
+				else:
+					self.numbreaks=0
 		else:
 			self.numbreaks=0
 		if ('gauss' in model) or ('Norris' in model):
