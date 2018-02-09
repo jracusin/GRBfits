@@ -752,7 +752,7 @@ def read_lcfit(dir=None,file=None,norris=True):
 			nump=len(par)
 			nf=len([xp for xp in pnames if ('center' in xp) or ('ts' in xp)])
 			model='nofit'
-			if 'center1' in pnames: norris=False
+			if 'fl_center1' in pnames: norris=False
 			model,fmodel=fit_models(nf,nbreak,norris=norris)
 			p=fit_params(model,pnames,par,pneg,ppos,chisq,dof)
 	
