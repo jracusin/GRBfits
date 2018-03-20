@@ -27,7 +27,7 @@ def fit_lcs(dir=None,review=False,norris=True,start=0):
 
 	if dir==None:
 		dir=''
-		nd,d=grbfits_status()
+		nd,d=grbfits_status(dir=dir)
 		if review==True:
 			nd=d
 	else:
@@ -89,10 +89,11 @@ def grbfits_status(dir=None):
 		if 'GRBfits/GRBs' not in cwd:	
 			print('You should be in the GRBfits/GRBs/ directory')
 			return
+	else: dir=''
 
-	grbs=glob.glob('GRB*')
+	grbs=glob.glob(dir+'GRB*')
 
-	dg=glob.glob('GRB*/lc_fit_out_py_int1.dat')
+	dg=glob.glob(dir+'GRB*/lc_fit_out_py_int1.dat')
 	donegrbs=[]
 	for g in dg:
 		splits=re.split('/',g)
@@ -106,6 +107,40 @@ def grbfits_status(dir=None):
 	print('Done GRBs = '+str(len(donegrbs)))
 	print('Not Done GRBs = '+str(len(notdonegrbs)))
 	return notdonegrbs,donegrbs
+
+def fit_faint_lcs(dir='/Users/jracusin/Swift/GRBfits/GRBs/',grblist=None):
+
+	if grblist == None:
+		grbdict,grbrec,grblist=load_data(dir='/Users/jracusin/Swift/GRBfits/GRBs/')
+	l=np.array([len(grb.lc) for grb in grblist])
+	w=np.where(l<=2)[0]
+	pind=1.
+	model,fmodel=fit_models(0,0,norris=False)
+	for i in w:
+		grb=grblist[i]
+		lc=grb.lc
+		#lc=read_lc(dir=grb.grb+'/')
+		t=np.array(lc['Time'])
+		rate=lc['Rate']
+		#		p0=[1,1]
+		a=1.
+		b=1.
+		popt,pcov=curve_fit(lambda t,a: fmodel['pow'](t,a,b),t,rate)
+#		popt,pcov=curve_fit(pownorm, t, rate)
+		#		popt, pcov=curve_fit(fmodel['pow'],t,rate,p0=p0,sigma=lc['Ratepos'],bounds=[[np.inf,0],[np.inf,0]])
+		perr = np.sqrt(np.diag(pcov))
+		det=np.where(lc['Ratepos']>0)
+
+		if perr != np.inf:
+			perr=np.append(perr[0],0.)
+			print popt
+			yfit=pownorm(t,popt)
+			chisq=sum(((yfit-rate)/lc['Ratepos'][det])**2)
+			dof=len(rate)-1
+			p=fit_params('pow',['norm','pow1'],[popt[0],1.],perr,perr,chisq,dof)
+			p.list()
+			write_lcfit(p,dir=dir+grb.grb+'/',file=None,nofit=False)	
+	return p
 
 def fit_the_lc(grbdict=None,lc=None,norris=True,dir=None,ft=None):
 
