@@ -331,10 +331,12 @@ def Norris(x, *p):
 	L = np.exp(2*(t1/t2)**0.5)
 	
 	f = A*L*np.exp(-t1/(x-ts)-(x-ts)/t2)
-	if ((type(x)!=float) & (x<=ts)):
-		f[x<=ts]=0
-	elif x<=ts:
-		f=0
+	w=np.where(x<=ts)[0]
+	f[w]=0
+	# if ((type(x)!=float) & (x<=ts)):
+	# 	f[x<=ts]=0
+	# elif x<=ts:
+	# 	f=0
 #	w=np.where(x<=ts)[0]
 #	f[w]=0.
 	
