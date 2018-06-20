@@ -234,17 +234,21 @@ def lc_linfit(xx,yy,breaks,xflares=None,norris=False):
 			x=x[wx]
 			y=y[wx]
 
+	breaks=np.sort(breaks)
 	bks=np.hstack((min(x)-1,breaks,max(x)))
 	yfit=[]
 	for i in range(len(bks)-1):
-		w=np.where((x > bks[i]) & (x <= bks[i+1]))
-		m,b = plot.polyfit(np.log10(x[w]), np.log10(y[w]), 1)
-		if i == 0: 
-			norm=10**b
-			p=np.array(norm)
-			pnames=np.array('norm')
-		yfit=np.append(yfit,10**b*x[w]**m)
-		p=np.hstack((p,-m,bks[i+1]))
+		w=np.where((x > bks[i]) & (x <= bks[i+1]))[0]
+		if len(w)>0:
+			m,b = plot.polyfit(np.log10(x[w]), np.log10(y[w]), 1)
+			if i == 0: 
+				norm=10**b
+				p=np.array(norm)
+				pnames=np.array('norm')
+			yfit=np.append(yfit,10**b*x[w]**m)
+			p=np.hstack((p,-m,bks[i+1]))
+		else:
+			p=np.array(1.,1.)
 		pnames=np.hstack((pnames,'pow'+str(i+1),'break'+str(i+1)))
 
 	p=p[0:len(p)-1]
