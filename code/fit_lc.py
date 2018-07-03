@@ -1150,12 +1150,12 @@ def download_UL(update=False,dir=None):
 	for i in range(len(grbs)):
 		grb=grbs[i]
 		targid=targids[i]
-		dir='/Users/jracusin/GRBs/'+grb+'/'
-		if not os.path.exists(dir): os.makedirs(dir)
+		dir2=dir+grb+'/'
+		if not os.path.exists(dir2): os.makedirs(dir2)
 		fage=-1
 		for file in files:
-			if os.path.exists(dir+file):
-				ftime=os.path.getmtime(dir+file)
+			if os.path.exists(dir2+file):
+				ftime=os.path.getmtime(dir2+file)
 				if file==files[0]:
 					fage=ftime-reftime
 				else: fage=0
@@ -1165,14 +1165,14 @@ def download_UL(update=False,dir=None):
 			if fage < 0:  # if file created before reftime
 				url="http://www.swift.ac.uk/"+lcspec+targid+"/"+file
 				print 'downloading: ', url
-				print dir+file
-				urllib.urlretrieve(url,dir+file)
+				print dir2+file
+				urllib.urlretrieve(url,dir2+file)
 				#wget.download(url,dir+file)
-			if os.path.exists(dir+file):
-				f=open(dir+file,'r')
+			if os.path.exists(dir2+file):
+				f=open(dir2+file,'r')
 				lines=f.readlines()
 				if any("404 page not found" in line for line in lines): 
-					os.remove(dir+file)
+					os.remove(dir2+file)
 
 
 	fref=open(dir+'reftime.dat','w')
