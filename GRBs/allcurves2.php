@@ -1148,341 +1148,341 @@
 <tr>
 <td><p class='grb'>GRB 120119A</p><a href='/xrt_curves/00512035/'><img src='/xrt_curves/00512035/thumb2.gif' alt='XRT Light curve of GRB 120119A'/></a></td>
 <td><p class='grb'>GRB 120121A</p><a href='/xrt_curves/00512164/'><img src='/xrt_curves/00512164/thumb2.gif' alt='XRT Light curve of GRB 120121A'/></a></td>
+<td><p class='grb'>GRB 120202A</p><a href='/xrt_curves/00020206/'><img src='/xrt_curves/00020206/thumb2.gif' alt='XRT Light curve of GRB 120202A'/></a></td>
 <td><p class='grb'>GRB 120211A</p><a href='/xrt_curves/00514586/'><img src='/xrt_curves/00514586/thumb2.gif' alt='XRT Light curve of GRB 120211A'/></a></td>
-<td><p class='grb'>GRB 120212A</p><a href='/xrt_curves/00514709/'><img src='/xrt_curves/00514709/thumb2.gif' alt='XRT Light curve of GRB 120212A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 120212A</p><a href='/xrt_curves/00514709/'><img src='/xrt_curves/00514709/thumb2.gif' alt='XRT Light curve of GRB 120212A'/></a></td>
 <td><p class='grb'>GRB 120213A</p><a href='/xrt_curves/00514767/'><img src='/xrt_curves/00514767/thumb2.gif' alt='XRT Light curve of GRB 120213A'/></a></td>
 <td><p class='grb'>GRB 120215A</p><a href='/xrt_curves/00515015/'><img src='/xrt_curves/00515015/thumb2.gif' alt='XRT Light curve of GRB 120215A'/></a></td>
 <td><p class='grb'>GRB 120219A</p><a href='/xrt_curves/00515375/'><img src='/xrt_curves/00515375/thumb2.gif' alt='XRT Light curve of GRB 120219A'/></a></td>
-<td><p class='grb'>GRB 120224A</p><a href='/xrt_curves/00515976/'><img src='/xrt_curves/00515976/thumb2.gif' alt='XRT Light curve of GRB 120224A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 120224A</p><a href='/xrt_curves/00515976/'><img src='/xrt_curves/00515976/thumb2.gif' alt='XRT Light curve of GRB 120224A'/></a></td>
+<td><p class='grb'>GRB 120302A</p><a href='/xrt_curves/00020214/'><img src='/xrt_curves/00020214/thumb2.gif' alt='XRT Light curve of GRB 120302A'/></a></td>
 <td><p class='grb'>GRB 120305A</p><a href='/xrt_curves/00516997/'><img src='/xrt_curves/00516997/thumb2.gif' alt='XRT Light curve of GRB 120305A'/></a></td>
 <td><p class='grb'>GRB 120308A</p><a href='/xrt_curves/00517234/'><img src='/xrt_curves/00517234/thumb2.gif' alt='XRT Light curve of GRB 120308A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120311A</p><a href='/xrt_curves/00517469/'><img src='/xrt_curves/00517469/thumb2.gif' alt='XRT Light curve of GRB 120311A'/></a></td>
 <td><p class='grb'>GRB 120311B</p><a href='/xrt_curves/00517489/'><img src='/xrt_curves/00517489/thumb2.gif' alt='XRT Light curve of GRB 120311B'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120312A</p><a href='/xrt_curves/00517566/'><img src='/xrt_curves/00517566/thumb2.gif' alt='XRT Light curve of GRB 120312A'/></a></td>
 <td><p class='grb'>GRB 120320A</p><a href='/xrt_curves/00518200/'><img src='/xrt_curves/00518200/thumb2.gif' alt='XRT Light curve of GRB 120320A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120324A</p><a href='/xrt_curves/00518507/'><img src='/xrt_curves/00518507/thumb2.gif' alt='XRT Light curve of GRB 120324A'/></a></td>
 <td><p class='grb'>GRB 120326A</p><a href='/xrt_curves/00518626/'><img src='/xrt_curves/00518626/thumb2.gif' alt='XRT Light curve of GRB 120326A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120327A</p><a href='/xrt_curves/00518731/'><img src='/xrt_curves/00518731/thumb2.gif' alt='XRT Light curve of GRB 120327A'/></a></td>
 <td><p class='grb'>GRB 120328A</p><a href='/xrt_curves/00518792/'><img src='/xrt_curves/00518792/thumb2.gif' alt='XRT Light curve of GRB 120328A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120401A</p><a href='/xrt_curves/00519043/'><img src='/xrt_curves/00519043/thumb2.gif' alt='XRT Light curve of GRB 120401A'/></a></td>
 <td><p class='grb'>GRB 120403B</p><a href='/xrt_curves/00519256/'><img src='/xrt_curves/00519256/thumb2.gif' alt='XRT Light curve of GRB 120403B'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120404A</p><a href='/xrt_curves/00519380/'><img src='/xrt_curves/00519380/thumb2.gif' alt='XRT Light curve of GRB 120404A'/></a></td>
 <td><p class='grb'>GRB 120419A</p><a href='/xrt_curves/00020215/'><img src='/xrt_curves/00020215/thumb2.gif' alt='XRT Light curve of GRB 120419A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120422A</p><a href='/xrt_curves/00520658/'><img src='/xrt_curves/00520658/thumb2.gif' alt='XRT Light curve of GRB 120422A'/></a></td>
 <td><p class='grb'>GRB 120514A</p><a href='/xrt_curves/00522197/'><img src='/xrt_curves/00522197/thumb2.gif' alt='XRT Light curve of GRB 120514A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120521A</p><a href='/xrt_curves/00522578/'><img src='/xrt_curves/00522578/thumb2.gif' alt='XRT Light curve of GRB 120521A'/></a></td>
 <td><p class='grb'>GRB 120521B</p><a href='/xrt_curves/00522586/'><img src='/xrt_curves/00522586/thumb2.gif' alt='XRT Light curve of GRB 120521B'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120521C</p><a href='/xrt_curves/00522656/'><img src='/xrt_curves/00522656/thumb2.gif' alt='XRT Light curve of GRB 120521C'/></a></td>
 <td><p class='grb'>GRB 120612A</p><a href='/xrt_curves/00524128/'><img src='/xrt_curves/00524128/thumb2.gif' alt='XRT Light curve of GRB 120612A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120624B</p><a href='/xrt_curves/00525068/'><img src='/xrt_curves/00525068/thumb2.gif' alt='XRT Light curve of GRB 120624B'/></a></td>
 <td><p class='grb'>GRB 120630A</p><a href='/xrt_curves/00525451/'><img src='/xrt_curves/00525451/thumb2.gif' alt='XRT Light curve of GRB 120630A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120701A</p><a href='/xrt_curves/00525477/'><img src='/xrt_curves/00525477/thumb2.gif' alt='XRT Light curve of GRB 120701A'/></a></td>
 <td><p class='grb'>GRB 120703A</p><a href='/xrt_curves/00525671/'><img src='/xrt_curves/00525671/thumb2.gif' alt='XRT Light curve of GRB 120703A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120711A</p><a href='/xrt_curves/00020223/'><img src='/xrt_curves/00020223/thumb2.gif' alt='XRT Light curve of GRB 120711A'/></a></td>
 <td><p class='grb'>GRB 120711B</p><a href='/xrt_curves/00526270/'><img src='/xrt_curves/00526270/thumb2.gif' alt='XRT Light curve of GRB 120711B'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120712A</p><a href='/xrt_curves/00526351/'><img src='/xrt_curves/00526351/thumb2.gif' alt='XRT Light curve of GRB 120712A'/></a></td>
 <td><p class='grb'>GRB 120714A</p><a href='/xrt_curves/00526593/'><img src='/xrt_curves/00526593/thumb2.gif' alt='XRT Light curve of GRB 120714A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120714B</p><a href='/xrt_curves/00526642/'><img src='/xrt_curves/00526642/thumb2.gif' alt='XRT Light curve of GRB 120714B'/></a></td>
 <td><p class='grb'>GRB 120716A</p><a href='/xrt_curves/00020225/'><img src='/xrt_curves/00020225/thumb2.gif' alt='XRT Light curve of GRB 120716A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120722A</p><a href='/xrt_curves/00528195/'><img src='/xrt_curves/00528195/thumb2.gif' alt='XRT Light curve of GRB 120722A'/></a></td>
 <td><p class='grb'>GRB 120724A</p><a href='/xrt_curves/00528443/'><img src='/xrt_curves/00528443/thumb2.gif' alt='XRT Light curve of GRB 120724A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120728A</p><a href='/xrt_curves/00529021/'><img src='/xrt_curves/00529021/thumb2.gif' alt='XRT Light curve of GRB 120728A'/></a></td>
 <td><p class='grb'>GRB 120729A</p><a href='/xrt_curves/00529095/'><img src='/xrt_curves/00529095/thumb2.gif' alt='XRT Light curve of GRB 120729A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120802A</p><a href='/xrt_curves/00529486/'><img src='/xrt_curves/00529486/thumb2.gif' alt='XRT Light curve of GRB 120802A'/></a></td>
 <td><p class='grb'>GRB 120803A</p><a href='/xrt_curves/00529582/'><img src='/xrt_curves/00529582/thumb2.gif' alt='XRT Light curve of GRB 120803A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120803B</p><a href='/xrt_curves/00529606/'><img src='/xrt_curves/00529606/thumb2.gif' alt='XRT Light curve of GRB 120803B'/></a></td>
 <td><p class='grb'>GRB 120804A</p><a href='/xrt_curves/00529686/'><img src='/xrt_curves/00529686/thumb2.gif' alt='XRT Light curve of GRB 120804A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120805A</p><a href='/xrt_curves/00530031/'><img src='/xrt_curves/00530031/thumb2.gif' alt='XRT Light curve of GRB 120805A'/></a></td>
 <td><p class='grb'>GRB 120807A</p><a href='/xrt_curves/00530267/'><img src='/xrt_curves/00530267/thumb2.gif' alt='XRT Light curve of GRB 120807A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120811A</p><a href='/xrt_curves/00530581/'><img src='/xrt_curves/00530581/thumb2.gif' alt='XRT Light curve of GRB 120811A'/></a></td>
 <td><p class='grb'>GRB 120811C</p><a href='/xrt_curves/00530689/'><img src='/xrt_curves/00530689/thumb2.gif' alt='XRT Light curve of GRB 120811C'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120815A</p><a href='/xrt_curves/00531003/'><img src='/xrt_curves/00531003/thumb2.gif' alt='XRT Light curve of GRB 120815A'/></a></td>
 <td><p class='grb'>GRB 120816A</p><a href='/xrt_curves/00531223/'><img src='/xrt_curves/00531223/thumb2.gif' alt='XRT Light curve of GRB 120816A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120817A</p><a href='/xrt_curves/00531267/'><img src='/xrt_curves/00531267/thumb2.gif' alt='XRT Light curve of GRB 120817A'/></a></td>
 <td><p class='grb'>GRB 120819A</p><a href='/xrt_curves/00531428/'><img src='/xrt_curves/00531428/thumb2.gif' alt='XRT Light curve of GRB 120819A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120907A</p><a href='/xrt_curves/00532871/'><img src='/xrt_curves/00532871/thumb2.gif' alt='XRT Light curve of GRB 120907A'/></a></td>
 <td><p class='grb'>GRB 120909A</p><a href='/xrt_curves/00533060/'><img src='/xrt_curves/00533060/thumb2.gif' alt='XRT Light curve of GRB 120909A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120911A</p><a href='/xrt_curves/00533268/'><img src='/xrt_curves/00533268/thumb2.gif' alt='XRT Light curve of GRB 120911A'/></a></td>
 <td><p class='grb'>GRB 120919A</p><a href='/xrt_curves/00020232/'><img src='/xrt_curves/00020232/thumb2.gif' alt='XRT Light curve of GRB 120919A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 120922A</p><a href='/xrt_curves/00534394/'><img src='/xrt_curves/00534394/thumb2.gif' alt='XRT Light curve of GRB 120922A'/></a></td>
 <td><p class='grb'>GRB 120923A</p><a href='/xrt_curves/00534402/'><img src='/xrt_curves/00534402/thumb2.gif' alt='XRT Light curve of GRB 120923A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 120927A</p><a href='/xrt_curves/00534815/'><img src='/xrt_curves/00534815/thumb2.gif' alt='XRT Light curve of GRB 120927A'/></a></td>
 <td><p class='grb'>GRB 121001A</p><a href='/xrt_curves/00535026/'><img src='/xrt_curves/00535026/thumb2.gif' alt='XRT Light curve of GRB 121001A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 121011A</p><a href='/xrt_curves/00535764/'><img src='/xrt_curves/00535764/thumb2.gif' alt='XRT Light curve of GRB 121011A'/></a></td>
 <td><p class='grb'>GRB 121017A</p><a href='/xrt_curves/00536172/'><img src='/xrt_curves/00536172/thumb2.gif' alt='XRT Light curve of GRB 121017A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 121024A</p><a href='/xrt_curves/00536580/'><img src='/xrt_curves/00536580/thumb2.gif' alt='XRT Light curve of GRB 121024A'/></a></td>
 <td><p class='grb'>GRB 121025A</p><a href='/xrt_curves/00032612/'><img src='/xrt_curves/00032612/thumb2.gif' alt='XRT Light curve of GRB 121025A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 121027A</p><a href='/xrt_curves/00536831/'><img src='/xrt_curves/00536831/thumb2.gif' alt='XRT Light curve of GRB 121027A'/></a></td>
 <td><p class='grb'>GRB 121028A</p><a href='/xrt_curves/00536897/'><img src='/xrt_curves/00536897/thumb2.gif' alt='XRT Light curve of GRB 121028A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 121031A</p><a href='/xrt_curves/00537195/'><img src='/xrt_curves/00537195/thumb2.gif' alt='XRT Light curve of GRB 121031A'/></a></td>
 <td><p class='grb'>GRB 121102A</p><a href='/xrt_curves/00537266/'><img src='/xrt_curves/00537266/thumb2.gif' alt='XRT Light curve of GRB 121102A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 121108A</p><a href='/xrt_curves/00537921/'><img src='/xrt_curves/00537921/thumb2.gif' alt='XRT Light curve of GRB 121108A'/></a></td>
 <td><p class='grb'>GRB 121117A</p><a href='/xrt_curves/00538696/'><img src='/xrt_curves/00538696/thumb2.gif' alt='XRT Light curve of GRB 121117A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 121123A</p><a href='/xrt_curves/00539358/'><img src='/xrt_curves/00539358/thumb2.gif' alt='XRT Light curve of GRB 121123A'/></a></td>
 <td><p class='grb'>GRB 121125A</p><a href='/xrt_curves/00539563/'><img src='/xrt_curves/00539563/thumb2.gif' alt='XRT Light curve of GRB 121125A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 121128A</p><a href='/xrt_curves/00539866/'><img src='/xrt_curves/00539866/thumb2.gif' alt='XRT Light curve of GRB 121128A'/></a></td>
 <td><p class='grb'>GRB 121201A</p><a href='/xrt_curves/00540178/'><img src='/xrt_curves/00540178/thumb2.gif' alt='XRT Light curve of GRB 121201A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 121202A</p><a href='/xrt_curves/00540255/'><img src='/xrt_curves/00540255/thumb2.gif' alt='XRT Light curve of GRB 121202A'/></a></td>
 <td><p class='grb'>GRB 121209A</p><a href='/xrt_curves/00540964/'><img src='/xrt_curves/00540964/thumb2.gif' alt='XRT Light curve of GRB 121209A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 121211A</p><a href='/xrt_curves/00541200/'><img src='/xrt_curves/00541200/thumb2.gif' alt='XRT Light curve of GRB 121211A'/></a></td>
 <td><p class='grb'>GRB 121212A</p><a href='/xrt_curves/00541371/'><img src='/xrt_curves/00541371/thumb2.gif' alt='XRT Light curve of GRB 121212A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 121217A</p><a href='/xrt_curves/00542441/'><img src='/xrt_curves/00542441/thumb2.gif' alt='XRT Light curve of GRB 121217A'/></a></td>
 <td><p class='grb'>GRB 121226A</p><a href='/xrt_curves/00544027/'><img src='/xrt_curves/00544027/thumb2.gif' alt='XRT Light curve of GRB 121226A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 121229A</p><a href='/xrt_curves/00544347/'><img src='/xrt_curves/00544347/thumb2.gif' alt='XRT Light curve of GRB 121229A'/></a></td>
 <td><p class='grb'>GRB 130102A</p><a href='/xrt_curves/00544784/'><img src='/xrt_curves/00544784/thumb2.gif' alt='XRT Light curve of GRB 130102A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 130122A</p><a href='/xrt_curves/00546731/'><img src='/xrt_curves/00546731/thumb2.gif' alt='XRT Light curve of GRB 130122A'/></a></td>
 <td><p class='grb'>GRB 130131A</p><a href='/xrt_curves/00547407/'><img src='/xrt_curves/00547407/thumb2.gif' alt='XRT Light curve of GRB 130131A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 130131B</p><a href='/xrt_curves/00547420/'><img src='/xrt_curves/00547420/thumb2.gif' alt='XRT Light curve of GRB 130131B'/></a></td>
 <td><p class='grb'>GRB 130206A</p><a href='/xrt_curves/00547918/'><img src='/xrt_curves/00547918/thumb2.gif' alt='XRT Light curve of GRB 130206A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 130211A</p><a href='/xrt_curves/00548276/'><img src='/xrt_curves/00548276/thumb2.gif' alt='XRT Light curve of GRB 130211A'/></a></td>
 <td><p class='grb'>GRB 130305A</p><a href='/xrt_curves/00020234/'><img src='/xrt_curves/00020234/thumb2.gif' alt='XRT Light curve of GRB 130305A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 130306A</p><a href='/xrt_curves/00550457/'><img src='/xrt_curves/00550457/thumb2.gif' alt='XRT Light curve of GRB 130306A'/></a></td>
 <td><p class='grb'>GRB 130313A</p><a href='/xrt_curves/00550906/'><img src='/xrt_curves/00550906/thumb2.gif' alt='XRT Light curve of GRB 130313A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 130315A</p><a href='/xrt_curves/00551126/'><img src='/xrt_curves/00551126/thumb2.gif' alt='XRT Light curve of GRB 130315A'/></a></td>
 <td><p class='grb'>GRB 130327A</p><a href='/xrt_curves/00552063/'><img src='/xrt_curves/00552063/thumb2.gif' alt='XRT Light curve of GRB 130327A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 130327B</p><a href='/xrt_curves/00020249/'><img src='/xrt_curves/00020249/thumb2.gif' alt='XRT Light curve of GRB 130327B'/></a></td>
 <td><p class='grb'>GRB 130408A</p><a href='/xrt_curves/00553132/'><img src='/xrt_curves/00553132/thumb2.gif' alt='XRT Light curve of GRB 130408A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 130418A</p><a href='/xrt_curves/00553847/'><img src='/xrt_curves/00553847/thumb2.gif' alt='XRT Light curve of GRB 130418A'/></a></td>
 <td><p class='grb'>GRB 130420A</p><a href='/xrt_curves/00553977/'><img src='/xrt_curves/00553977/thumb2.gif' alt='XRT Light curve of GRB 130420A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 130420B</p><a href='/xrt_curves/00553996/'><img src='/xrt_curves/00553996/thumb2.gif' alt='XRT Light curve of GRB 130420B'/></a></td>
 <td><p class='grb'>GRB 130427A</p><a href='/xrt_curves/00554620/'><img src='/xrt_curves/00554620/thumb2.gif' alt='XRT Light curve of GRB 130427A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 130427B</p><a href='/xrt_curves/00554635/'><img src='/xrt_curves/00554635/thumb2.gif' alt='XRT Light curve of GRB 130427B'/></a></td>
 <td><p class='grb'>GRB 130502A</p><a href='/xrt_curves/00554996/'><img src='/xrt_curves/00554996/thumb2.gif' alt='XRT Light curve of GRB 130502A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 130502B</p><a href='/xrt_curves/00020266/'><img src='/xrt_curves/00020266/thumb2.gif' alt='XRT Light curve of GRB 130502B'/></a></td>
 <td><p class='grb'>GRB 130504A</p><a href='/xrt_curves/00555096/'><img src='/xrt_curves/00555096/thumb2.gif' alt='XRT Light curve of GRB 130504A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 130504C</p><a href='/xrt_curves/00020267/'><img src='/xrt_curves/00020267/thumb2.gif' alt='XRT Light curve of GRB 130504C'/></a></td>
 <td><p class='grb'>GRB 130505A</p><a href='/xrt_curves/00555163/'><img src='/xrt_curves/00555163/thumb2.gif' alt='XRT Light curve of GRB 130505A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 130508A</p><a href='/xrt_curves/00555413/'><img src='/xrt_curves/00555413/thumb2.gif' alt='XRT Light curve of GRB 130508A'/></a></td>
 <td><p class='grb'>GRB 130511A</p><a href='/xrt_curves/00555600/'><img src='/xrt_curves/00555600/thumb2.gif' alt='XRT Light curve of GRB 130511A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 130513A</p><a href='/xrt_curves/00020274/'><img src='/xrt_curves/00020274/thumb2.gif' alt='XRT Light curve of GRB 130513A'/></a></td>
 <td><p class='grb'>GRB 130514A</p><a href='/xrt_curves/00555821/'><img src='/xrt_curves/00555821/thumb2.gif' alt='XRT Light curve of GRB 130514A'/></a></td>
+</tr>
+<tr>
 <td><p class='grb'>GRB 130514B</p><a href='/xrt_curves/00020275/'><img src='/xrt_curves/00020275/thumb2.gif' alt='XRT Light curve of GRB 130514B'/></a></td>
 <td><p class='grb'>GRB 130515A</p><a href='/xrt_curves/00555880/'><img src='/xrt_curves/00555880/thumb2.gif' alt='XRT Light curve of GRB 130515A'/></a></td>
-</tr>
-<tr>
-<td><p class='grb'>GRB 130518A</p><a href='/xrt_curves/00020281/'><img src='/xrt_curves/00020281/thumb2.gif' alt='XRT Light curve of GRB 130518A'/></a></td>
 <td><p class='grb'>GRB 130527A</p><a href='/xrt_curves/00556753/'><img src='/xrt_curves/00556753/thumb2.gif' alt='XRT Light curve of GRB 130527A'/></a></td>
 <td><p class='grb'>GRB 130528A</p><a href='/xrt_curves/00556870/'><img src='/xrt_curves/00556870/thumb2.gif' alt='XRT Light curve of GRB 130528A'/></a></td>
-<td><p class='grb'>GRB 130529A</p><a href='/xrt_curves/00556930/'><img src='/xrt_curves/00556930/thumb2.gif' alt='XRT Light curve of GRB 130529A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130529A</p><a href='/xrt_curves/00556930/'><img src='/xrt_curves/00556930/thumb2.gif' alt='XRT Light curve of GRB 130529A'/></a></td>
 <td><p class='grb'>GRB 130603A</p><a href='/xrt_curves/00557274/'><img src='/xrt_curves/00557274/thumb2.gif' alt='XRT Light curve of GRB 130603A'/></a></td>
 <td><p class='grb'>GRB 130603B</p><a href='/xrt_curves/00557310/'><img src='/xrt_curves/00557310/thumb2.gif' alt='XRT Light curve of GRB 130603B'/></a></td>
 <td><p class='grb'>GRB 130604A</p><a href='/xrt_curves/00557354/'><img src='/xrt_curves/00557354/thumb2.gif' alt='XRT Light curve of GRB 130604A'/></a></td>
-<td><p class='grb'>GRB 130605A</p><a href='/xrt_curves/00557508/'><img src='/xrt_curves/00557508/thumb2.gif' alt='XRT Light curve of GRB 130605A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130605A</p><a href='/xrt_curves/00557508/'><img src='/xrt_curves/00557508/thumb2.gif' alt='XRT Light curve of GRB 130605A'/></a></td>
 <td><p class='grb'>GRB 130606A</p><a href='/xrt_curves/00557589/'><img src='/xrt_curves/00557589/thumb2.gif' alt='XRT Light curve of GRB 130606A'/></a></td>
 <td><p class='grb'>GRB 130606B</p><a href='/xrt_curves/00020283/'><img src='/xrt_curves/00020283/thumb2.gif' alt='XRT Light curve of GRB 130606B'/></a></td>
 <td><p class='grb'>GRB 130608A</p><a href='/xrt_curves/00557771/'><img src='/xrt_curves/00557771/thumb2.gif' alt='XRT Light curve of GRB 130608A'/></a></td>
-<td><p class='grb'>GRB 130609A</p><a href='/xrt_curves/00557782/'><img src='/xrt_curves/00557782/thumb2.gif' alt='XRT Light curve of GRB 130609A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130609A</p><a href='/xrt_curves/00557782/'><img src='/xrt_curves/00557782/thumb2.gif' alt='XRT Light curve of GRB 130609A'/></a></td>
 <td><p class='grb'>GRB 130609B</p><a href='/xrt_curves/00557828/'><img src='/xrt_curves/00557828/thumb2.gif' alt='XRT Light curve of GRB 130609B'/></a></td>
 <td><p class='grb'>GRB 130610A</p><a href='/xrt_curves/00557845/'><img src='/xrt_curves/00557845/thumb2.gif' alt='XRT Light curve of GRB 130610A'/></a></td>
 <td><p class='grb'>GRB 130612A</p><a href='/xrt_curves/00557976/'><img src='/xrt_curves/00557976/thumb2.gif' alt='XRT Light curve of GRB 130612A'/></a></td>
-<td><p class='grb'>GRB 130615A</p><a href='/xrt_curves/00558271/'><img src='/xrt_curves/00558271/thumb2.gif' alt='XRT Light curve of GRB 130615A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130615A</p><a href='/xrt_curves/00558271/'><img src='/xrt_curves/00558271/thumb2.gif' alt='XRT Light curve of GRB 130615A'/></a></td>
 <td><p class='grb'>GRB 130623A</p><a href='/xrt_curves/00020284/'><img src='/xrt_curves/00020284/thumb2.gif' alt='XRT Light curve of GRB 130623A'/></a></td>
 <td><p class='grb'>GRB 130625A</p><a href='/xrt_curves/00558982/'><img src='/xrt_curves/00558982/thumb2.gif' alt='XRT Light curve of GRB 130625A'/></a></td>
 <td><p class='grb'>GRB 130627A</p><a href='/xrt_curves/00559132/'><img src='/xrt_curves/00559132/thumb2.gif' alt='XRT Light curve of GRB 130627A'/></a></td>
-<td><p class='grb'>GRB 130627B</p><a href='/xrt_curves/00559139/'><img src='/xrt_curves/00559139/thumb2.gif' alt='XRT Light curve of GRB 130627B'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130627B</p><a href='/xrt_curves/00559139/'><img src='/xrt_curves/00559139/thumb2.gif' alt='XRT Light curve of GRB 130627B'/></a></td>
 <td><p class='grb'>GRB 130701A</p><a href='/xrt_curves/00559482/'><img src='/xrt_curves/00559482/thumb2.gif' alt='XRT Light curve of GRB 130701A'/></a></td>
 <td><p class='grb'>GRB 130702A</p><a href='/xrt_curves/00032876/'><img src='/xrt_curves/00032876/thumb2.gif' alt='XRT Light curve of GRB 130702A'/></a></td>
 <td><p class='grb'>GRB 130716A</p><a href='/xrt_curves/00561974/'><img src='/xrt_curves/00561974/thumb2.gif' alt='XRT Light curve of GRB 130716A'/></a></td>
-<td><p class='grb'>GRB 130722A</p><a href='/xrt_curves/00563213/'><img src='/xrt_curves/00563213/thumb2.gif' alt='XRT Light curve of GRB 130722A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130722A</p><a href='/xrt_curves/00563213/'><img src='/xrt_curves/00563213/thumb2.gif' alt='XRT Light curve of GRB 130722A'/></a></td>
 <td><p class='grb'>GRB 130725A</p><a href='/xrt_curves/00563980/'><img src='/xrt_curves/00563980/thumb2.gif' alt='XRT Light curve of GRB 130725A'/></a></td>
 <td><p class='grb'>GRB 130725B</p><a href='/xrt_curves/00564028/'><img src='/xrt_curves/00564028/thumb2.gif' alt='XRT Light curve of GRB 130725B'/></a></td>
 <td><p class='grb'>GRB 130727A</p><a href='/xrt_curves/00564342/'><img src='/xrt_curves/00564342/thumb2.gif' alt='XRT Light curve of GRB 130727A'/></a></td>
-<td><p class='grb'>GRB 130803A</p><a href='/xrt_curves/00565263/'><img src='/xrt_curves/00565263/thumb2.gif' alt='XRT Light curve of GRB 130803A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130803A</p><a href='/xrt_curves/00565263/'><img src='/xrt_curves/00565263/thumb2.gif' alt='XRT Light curve of GRB 130803A'/></a></td>
 <td><p class='grb'>GRB 130806A</p><a href='/xrt_curves/00565562/'><img src='/xrt_curves/00565562/thumb2.gif' alt='XRT Light curve of GRB 130806A'/></a></td>
 <td><p class='grb'>GRB 130807A</p><a href='/xrt_curves/00565651/'><img src='/xrt_curves/00565651/thumb2.gif' alt='XRT Light curve of GRB 130807A'/></a></td>
 <td><p class='grb'>GRB 130812A</p><a href='/xrt_curves/00566228/'><img src='/xrt_curves/00566228/thumb2.gif' alt='XRT Light curve of GRB 130812A'/></a></td>
-<td><p class='grb'>GRB 130816A</p><a href='/xrt_curves/00566545/'><img src='/xrt_curves/00566545/thumb2.gif' alt='XRT Light curve of GRB 130816A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130816A</p><a href='/xrt_curves/00566545/'><img src='/xrt_curves/00566545/thumb2.gif' alt='XRT Light curve of GRB 130816A'/></a></td>
 <td><p class='grb'>GRB 130816B</p><a href='/xrt_curves/00566561/'><img src='/xrt_curves/00566561/thumb2.gif' alt='XRT Light curve of GRB 130816B'/></a></td>
 <td><p class='grb'>GRB 130822A</p><a href='/xrt_curves/00567163/'><img src='/xrt_curves/00567163/thumb2.gif' alt='XRT Light curve of GRB 130822A'/></a></td>
 <td><p class='grb'>GRB 130831A</p><a href='/xrt_curves/00568849/'><img src='/xrt_curves/00568849/thumb2.gif' alt='XRT Light curve of GRB 130831A'/></a></td>
-<td><p class='grb'>GRB 130831B</p><a href='/xrt_curves/00568855/'><img src='/xrt_curves/00568855/thumb2.gif' alt='XRT Light curve of GRB 130831B'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130831B</p><a href='/xrt_curves/00568855/'><img src='/xrt_curves/00568855/thumb2.gif' alt='XRT Light curve of GRB 130831B'/></a></td>
 <td><p class='grb'>GRB 130903A</p><a href='/xrt_curves/00020294/'><img src='/xrt_curves/00020294/thumb2.gif' alt='XRT Light curve of GRB 130903A'/></a></td>
 <td><p class='grb'>GRB 130907A</p><a href='/xrt_curves/00569992/'><img src='/xrt_curves/00569992/thumb2.gif' alt='XRT Light curve of GRB 130907A'/></a></td>
 <td><p class='grb'>GRB 130912A</p><a href='/xrt_curves/00570465/'><img src='/xrt_curves/00570465/thumb2.gif' alt='XRT Light curve of GRB 130912A'/></a></td>
-<td><p class='grb'>GRB 130925A</p><a href='/xrt_curves/00571830/'><img src='/xrt_curves/00571830/thumb2.gif' alt='XRT Light curve of GRB 130925A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 130925A</p><a href='/xrt_curves/00571830/'><img src='/xrt_curves/00571830/thumb2.gif' alt='XRT Light curve of GRB 130925A'/></a></td>
 <td><p class='grb'>GRB 130929A</p><a href='/xrt_curves/00572308/'><img src='/xrt_curves/00572308/thumb2.gif' alt='XRT Light curve of GRB 130929A'/></a></td>
 <td><p class='grb'>GRB 131002A</p><a href='/xrt_curves/00572721/'><img src='/xrt_curves/00572721/thumb2.gif' alt='XRT Light curve of GRB 131002A'/></a></td>
 <td><p class='grb'>GRB 131002B</p><a href='/xrt_curves/00572742/'><img src='/xrt_curves/00572742/thumb2.gif' alt='XRT Light curve of GRB 131002B'/></a></td>
-<td><p class='grb'>GRB 131004A</p><a href='/xrt_curves/00573190/'><img src='/xrt_curves/00573190/thumb2.gif' alt='XRT Light curve of GRB 131004A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 131004A</p><a href='/xrt_curves/00573190/'><img src='/xrt_curves/00573190/thumb2.gif' alt='XRT Light curve of GRB 131004A'/></a></td>
 <td><p class='grb'>GRB 131011A</p><a href='/xrt_curves/00020298/'><img src='/xrt_curves/00020298/thumb2.gif' alt='XRT Light curve of GRB 131011A'/></a></td>
 <td><p class='grb'>GRB 131018A</p><a href='/xrt_curves/00574935/'><img src='/xrt_curves/00574935/thumb2.gif' alt='XRT Light curve of GRB 131018A'/></a></td>
 <td><p class='grb'>GRB 131018B</p><a href='/xrt_curves/00020308/'><img src='/xrt_curves/00020308/thumb2.gif' alt='XRT Light curve of GRB 131018B'/></a></td>
-<td><p class='grb'>GRB 131024A</p><a href='/xrt_curves/00575707/'><img src='/xrt_curves/00575707/thumb2.gif' alt='XRT Light curve of GRB 131024A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 131024A</p><a href='/xrt_curves/00575707/'><img src='/xrt_curves/00575707/thumb2.gif' alt='XRT Light curve of GRB 131024A'/></a></td>
 <td><p class='grb'>GRB 131024B</p><a href='/xrt_curves/00575754/'><img src='/xrt_curves/00575754/thumb2.gif' alt='XRT Light curve of GRB 131024B'/></a></td>
 <td><p class='grb'>GRB 131030A</p><a href='/xrt_curves/00576238/'><img src='/xrt_curves/00576238/thumb2.gif' alt='XRT Light curve of GRB 131030A'/></a></td>
 <td><p class='grb'>GRB 131031A</p><a href='/xrt_curves/00020317/'><img src='/xrt_curves/00020317/thumb2.gif' alt='XRT Light curve of GRB 131031A'/></a></td>
-<td><p class='grb'>GRB 131103A</p><a href='/xrt_curves/00576562/'><img src='/xrt_curves/00576562/thumb2.gif' alt='XRT Light curve of GRB 131103A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 131103A</p><a href='/xrt_curves/00576562/'><img src='/xrt_curves/00576562/thumb2.gif' alt='XRT Light curve of GRB 131103A'/></a></td>
 <td><p class='grb'>GRB 131105A</p><a href='/xrt_curves/00576738/'><img src='/xrt_curves/00576738/thumb2.gif' alt='XRT Light curve of GRB 131105A'/></a></td>
 <td><p class='grb'>GRB 131117A</p><a href='/xrt_curves/00577968/'><img src='/xrt_curves/00577968/thumb2.gif' alt='XRT Light curve of GRB 131117A'/></a></td>
 <td><p class='grb'>GRB 131122A</p><a href='/xrt_curves/00020328/'><img src='/xrt_curves/00020328/thumb2.gif' alt='XRT Light curve of GRB 131122A'/></a></td>
-<td><p class='grb'>GRB 131127A</p><a href='/xrt_curves/00579571/'><img src='/xrt_curves/00579571/thumb2.gif' alt='XRT Light curve of GRB 131127A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 131127A</p><a href='/xrt_curves/00579571/'><img src='/xrt_curves/00579571/thumb2.gif' alt='XRT Light curve of GRB 131127A'/></a></td>
 <td><p class='grb'>GRB 131128A</p><a href='/xrt_curves/00579683/'><img src='/xrt_curves/00579683/thumb2.gif' alt='XRT Light curve of GRB 131128A'/></a></td>
 <td><p class='grb'>GRB 131202A</p><a href='/xrt_curves/00579982/'><img src='/xrt_curves/00579982/thumb2.gif' alt='XRT Light curve of GRB 131202A'/></a></td>
 <td><p class='grb'>GRB 131205A</p><a href='/xrt_curves/00580267/'><img src='/xrt_curves/00580267/thumb2.gif' alt='XRT Light curve of GRB 131205A'/></a></td>
-<td><p class='grb'>GRB 131227A</p><a href='/xrt_curves/00582184/'><img src='/xrt_curves/00582184/thumb2.gif' alt='XRT Light curve of GRB 131227A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 131227A</p><a href='/xrt_curves/00582184/'><img src='/xrt_curves/00582184/thumb2.gif' alt='XRT Light curve of GRB 131227A'/></a></td>
 <td><p class='grb'>GRB 131229A</p><a href='/xrt_curves/00582374/'><img src='/xrt_curves/00582374/thumb2.gif' alt='XRT Light curve of GRB 131229A'/></a></td>
 <td><p class='grb'>GRB 131231A</p><a href='/xrt_curves/00020336/'><img src='/xrt_curves/00020336/thumb2.gif' alt='XRT Light curve of GRB 131231A'/></a></td>
 <td><p class='grb'>GRB 140102A</p><a href='/xrt_curves/00582760/'><img src='/xrt_curves/00582760/thumb2.gif' alt='XRT Light curve of GRB 140102A'/></a></td>
-<td><p class='grb'>GRB 140103A</p><a href='/xrt_curves/00582773/'><img src='/xrt_curves/00582773/thumb2.gif' alt='XRT Light curve of GRB 140103A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140103A</p><a href='/xrt_curves/00582773/'><img src='/xrt_curves/00582773/thumb2.gif' alt='XRT Light curve of GRB 140103A'/></a></td>
 <td><p class='grb'>GRB 140104B</p><a href='/xrt_curves/00020337/'><img src='/xrt_curves/00020337/thumb2.gif' alt='XRT Light curve of GRB 140104B'/></a></td>
 <td><p class='grb'>GRB 140108A</p><a href='/xrt_curves/00583338/'><img src='/xrt_curves/00583338/thumb2.gif' alt='XRT Light curve of GRB 140108A'/></a></td>
 <td><p class='grb'>GRB 140114A</p><a href='/xrt_curves/00583861/'><img src='/xrt_curves/00583861/thumb2.gif' alt='XRT Light curve of GRB 140114A'/></a></td>
-<td><p class='grb'>GRB 140129A</p><a href='/xrt_curves/00585128/'><img src='/xrt_curves/00585128/thumb2.gif' alt='XRT Light curve of GRB 140129A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140129A</p><a href='/xrt_curves/00585128/'><img src='/xrt_curves/00585128/thumb2.gif' alt='XRT Light curve of GRB 140129A'/></a></td>
 <td><p class='grb'>GRB 140129B</p><a href='/xrt_curves/00585149/'><img src='/xrt_curves/00585149/thumb2.gif' alt='XRT Light curve of GRB 140129B'/></a></td>
 <td><p class='grb'>GRB 140206A</p><a href='/xrt_curves/00585834/'><img src='/xrt_curves/00585834/thumb2.gif' alt='XRT Light curve of GRB 140206A'/></a></td>
 <td><p class='grb'>GRB 140209A</p><a href='/xrt_curves/00586071/'><img src='/xrt_curves/00586071/thumb2.gif' alt='XRT Light curve of GRB 140209A'/></a></td>
-<td><p class='grb'>GRB 140211A</p><a href='/xrt_curves/00586289/'><img src='/xrt_curves/00586289/thumb2.gif' alt='XRT Light curve of GRB 140211A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140211A</p><a href='/xrt_curves/00586289/'><img src='/xrt_curves/00586289/thumb2.gif' alt='XRT Light curve of GRB 140211A'/></a></td>
 <td><p class='grb'>GRB 140213A</p><a href='/xrt_curves/00586569/'><img src='/xrt_curves/00586569/thumb2.gif' alt='XRT Light curve of GRB 140213A'/></a></td>
 <td><p class='grb'>GRB 140215A</p><a href='/xrt_curves/00586680/'><img src='/xrt_curves/00586680/thumb2.gif' alt='XRT Light curve of GRB 140215A'/></a></td>
 <td><p class='grb'>GRB 140226A</p><a href='/xrt_curves/00033157/'><img src='/xrt_curves/00033157/thumb2.gif' alt='XRT Light curve of GRB 140226A'/></a></td>
-<td><p class='grb'>GRB 140301A</p><a href='/xrt_curves/00589590/'><img src='/xrt_curves/00589590/thumb2.gif' alt='XRT Light curve of GRB 140301A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140301A</p><a href='/xrt_curves/00589590/'><img src='/xrt_curves/00589590/thumb2.gif' alt='XRT Light curve of GRB 140301A'/></a></td>
 <td><p class='grb'>GRB 140302A</p><a href='/xrt_curves/00589685/'><img src='/xrt_curves/00589685/thumb2.gif' alt='XRT Light curve of GRB 140302A'/></a></td>
 <td><p class='grb'>GRB 140304A</p><a href='/xrt_curves/00590206/'><img src='/xrt_curves/00590206/thumb2.gif' alt='XRT Light curve of GRB 140304A'/></a></td>
 <td><p class='grb'>GRB 140311A</p><a href='/xrt_curves/00591390/'><img src='/xrt_curves/00591390/thumb2.gif' alt='XRT Light curve of GRB 140311A'/></a></td>
-<td><p class='grb'>GRB 140311B</p><a href='/xrt_curves/00591392/'><img src='/xrt_curves/00591392/thumb2.gif' alt='XRT Light curve of GRB 140311B'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140311B</p><a href='/xrt_curves/00591392/'><img src='/xrt_curves/00591392/thumb2.gif' alt='XRT Light curve of GRB 140311B'/></a></td>
 <td><p class='grb'>GRB 140318A</p><a href='/xrt_curves/00592204/'><img src='/xrt_curves/00592204/thumb2.gif' alt='XRT Light curve of GRB 140318A'/></a></td>
 <td><p class='grb'>GRB 140320A</p><a href='/xrt_curves/00592544/'><img src='/xrt_curves/00592544/thumb2.gif' alt='XRT Light curve of GRB 140320A'/></a></td>
 <td><p class='grb'>GRB 140320B</p><a href='/xrt_curves/00020370/'><img src='/xrt_curves/00020370/thumb2.gif' alt='XRT Light curve of GRB 140320B'/></a></td>
-<td><p class='grb'>GRB 140320C</p><a href='/xrt_curves/00020371/'><img src='/xrt_curves/00020371/thumb2.gif' alt='XRT Light curve of GRB 140320C'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140320C</p><a href='/xrt_curves/00020371/'><img src='/xrt_curves/00020371/thumb2.gif' alt='XRT Light curve of GRB 140320C'/></a></td>
 <td><p class='grb'>GRB 140323A</p><a href='/xrt_curves/00592916/'><img src='/xrt_curves/00592916/thumb2.gif' alt='XRT Light curve of GRB 140323A'/></a></td>
 <td><p class='grb'>GRB 140330A</p><a href='/xrt_curves/00020372/'><img src='/xrt_curves/00020372/thumb2.gif' alt='XRT Light curve of GRB 140330A'/></a></td>
 <td><p class='grb'>GRB 140331A</p><a href='/xrt_curves/00594081/'><img src='/xrt_curves/00594081/thumb2.gif' alt='XRT Light curve of GRB 140331A'/></a></td>
-<td><p class='grb'>GRB 140402A</p><a href='/xrt_curves/00020373/'><img src='/xrt_curves/00020373/thumb2.gif' alt='XRT Light curve of GRB 140402A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140402A</p><a href='/xrt_curves/00020373/'><img src='/xrt_curves/00020373/thumb2.gif' alt='XRT Light curve of GRB 140402A'/></a></td>
 <td><p class='grb'>GRB 140408A</p><a href='/xrt_curves/00595141/'><img src='/xrt_curves/00595141/thumb2.gif' alt='XRT Light curve of GRB 140408A'/></a></td>
 <td><p class='grb'>GRB 140412A</p><a href='/xrt_curves/00595608/'><img src='/xrt_curves/00595608/thumb2.gif' alt='XRT Light curve of GRB 140412A'/></a></td>
 <td><p class='grb'>GRB 140413A</p><a href='/xrt_curves/00595616/'><img src='/xrt_curves/00595616/thumb2.gif' alt='XRT Light curve of GRB 140413A'/></a></td>
-<td><p class='grb'>GRB 140419A</p><a href='/xrt_curves/00596426/'><img src='/xrt_curves/00596426/thumb2.gif' alt='XRT Light curve of GRB 140419A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140419A</p><a href='/xrt_curves/00596426/'><img src='/xrt_curves/00596426/thumb2.gif' alt='XRT Light curve of GRB 140419A'/></a></td>
 <td><p class='grb'>GRB 140423A</p><a href='/xrt_curves/00596901/'><img src='/xrt_curves/00596901/thumb2.gif' alt='XRT Light curve of GRB 140423A'/></a></td>
 <td><p class='grb'>GRB 140428A</p><a href='/xrt_curves/00597519/'><img src='/xrt_curves/00597519/thumb2.gif' alt='XRT Light curve of GRB 140428A'/></a></td>
 <td><p class='grb'>GRB 140430A</p><a href='/xrt_curves/00597722/'><img src='/xrt_curves/00597722/thumb2.gif' alt='XRT Light curve of GRB 140430A'/></a></td>
-<td><p class='grb'>GRB 140502A</p><a href='/xrt_curves/00597841/'><img src='/xrt_curves/00597841/thumb2.gif' alt='XRT Light curve of GRB 140502A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140502A</p><a href='/xrt_curves/00597841/'><img src='/xrt_curves/00597841/thumb2.gif' alt='XRT Light curve of GRB 140502A'/></a></td>
 <td><p class='grb'>GRB 140506A</p><a href='/xrt_curves/00598284/'><img src='/xrt_curves/00598284/thumb2.gif' alt='XRT Light curve of GRB 140506A'/></a></td>
 <td><p class='grb'>GRB 140508A</p><a href='/xrt_curves/00020376/'><img src='/xrt_curves/00020376/thumb2.gif' alt='XRT Light curve of GRB 140508A'/></a></td>
 <td><p class='grb'>GRB 140509A</p><a href='/xrt_curves/00598497/'><img src='/xrt_curves/00598497/thumb2.gif' alt='XRT Light curve of GRB 140509A'/></a></td>
-<td><p class='grb'>GRB 140512A</p><a href='/xrt_curves/00598819/'><img src='/xrt_curves/00598819/thumb2.gif' alt='XRT Light curve of GRB 140512A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140512A</p><a href='/xrt_curves/00598819/'><img src='/xrt_curves/00598819/thumb2.gif' alt='XRT Light curve of GRB 140512A'/></a></td>
 <td><p class='grb'>GRB 140515A</p><a href='/xrt_curves/00599037/'><img src='/xrt_curves/00599037/thumb2.gif' alt='XRT Light curve of GRB 140515A'/></a></td>
 <td><p class='grb'>GRB 140516A</p><a href='/xrt_curves/00599188/'><img src='/xrt_curves/00599188/thumb2.gif' alt='XRT Light curve of GRB 140516A'/></a></td>
 <td><p class='grb'>GRB 140518A</p><a href='/xrt_curves/00599287/'><img src='/xrt_curves/00599287/thumb2.gif' alt='XRT Light curve of GRB 140518A'/></a></td>
-<td><p class='grb'>GRB 140529A</p><a href='/xrt_curves/00020383/'><img src='/xrt_curves/00020383/thumb2.gif' alt='XRT Light curve of GRB 140529A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140529A</p><a href='/xrt_curves/00020383/'><img src='/xrt_curves/00020383/thumb2.gif' alt='XRT Light curve of GRB 140529A'/></a></td>
 <td><p class='grb'>GRB 140606B</p><a href='/xrt_curves/00020384/'><img src='/xrt_curves/00020384/thumb2.gif' alt='XRT Light curve of GRB 140606B'/></a></td>
 <td><p class='grb'>GRB 140610A</p><a href='/xrt_curves/00601259/'><img src='/xrt_curves/00601259/thumb2.gif' alt='XRT Light curve of GRB 140610A'/></a></td>
 <td><p class='grb'>GRB 140611A</p><a href='/xrt_curves/00020385/'><img src='/xrt_curves/00020385/thumb2.gif' alt='XRT Light curve of GRB 140611A'/></a></td>
-<td><p class='grb'>GRB 140614A</p><a href='/xrt_curves/00601646/'><img src='/xrt_curves/00601646/thumb2.gif' alt='XRT Light curve of GRB 140614A'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 140614A</p><a href='/xrt_curves/00601646/'><img src='/xrt_curves/00601646/thumb2.gif' alt='XRT Light curve of GRB 140614A'/></a></td>
 <td><p class='grb'>GRB 140614B</p><a href='/xrt_curves/00601662/'><img src='/xrt_curves/00601662/thumb2.gif' alt='XRT Light curve of GRB 140614B'/></a></td>
 <td><p class='grb'>GRB 140619A</p><a href='/xrt_curves/00602080/'><img src='/xrt_curves/00602080/thumb2.gif' alt='XRT Light curve of GRB 140619A'/></a></td>
 <td><p class='grb'>GRB 140620A</p><a href='/xrt_curves/00020387/'><img src='/xrt_curves/00020387/thumb2.gif' alt='XRT Light curve of GRB 140620A'/></a></td>
-<td><p class='grb'>GRB 140622A</p><a href='/xrt_curves/00602278/'><img src='/xrt_curves/00602278/thumb2.gif' alt='XRT Light curve of GRB 140622A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 140623A</p><a href='/xrt_curves/00020388/'><img src='/xrt_curves/00020388/thumb2.gif' alt='XRT Light curve of GRB 140623A'/></a></td>
+<td><p class='grb'>GRB 140622A</p><a href='/xrt_curves/00602278/'><img src='/xrt_curves/00602278/thumb2.gif' alt='XRT Light curve of GRB 140622A'/></a></td>
 <td><p class='grb'>GRB 140626A</p><a href='/xrt_curves/00602604/'><img src='/xrt_curves/00602604/thumb2.gif' alt='XRT Light curve of GRB 140626A'/></a></td>
 <td><p class='grb'>GRB 140628A</p><a href='/xrt_curves/00602803/'><img src='/xrt_curves/00602803/thumb2.gif' alt='XRT Light curve of GRB 140628A'/></a></td>
 <td><p class='grb'>GRB 140629A</p><a href='/xrt_curves/00602884/'><img src='/xrt_curves/00602884/thumb2.gif' alt='XRT Light curve of GRB 140629A'/></a></td>
@@ -1599,231 +1599,341 @@
 <td><p class='grb'>GRB 150527A</p><a href='/xrt_curves/00641698/'><img src='/xrt_curves/00641698/thumb2.gif' alt='XRT Light curve of GRB 150527A'/></a></td>
 <td><p class='grb'>GRB 150530A</p><a href='/xrt_curves/00642018/'><img src='/xrt_curves/00642018/thumb2.gif' alt='XRT Light curve of GRB 150530A'/></a></td>
 <td><p class='grb'>GRB 150607A</p><a href='/xrt_curves/00642620/'><img src='/xrt_curves/00642620/thumb2.gif' alt='XRT Light curve of GRB 150607A'/></a></td>
-<td><p class='grb'>GRB 150608A</p><a href='/xrt_curves/00020524/'><img src='/xrt_curves/00020524/thumb2.gif' alt='XRT Light curve of GRB 150608A'/></a></td>
+<td><p class='grb'>GRB 150615A</p><a href='/xrt_curves/00643833/'><img src='/xrt_curves/00643833/thumb2.gif' alt='XRT Light curve of GRB 150615A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 150615A</p><a href='/xrt_curves/00643833/'><img src='/xrt_curves/00643833/thumb2.gif' alt='XRT Light curve of GRB 150615A'/></a></td>
 <td><p class='grb'>GRB 150616A</p><a href='/xrt_curves/00644259/'><img src='/xrt_curves/00644259/thumb2.gif' alt='XRT Light curve of GRB 150616A'/></a></td>
 <td><p class='grb'>GRB 150626A</p><a href='/xrt_curves/00646603/'><img src='/xrt_curves/00646603/thumb2.gif' alt='XRT Light curve of GRB 150626A'/></a></td>
 <td><p class='grb'>GRB 150626B</p><a href='/xrt_curves/00646786/'><img src='/xrt_curves/00646786/thumb2.gif' alt='XRT Light curve of GRB 150626B'/></a></td>
+<td><p class='grb'>GRB 150711A</p><a href='/xrt_curves/00648601/'><img src='/xrt_curves/00648601/thumb2.gif' alt='XRT Light curve of GRB 150711A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 150711A</p><a href='/xrt_curves/00648601/'><img src='/xrt_curves/00648601/thumb2.gif' alt='XRT Light curve of GRB 150711A'/></a></td>
 <td><p class='grb'>GRB 150716A</p><a href='/xrt_curves/00649157/'><img src='/xrt_curves/00649157/thumb2.gif' alt='XRT Light curve of GRB 150716A'/></a></td>
 <td><p class='grb'>GRB 150720A</p><a href='/xrt_curves/00649706/'><img src='/xrt_curves/00649706/thumb2.gif' alt='XRT Light curve of GRB 150720A'/></a></td>
 <td><p class='grb'>GRB 150722A</p><a href='/xrt_curves/00649916/'><img src='/xrt_curves/00649916/thumb2.gif' alt='XRT Light curve of GRB 150722A'/></a></td>
+<td><p class='grb'>GRB 150724A</p><a href='/xrt_curves/00650141/'><img src='/xrt_curves/00650141/thumb2.gif' alt='XRT Light curve of GRB 150724A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 150724A</p><a href='/xrt_curves/00650141/'><img src='/xrt_curves/00650141/thumb2.gif' alt='XRT Light curve of GRB 150724A'/></a></td>
 <td><p class='grb'>GRB 150727A</p><a href='/xrt_curves/00650530/'><img src='/xrt_curves/00650530/thumb2.gif' alt='XRT Light curve of GRB 150727A'/></a></td>
 <td><p class='grb'>GRB 150728A</p><a href='/xrt_curves/00650617/'><img src='/xrt_curves/00650617/thumb2.gif' alt='XRT Light curve of GRB 150728A'/></a></td>
 <td><p class='grb'>GRB 150801B</p><a href='/xrt_curves/00650977/'><img src='/xrt_curves/00650977/thumb2.gif' alt='XRT Light curve of GRB 150801B'/></a></td>
+<td><p class='grb'>GRB 150811A</p><a href='/xrt_curves/00651882/'><img src='/xrt_curves/00651882/thumb2.gif' alt='XRT Light curve of GRB 150811A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 150811A</p><a href='/xrt_curves/00651882/'><img src='/xrt_curves/00651882/thumb2.gif' alt='XRT Light curve of GRB 150811A'/></a></td>
 <td><p class='grb'>GRB 150817A</p><a href='/xrt_curves/00652334/'><img src='/xrt_curves/00652334/thumb2.gif' alt='XRT Light curve of GRB 150817A'/></a></td>
 <td><p class='grb'>GRB 150818A</p><a href='/xrt_curves/00652603/'><img src='/xrt_curves/00652603/thumb2.gif' alt='XRT Light curve of GRB 150818A'/></a></td>
 <td><p class='grb'>GRB 150819A</p><a href='/xrt_curves/00652643/'><img src='/xrt_curves/00652643/thumb2.gif' alt='XRT Light curve of GRB 150819A'/></a></td>
+<td><p class='grb'>GRB 150821A</p><a href='/xrt_curves/00652847/'><img src='/xrt_curves/00652847/thumb2.gif' alt='XRT Light curve of GRB 150821A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 150821A</p><a href='/xrt_curves/00652847/'><img src='/xrt_curves/00652847/thumb2.gif' alt='XRT Light curve of GRB 150821A'/></a></td>
 <td><p class='grb'>GRB 150831A</p><a href='/xrt_curves/00653838/'><img src='/xrt_curves/00653838/thumb2.gif' alt='XRT Light curve of GRB 150831A'/></a></td>
 <td><p class='grb'>GRB 150831B</p><a href='/xrt_curves/00653978/'><img src='/xrt_curves/00653978/thumb2.gif' alt='XRT Light curve of GRB 150831B'/></a></td>
 <td><p class='grb'>GRB 150907B</p><a href='/xrt_curves/00654803/'><img src='/xrt_curves/00654803/thumb2.gif' alt='XRT Light curve of GRB 150907B'/></a></td>
+<td><p class='grb'>GRB 150910A</p><a href='/xrt_curves/00655097/'><img src='/xrt_curves/00655097/thumb2.gif' alt='XRT Light curve of GRB 150910A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 150910A</p><a href='/xrt_curves/00655097/'><img src='/xrt_curves/00655097/thumb2.gif' alt='XRT Light curve of GRB 150910A'/></a></td>
 <td><p class='grb'>GRB 150911A</p><a href='/xrt_curves/00655262/'><img src='/xrt_curves/00655262/thumb2.gif' alt='XRT Light curve of GRB 150911A'/></a></td>
 <td><p class='grb'>GRB 150915A</p><a href='/xrt_curves/00655721/'><img src='/xrt_curves/00655721/thumb2.gif' alt='XRT Light curve of GRB 150915A'/></a></td>
 <td><p class='grb'>GRB 150925A</p><a href='/xrt_curves/00656604/'><img src='/xrt_curves/00656604/thumb2.gif' alt='XRT Light curve of GRB 150925A'/></a></td>
+<td><p class='grb'>GRB 151001A</p><a href='/xrt_curves/00657286/'><img src='/xrt_curves/00657286/thumb2.gif' alt='XRT Light curve of GRB 151001A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 151001A</p><a href='/xrt_curves/00657286/'><img src='/xrt_curves/00657286/thumb2.gif' alt='XRT Light curve of GRB 151001A'/></a></td>
 <td><p class='grb'>GRB 151001B</p><a href='/xrt_curves/00657321/'><img src='/xrt_curves/00657321/thumb2.gif' alt='XRT Light curve of GRB 151001B'/></a></td>
 <td><p class='grb'>GRB 151006A</p><a href='/xrt_curves/00657750/'><img src='/xrt_curves/00657750/thumb2.gif' alt='XRT Light curve of GRB 151006A'/></a></td>
 <td><p class='grb'>GRB 151021A</p><a href='/xrt_curves/00660671/'><img src='/xrt_curves/00660671/thumb2.gif' alt='XRT Light curve of GRB 151021A'/></a></td>
+<td><p class='grb'>GRB 151022A</p><a href='/xrt_curves/00661036/'><img src='/xrt_curves/00661036/thumb2.gif' alt='XRT Light curve of GRB 151022A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 151022A</p><a href='/xrt_curves/00661036/'><img src='/xrt_curves/00661036/thumb2.gif' alt='XRT Light curve of GRB 151022A'/></a></td>
 <td><p class='grb'>GRB 151023A</p><a href='/xrt_curves/00661253/'><img src='/xrt_curves/00661253/thumb2.gif' alt='XRT Light curve of GRB 151023A'/></a></td>
 <td><p class='grb'>GRB 151027A</p><a href='/xrt_curves/00661775/'><img src='/xrt_curves/00661775/thumb2.gif' alt='XRT Light curve of GRB 151027A'/></a></td>
 <td><p class='grb'>GRB 151027B</p><a href='/xrt_curves/00661869/'><img src='/xrt_curves/00661869/thumb2.gif' alt='XRT Light curve of GRB 151027B'/></a></td>
+<td><p class='grb'>GRB 151029A</p><a href='/xrt_curves/00662086/'><img src='/xrt_curves/00662086/thumb2.gif' alt='XRT Light curve of GRB 151029A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 151029A</p><a href='/xrt_curves/00662086/'><img src='/xrt_curves/00662086/thumb2.gif' alt='XRT Light curve of GRB 151029A'/></a></td>
 <td><p class='grb'>GRB 151031A</p><a href='/xrt_curves/00662330/'><img src='/xrt_curves/00662330/thumb2.gif' alt='XRT Light curve of GRB 151031A'/></a></td>
 <td><p class='grb'>GRB 151111A</p><a href='/xrt_curves/00663074/'><img src='/xrt_curves/00663074/thumb2.gif' alt='XRT Light curve of GRB 151111A'/></a></td>
 <td><p class='grb'>GRB 151112A</p><a href='/xrt_curves/00663179/'><img src='/xrt_curves/00663179/thumb2.gif' alt='XRT Light curve of GRB 151112A'/></a></td>
+<td><p class='grb'>GRB 151114A</p><a href='/xrt_curves/00663490/'><img src='/xrt_curves/00663490/thumb2.gif' alt='XRT Light curve of GRB 151114A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 151114A</p><a href='/xrt_curves/00663490/'><img src='/xrt_curves/00663490/thumb2.gif' alt='XRT Light curve of GRB 151114A'/></a></td>
 <td><p class='grb'>GRB 151118A</p><a href='/xrt_curves/00664078/'><img src='/xrt_curves/00664078/thumb2.gif' alt='XRT Light curve of GRB 151118A'/></a></td>
 <td><p class='grb'>GRB 151127A</p><a href='/xrt_curves/00665268/'><img src='/xrt_curves/00665268/thumb2.gif' alt='XRT Light curve of GRB 151127A'/></a></td>
 <td><p class='grb'>GRB 151205A</p><a href='/xrt_curves/00666352/'><img src='/xrt_curves/00666352/thumb2.gif' alt='XRT Light curve of GRB 151205A'/></a></td>
+<td><p class='grb'>GRB 151210A</p><a href='/xrt_curves/00666931/'><img src='/xrt_curves/00666931/thumb2.gif' alt='XRT Light curve of GRB 151210A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 151210A</p><a href='/xrt_curves/00666931/'><img src='/xrt_curves/00666931/thumb2.gif' alt='XRT Light curve of GRB 151210A'/></a></td>
 <td><p class='grb'>GRB 151215A</p><a href='/xrt_curves/00667392/'><img src='/xrt_curves/00667392/thumb2.gif' alt='XRT Light curve of GRB 151215A'/></a></td>
 <td><p class='grb'>GRB 151228A</p><a href='/xrt_curves/00668543/'><img src='/xrt_curves/00668543/thumb2.gif' alt='XRT Light curve of GRB 151228A'/></a></td>
 <td><p class='grb'>GRB 151228B</p><a href='/xrt_curves/00668641/'><img src='/xrt_curves/00668641/thumb2.gif' alt='XRT Light curve of GRB 151228B'/></a></td>
+<td><p class='grb'>GRB 151229A</p><a href='/xrt_curves/00668689/'><img src='/xrt_curves/00668689/thumb2.gif' alt='XRT Light curve of GRB 151229A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 151229A</p><a href='/xrt_curves/00668689/'><img src='/xrt_curves/00668689/thumb2.gif' alt='XRT Light curve of GRB 151229A'/></a></td>
 <td><p class='grb'>GRB 160104A</p><a href='/xrt_curves/00669319/'><img src='/xrt_curves/00669319/thumb2.gif' alt='XRT Light curve of GRB 160104A'/></a></td>
 <td><p class='grb'>GRB 160117B</p><a href='/xrt_curves/00670800/'><img src='/xrt_curves/00670800/thumb2.gif' alt='XRT Light curve of GRB 160117B'/></a></td>
 <td><p class='grb'>GRB 160119A</p><a href='/xrt_curves/00671014/'><img src='/xrt_curves/00671014/thumb2.gif' alt='XRT Light curve of GRB 160119A'/></a></td>
+<td><p class='grb'>GRB 160121A</p><a href='/xrt_curves/00671231/'><img src='/xrt_curves/00671231/thumb2.gif' alt='XRT Light curve of GRB 160121A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160121A</p><a href='/xrt_curves/00671231/'><img src='/xrt_curves/00671231/thumb2.gif' alt='XRT Light curve of GRB 160121A'/></a></td>
 <td><p class='grb'>GRB 160123A</p><a href='/xrt_curves/00671447/'><img src='/xrt_curves/00671447/thumb2.gif' alt='XRT Light curve of GRB 160123A'/></a></td>
 <td><p class='grb'>GRB 160127A</p><a href='/xrt_curves/00671828/'><img src='/xrt_curves/00671828/thumb2.gif' alt='XRT Light curve of GRB 160127A'/></a></td>
 <td><p class='grb'>GRB 160131A</p><a href='/xrt_curves/00672236/'><img src='/xrt_curves/00672236/thumb2.gif' alt='XRT Light curve of GRB 160131A'/></a></td>
+<td><p class='grb'>GRB 160203A</p><a href='/xrt_curves/00672525/'><img src='/xrt_curves/00672525/thumb2.gif' alt='XRT Light curve of GRB 160203A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160203A</p><a href='/xrt_curves/00672525/'><img src='/xrt_curves/00672525/thumb2.gif' alt='XRT Light curve of GRB 160203A'/></a></td>
 <td><p class='grb'>GRB 160216A</p><a href='/xrt_curves/00673978/'><img src='/xrt_curves/00673978/thumb2.gif' alt='XRT Light curve of GRB 160216A'/></a></td>
 <td><p class='grb'>GRB 160220A</p><a href='/xrt_curves/00674670/'><img src='/xrt_curves/00674670/thumb2.gif' alt='XRT Light curve of GRB 160220A'/></a></td>
 <td><p class='grb'>GRB 160220B</p><a href='/xrt_curves/00674734/'><img src='/xrt_curves/00674734/thumb2.gif' alt='XRT Light curve of GRB 160220B'/></a></td>
+<td><p class='grb'>GRB 160225A</p><a href='/xrt_curves/00675998/'><img src='/xrt_curves/00675998/thumb2.gif' alt='XRT Light curve of GRB 160225A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160225A</p><a href='/xrt_curves/00675998/'><img src='/xrt_curves/00675998/thumb2.gif' alt='XRT Light curve of GRB 160225A'/></a></td>
 <td><p class='grb'>GRB 160227A</p><a href='/xrt_curves/00676423/'><img src='/xrt_curves/00676423/thumb2.gif' alt='XRT Light curve of GRB 160227A'/></a></td>
 <td><p class='grb'>GRB 160228A</p><a href='/xrt_curves/00676595/'><img src='/xrt_curves/00676595/thumb2.gif' alt='XRT Light curve of GRB 160228A'/></a></td>
 <td><p class='grb'>GRB 160303A</p><a href='/xrt_curves/00677495/'><img src='/xrt_curves/00677495/thumb2.gif' alt='XRT Light curve of GRB 160303A'/></a></td>
+<td><p class='grb'>GRB 160313A</p><a href='/xrt_curves/00678929/'><img src='/xrt_curves/00678929/thumb2.gif' alt='XRT Light curve of GRB 160313A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160313A</p><a href='/xrt_curves/00678929/'><img src='/xrt_curves/00678929/thumb2.gif' alt='XRT Light curve of GRB 160313A'/></a></td>
 <td><p class='grb'>GRB 160314A</p><a href='/xrt_curves/00679120/'><img src='/xrt_curves/00679120/thumb2.gif' alt='XRT Light curve of GRB 160314A'/></a></td>
 <td><p class='grb'>GRB 160321A</p><a href='/xrt_curves/00680017/'><img src='/xrt_curves/00680017/thumb2.gif' alt='XRT Light curve of GRB 160321A'/></a></td>
 <td><p class='grb'>GRB 160325A</p><a href='/xrt_curves/00680436/'><img src='/xrt_curves/00680436/thumb2.gif' alt='XRT Light curve of GRB 160325A'/></a></td>
+<td><p class='grb'>GRB 160327A</p><a href='/xrt_curves/00680655/'><img src='/xrt_curves/00680655/thumb2.gif' alt='XRT Light curve of GRB 160327A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160327A</p><a href='/xrt_curves/00680655/'><img src='/xrt_curves/00680655/thumb2.gif' alt='XRT Light curve of GRB 160327A'/></a></td>
 <td><p class='grb'>GRB 160408A</p><a href='/xrt_curves/00682059/'><img src='/xrt_curves/00682059/thumb2.gif' alt='XRT Light curve of GRB 160408A'/></a></td>
 <td><p class='grb'>GRB 160410A</p><a href='/xrt_curves/00682269/'><img src='/xrt_curves/00682269/thumb2.gif' alt='XRT Light curve of GRB 160410A'/></a></td>
 <td><p class='grb'>GRB 160411A</p><a href='/xrt_curves/00682339/'><img src='/xrt_curves/00682339/thumb2.gif' alt='XRT Light curve of GRB 160411A'/></a></td>
+<td><p class='grb'>GRB 160412A</p><a href='/xrt_curves/00682522/'><img src='/xrt_curves/00682522/thumb2.gif' alt='XRT Light curve of GRB 160412A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160412A</p><a href='/xrt_curves/00682522/'><img src='/xrt_curves/00682522/thumb2.gif' alt='XRT Light curve of GRB 160412A'/></a></td>
 <td><p class='grb'>GRB 160417A</p><a href='/xrt_curves/00683076/'><img src='/xrt_curves/00683076/thumb2.gif' alt='XRT Light curve of GRB 160417A'/></a></td>
 <td><p class='grb'>GRB 160425A</p><a href='/xrt_curves/00684098/'><img src='/xrt_curves/00684098/thumb2.gif' alt='XRT Light curve of GRB 160425A'/></a></td>
 <td><p class='grb'>GRB 160501A</p><a href='/xrt_curves/00684679/'><img src='/xrt_curves/00684679/thumb2.gif' alt='XRT Light curve of GRB 160501A'/></a></td>
+<td><p class='grb'>GRB 160504A</p><a href='/xrt_curves/00685124/'><img src='/xrt_curves/00685124/thumb2.gif' alt='XRT Light curve of GRB 160504A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160504A</p><a href='/xrt_curves/00685124/'><img src='/xrt_curves/00685124/thumb2.gif' alt='XRT Light curve of GRB 160504A'/></a></td>
 <td><p class='grb'>GRB 160506A</p><a href='/xrt_curves/00685245/'><img src='/xrt_curves/00685245/thumb2.gif' alt='XRT Light curve of GRB 160506A'/></a></td>
 <td><p class='grb'>GRB 160525B</p><a href='/xrt_curves/00687522/'><img src='/xrt_curves/00687522/thumb2.gif' alt='XRT Light curve of GRB 160525B'/></a></td>
 <td><p class='grb'>GRB 160601A</p><a href='/xrt_curves/00688452/'><img src='/xrt_curves/00688452/thumb2.gif' alt='XRT Light curve of GRB 160601A'/></a></td>
+<td><p class='grb'>GRB 160607A</p><a href='/xrt_curves/00689597/'><img src='/xrt_curves/00689597/thumb2.gif' alt='XRT Light curve of GRB 160607A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160607A</p><a href='/xrt_curves/00689597/'><img src='/xrt_curves/00689597/thumb2.gif' alt='XRT Light curve of GRB 160607A'/></a></td>
 <td><p class='grb'>GRB 160611A</p><a href='/xrt_curves/00690598/'><img src='/xrt_curves/00690598/thumb2.gif' alt='XRT Light curve of GRB 160611A'/></a></td>
 <td><p class='grb'>GRB 160624A</p><a href='/xrt_curves/00701288/'><img src='/xrt_curves/00701288/thumb2.gif' alt='XRT Light curve of GRB 160624A'/></a></td>
 <td><p class='grb'>GRB 160625A</p><a href='/xrt_curves/00701503/'><img src='/xrt_curves/00701503/thumb2.gif' alt='XRT Light curve of GRB 160625A'/></a></td>
+<td><p class='grb'>GRB 160630A</p><a href='/xrt_curves/00702252/'><img src='/xrt_curves/00702252/thumb2.gif' alt='XRT Light curve of GRB 160630A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160630A</p><a href='/xrt_curves/00702252/'><img src='/xrt_curves/00702252/thumb2.gif' alt='XRT Light curve of GRB 160630A'/></a></td>
 <td><p class='grb'>GRB 160705B</p><a href='/xrt_curves/00703176/'><img src='/xrt_curves/00703176/thumb2.gif' alt='XRT Light curve of GRB 160705B'/></a></td>
 <td><p class='grb'>GRB 160712A</p><a href='/xrt_curves/00704155/'><img src='/xrt_curves/00704155/thumb2.gif' alt='XRT Light curve of GRB 160712A'/></a></td>
 <td><p class='grb'>GRB 160716A</p><a href='/xrt_curves/00704572/'><img src='/xrt_curves/00704572/thumb2.gif' alt='XRT Light curve of GRB 160716A'/></a></td>
+<td><p class='grb'>GRB 160801A</p><a href='/xrt_curves/00706871/'><img src='/xrt_curves/00706871/thumb2.gif' alt='XRT Light curve of GRB 160801A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160801A</p><a href='/xrt_curves/00706871/'><img src='/xrt_curves/00706871/thumb2.gif' alt='XRT Light curve of GRB 160801A'/></a></td>
 <td><p class='grb'>GRB 160804A</p><a href='/xrt_curves/00707231/'><img src='/xrt_curves/00707231/thumb2.gif' alt='XRT Light curve of GRB 160804A'/></a></td>
 <td><p class='grb'>GRB 160815A</p><a href='/xrt_curves/00708598/'><img src='/xrt_curves/00708598/thumb2.gif' alt='XRT Light curve of GRB 160815A'/></a></td>
 <td><p class='grb'>GRB 160821B</p><a href='/xrt_curves/00709357/'><img src='/xrt_curves/00709357/thumb2.gif' alt='XRT Light curve of GRB 160821B'/></a></td>
+<td><p class='grb'>GRB 160824A</p><a href='/xrt_curves/00709765/'><img src='/xrt_curves/00709765/thumb2.gif' alt='XRT Light curve of GRB 160824A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160824A</p><a href='/xrt_curves/00709765/'><img src='/xrt_curves/00709765/thumb2.gif' alt='XRT Light curve of GRB 160824A'/></a></td>
 <td><p class='grb'>GRB 160826A</p><a href='/xrt_curves/00709907/'><img src='/xrt_curves/00709907/thumb2.gif' alt='XRT Light curve of GRB 160826A'/></a></td>
 <td><p class='grb'>GRB 160905A</p><a href='/xrt_curves/00711084/'><img src='/xrt_curves/00711084/thumb2.gif' alt='XRT Light curve of GRB 160905A'/></a></td>
 <td><p class='grb'>GRB 160912A</p><a href='/xrt_curves/00711914/'><img src='/xrt_curves/00711914/thumb2.gif' alt='XRT Light curve of GRB 160912A'/></a></td>
+<td><p class='grb'>GRB 160917A</p><a href='/xrt_curves/00712505/'><img src='/xrt_curves/00712505/thumb2.gif' alt='XRT Light curve of GRB 160917A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 160917A</p><a href='/xrt_curves/00712505/'><img src='/xrt_curves/00712505/thumb2.gif' alt='XRT Light curve of GRB 160917A'/></a></td>
 <td><p class='grb'>GRB 160927A</p><a href='/xrt_curves/00713782/'><img src='/xrt_curves/00713782/thumb2.gif' alt='XRT Light curve of GRB 160927A'/></a></td>
 <td><p class='grb'>GRB 161001A</p><a href='/xrt_curves/00714404/'><img src='/xrt_curves/00714404/thumb2.gif' alt='XRT Light curve of GRB 161001A'/></a></td>
 <td><p class='grb'>GRB 161004A</p><a href='/xrt_curves/00715084/'><img src='/xrt_curves/00715084/thumb2.gif' alt='XRT Light curve of GRB 161004A'/></a></td>
+<td><p class='grb'>GRB 161004B</p><a href='/xrt_curves/00715246/'><img src='/xrt_curves/00715246/thumb2.gif' alt='XRT Light curve of GRB 161004B'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 161004B</p><a href='/xrt_curves/00715246/'><img src='/xrt_curves/00715246/thumb2.gif' alt='XRT Light curve of GRB 161004B'/></a></td>
 <td><p class='grb'>GRB 161007A</p><a href='/xrt_curves/00716127/'><img src='/xrt_curves/00716127/thumb2.gif' alt='XRT Light curve of GRB 161007A'/></a></td>
 <td><p class='grb'>GRB 161011A</p><a href='/xrt_curves/00716876/'><img src='/xrt_curves/00716876/thumb2.gif' alt='XRT Light curve of GRB 161011A'/></a></td>
 <td><p class='grb'>GRB 161014A</p><a href='/xrt_curves/00717500/'><img src='/xrt_curves/00717500/thumb2.gif' alt='XRT Light curve of GRB 161014A'/></a></td>
+<td><p class='grb'>GRB 161017A</p><a href='/xrt_curves/00718023/'><img src='/xrt_curves/00718023/thumb2.gif' alt='XRT Light curve of GRB 161017A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 161017A</p><a href='/xrt_curves/00718023/'><img src='/xrt_curves/00718023/thumb2.gif' alt='XRT Light curve of GRB 161017A'/></a></td>
 <td><p class='grb'>GRB 161022A</p><a href='/xrt_curves/00718655/'><img src='/xrt_curves/00718655/thumb2.gif' alt='XRT Light curve of GRB 161022A'/></a></td>
 <td><p class='grb'>GRB 161104A</p><a href='/xrt_curves/00720568/'><img src='/xrt_curves/00720568/thumb2.gif' alt='XRT Light curve of GRB 161104A'/></a></td>
 <td><p class='grb'>GRB 161105A</p><a href='/xrt_curves/00720697/'><img src='/xrt_curves/00720697/thumb2.gif' alt='XRT Light curve of GRB 161105A'/></a></td>
+<td><p class='grb'>GRB 161108A</p><a href='/xrt_curves/00721234/'><img src='/xrt_curves/00721234/thumb2.gif' alt='XRT Light curve of GRB 161108A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 161108A</p><a href='/xrt_curves/00721234/'><img src='/xrt_curves/00721234/thumb2.gif' alt='XRT Light curve of GRB 161108A'/></a></td>
 <td><p class='grb'>GRB 161113A</p><a href='/xrt_curves/00722063/'><img src='/xrt_curves/00722063/thumb2.gif' alt='XRT Light curve of GRB 161113A'/></a></td>
 <td><p class='grb'>GRB 161117A</p><a href='/xrt_curves/00722604/'><img src='/xrt_curves/00722604/thumb2.gif' alt='XRT Light curve of GRB 161117A'/></a></td>
 <td><p class='grb'>GRB 161117B</p><a href='/xrt_curves/00722642/'><img src='/xrt_curves/00722642/thumb2.gif' alt='XRT Light curve of GRB 161117B'/></a></td>
+<td><p class='grb'>GRB 161129A</p><a href='/xrt_curves/00724438/'><img src='/xrt_curves/00724438/thumb2.gif' alt='XRT Light curve of GRB 161129A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 161129A</p><a href='/xrt_curves/00724438/'><img src='/xrt_curves/00724438/thumb2.gif' alt='XRT Light curve of GRB 161129A'/></a></td>
 <td><p class='grb'>GRB 161202A</p><a href='/xrt_curves/00725036/'><img src='/xrt_curves/00725036/thumb2.gif' alt='XRT Light curve of GRB 161202A'/></a></td>
 <td><p class='grb'>GRB 161214B</p><a href='/xrt_curves/00726885/'><img src='/xrt_curves/00726885/thumb2.gif' alt='XRT Light curve of GRB 161214B'/></a></td>
 <td><p class='grb'>GRB 161217A</p><a href='/xrt_curves/00727167/'><img src='/xrt_curves/00727167/thumb2.gif' alt='XRT Light curve of GRB 161217A'/></a></td>
+<td><p class='grb'>GRB 161219B</p><a href='/xrt_curves/00727541/'><img src='/xrt_curves/00727541/thumb2.gif' alt='XRT Light curve of GRB 161219B'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 161219B</p><a href='/xrt_curves/00727541/'><img src='/xrt_curves/00727541/thumb2.gif' alt='XRT Light curve of GRB 161219B'/></a></td>
 <td><p class='grb'>GRB 161220A</p><a href='/xrt_curves/00727610/'><img src='/xrt_curves/00727610/thumb2.gif' alt='XRT Light curve of GRB 161220A'/></a></td>
 <td><p class='grb'>GRB 161224A</p><a href='/xrt_curves/00728268/'><img src='/xrt_curves/00728268/thumb2.gif' alt='XRT Light curve of GRB 161224A'/></a></td>
 <td><p class='grb'>GRB 170111A</p><a href='/xrt_curves/00731887/'><img src='/xrt_curves/00731887/thumb2.gif' alt='XRT Light curve of GRB 170111A'/></a></td>
+<td><p class='grb'>GRB 170113A</p><a href='/xrt_curves/00732526/'><img src='/xrt_curves/00732526/thumb2.gif' alt='XRT Light curve of GRB 170113A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 170113A</p><a href='/xrt_curves/00732526/'><img src='/xrt_curves/00732526/thumb2.gif' alt='XRT Light curve of GRB 170113A'/></a></td>
 <td><p class='grb'>GRB 170115A</p><a href='/xrt_curves/00733103/'><img src='/xrt_curves/00733103/thumb2.gif' alt='XRT Light curve of GRB 170115A'/></a></td>
 <td><p class='grb'>GRB 170126A</p><a href='/xrt_curves/00735188/'><img src='/xrt_curves/00735188/thumb2.gif' alt='XRT Light curve of GRB 170126A'/></a></td>
 <td><p class='grb'>GRB 170127A</p><a href='/xrt_curves/00735326/'><img src='/xrt_curves/00735326/thumb2.gif' alt='XRT Light curve of GRB 170127A'/></a></td>
+<td><p class='grb'>GRB 170127B</p><a href='/xrt_curves/00735331/'><img src='/xrt_curves/00735331/thumb2.gif' alt='XRT Light curve of GRB 170127B'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 170127B</p><a href='/xrt_curves/00735331/'><img src='/xrt_curves/00735331/thumb2.gif' alt='XRT Light curve of GRB 170127B'/></a></td>
 <td><p class='grb'>GRB 170202A</p><a href='/xrt_curves/00736407/'><img src='/xrt_curves/00736407/thumb2.gif' alt='XRT Light curve of GRB 170202A'/></a></td>
 <td><p class='grb'>GRB 170205A</p><a href='/xrt_curves/00736843/'><img src='/xrt_curves/00736843/thumb2.gif' alt='XRT Light curve of GRB 170205A'/></a></td>
 <td><p class='grb'>GRB 170206B</p><a href='/xrt_curves/00737125/'><img src='/xrt_curves/00737125/thumb2.gif' alt='XRT Light curve of GRB 170206B'/></a></td>
+<td><p class='grb'>GRB 170208A</p><a href='/xrt_curves/00737438/'><img src='/xrt_curves/00737438/thumb2.gif' alt='XRT Light curve of GRB 170208A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 170208A</p><a href='/xrt_curves/00737438/'><img src='/xrt_curves/00737438/thumb2.gif' alt='XRT Light curve of GRB 170208A'/></a></td>
 <td><p class='grb'>GRB 170208B</p><a href='/xrt_curves/00737463/'><img src='/xrt_curves/00737463/thumb2.gif' alt='XRT Light curve of GRB 170208B'/></a></td>
 <td><p class='grb'>GRB 170306A</p><a href='/xrt_curves/00741220/'><img src='/xrt_curves/00741220/thumb2.gif' alt='XRT Light curve of GRB 170306A'/></a></td>
 <td><p class='grb'>GRB 170311A</p><a href='/xrt_curves/00741965/'><img src='/xrt_curves/00741965/thumb2.gif' alt='XRT Light curve of GRB 170311A'/></a></td>
+<td><p class='grb'>GRB 170317A</p><a href='/xrt_curves/00742866/'><img src='/xrt_curves/00742866/thumb2.gif' alt='XRT Light curve of GRB 170317A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 170317A</p><a href='/xrt_curves/00742866/'><img src='/xrt_curves/00742866/thumb2.gif' alt='XRT Light curve of GRB 170317A'/></a></td>
 <td><p class='grb'>GRB 170318A</p><a href='/xrt_curves/00743065/'><img src='/xrt_curves/00743065/thumb2.gif' alt='XRT Light curve of GRB 170318A'/></a></td>
 <td><p class='grb'>GRB 170318B</p><a href='/xrt_curves/00743086/'><img src='/xrt_curves/00743086/thumb2.gif' alt='XRT Light curve of GRB 170318B'/></a></td>
 <td><p class='grb'>GRB 170330A</p><a href='/xrt_curves/00744773/'><img src='/xrt_curves/00744773/thumb2.gif' alt='XRT Light curve of GRB 170330A'/></a></td>
+<td><p class='grb'>GRB 170331A</p><a href='/xrt_curves/00744791/'><img src='/xrt_curves/00744791/thumb2.gif' alt='XRT Light curve of GRB 170331A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 170331A</p><a href='/xrt_curves/00744791/'><img src='/xrt_curves/00744791/thumb2.gif' alt='XRT Light curve of GRB 170331A'/></a></td>
 <td><p class='grb'>GRB 170405A</p><a href='/xrt_curves/00745797/'><img src='/xrt_curves/00745797/thumb2.gif' alt='XRT Light curve of GRB 170405A'/></a></td>
 <td><p class='grb'>GRB 170419A</p><a href='/xrt_curves/00748898/'><img src='/xrt_curves/00748898/thumb2.gif' alt='XRT Light curve of GRB 170419A'/></a></td>
 <td><p class='grb'>GRB 170428A</p><a href='/xrt_curves/00750298/'><img src='/xrt_curves/00750298/thumb2.gif' alt='XRT Light curve of GRB 170428A'/></a></td>
+<td><p class='grb'>GRB 170510A</p><a href='/xrt_curves/00020769/'><img src='/xrt_curves/00020769/thumb2.gif' alt='XRT Light curve of GRB 170510A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 170510A</p><a href='/xrt_curves/00020769/'><img src='/xrt_curves/00020769/thumb2.gif' alt='XRT Light curve of GRB 170510A'/></a></td>
 <td><p class='grb'>GRB 170516A</p><a href='/xrt_curves/00753110/'><img src='/xrt_curves/00753110/thumb2.gif' alt='XRT Light curve of GRB 170516A'/></a></td>
 <td><p class='grb'>GRB 170519A</p><a href='/xrt_curves/00753445/'><img src='/xrt_curves/00753445/thumb2.gif' alt='XRT Light curve of GRB 170519A'/></a></td>
 <td><p class='grb'>GRB 170524A</p><a href='/xrt_curves/00754322/'><img src='/xrt_curves/00754322/thumb2.gif' alt='XRT Light curve of GRB 170524A'/></a></td>
+<td><p class='grb'>GRB 170526A</p><a href='/xrt_curves/00754549/'><img src='/xrt_curves/00754549/thumb2.gif' alt='XRT Light curve of GRB 170526A'/></a></td>
 </tr>
 <tr>
-<td><p class='grb'>GRB 170526A</p><a href='/xrt_curves/00754549/'><img src='/xrt_curves/00754549/thumb2.gif' alt='XRT Light curve of GRB 170526A'/></a></td>
 <td><p class='grb'>GRB 170531A</p><a href='/xrt_curves/00755343/'><img src='/xrt_curves/00755343/thumb2.gif' alt='XRT Light curve of GRB 170531A'/></a></td>
 <td><p class='grb'>GRB 170531B</p><a href='/xrt_curves/00755354/'><img src='/xrt_curves/00755354/thumb2.gif' alt='XRT Light curve of GRB 170531B'/></a></td>
 <td><p class='grb'>GRB 170604A</p><a href='/xrt_curves/00755867/'><img src='/xrt_curves/00755867/thumb2.gif' alt='XRT Light curve of GRB 170604A'/></a></td>
-</tr>
-<tr>
 <td><p class='grb'>GRB 170607A</p><a href='/xrt_curves/00756284/'><img src='/xrt_curves/00756284/thumb2.gif' alt='XRT Light curve of GRB 170607A'/></a></td>
-<td><p class='grb'>GRB 170626A</p><a href='/xrt_curves/00758766/'><img src='/xrt_curves/00758766/thumb2.gif' alt='XRT Light curve of GRB 170626A'/></a></td>
-<td><p class='grb'>SGR 1935+2154</p><a href='/xrt_curves/00603488/'><img src='/xrt_curves/00603488/thumb2.gif' alt='XRT Light curve of SGR 1935+2154'/></a></td>
-<td><p class='grb'>SWIFT J0045.2+4151</p><a href='/xrt_curves/00633105/'><img src='/xrt_curves/00633105/thumb2.gif' alt='XRT Light curve of SWIFT J0045.2+4151'/></a></td>
 </tr>
 <tr>
+<td><p class='grb'>GRB 170626A</p><a href='/xrt_curves/00758766/'><img src='/xrt_curves/00758766/thumb2.gif' alt='XRT Light curve of GRB 170626A'/></a></td>
+<td><p class='grb'>GRB 170629A</p><a href='/xrt_curves/00759159/'><img src='/xrt_curves/00759159/thumb2.gif' alt='XRT Light curve of GRB 170629A'/></a></td>
+<td><p class='grb'>GRB 170705A</p><a href='/xrt_curves/00760064/'><img src='/xrt_curves/00760064/thumb2.gif' alt='XRT Light curve of GRB 170705A'/></a></td>
+<td><p class='grb'>GRB 170710A</p><a href='/xrt_curves/00761119/'><img src='/xrt_curves/00761119/thumb2.gif' alt='XRT Light curve of GRB 170710A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 170711A</p><a href='/xrt_curves/00761622/'><img src='/xrt_curves/00761622/thumb2.gif' alt='XRT Light curve of GRB 170711A'/></a></td>
+<td><p class='grb'>GRB 170714A</p><a href='/xrt_curves/00762535/'><img src='/xrt_curves/00762535/thumb2.gif' alt='XRT Light curve of GRB 170714A'/></a></td>
+<td><p class='grb'>GRB 170728A</p><a href='/xrt_curves/00765008/'><img src='/xrt_curves/00765008/thumb2.gif' alt='XRT Light curve of GRB 170728A'/></a></td>
+<td><p class='grb'>GRB 170728B</p><a href='/xrt_curves/00765130/'><img src='/xrt_curves/00765130/thumb2.gif' alt='XRT Light curve of GRB 170728B'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 170803A</p><a href='/xrt_curves/00766081/'><img src='/xrt_curves/00766081/thumb2.gif' alt='XRT Light curve of GRB 170803A'/></a></td>
+<td><p class='grb'>GRB 170804A</p><a href='/xrt_curves/00766194/'><img src='/xrt_curves/00766194/thumb2.gif' alt='XRT Light curve of GRB 170804A'/></a></td>
+<td><p class='grb'>GRB 170810A</p><a href='/xrt_curves/00767284/'><img src='/xrt_curves/00767284/thumb2.gif' alt='XRT Light curve of GRB 170810A'/></a></td>
+<td><p class='grb'>GRB 170813A</p><a href='/xrt_curves/00767563/'><img src='/xrt_curves/00767563/thumb2.gif' alt='XRT Light curve of GRB 170813A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 170822A</p><a href='/xrt_curves/00768939/'><img src='/xrt_curves/00768939/thumb2.gif' alt='XRT Light curve of GRB 170822A'/></a></td>
+<td><p class='grb'>GRB 170827A</p><a href='/xrt_curves/00769567/'><img src='/xrt_curves/00769567/thumb2.gif' alt='XRT Light curve of GRB 170827A'/></a></td>
+<td><p class='grb'>GRB 170903A</p><a href='/xrt_curves/00770528/'><img src='/xrt_curves/00770528/thumb2.gif' alt='XRT Light curve of GRB 170903A'/></a></td>
+<td><p class='grb'>GRB 170906A</p><a href='/xrt_curves/00770957/'><img src='/xrt_curves/00770957/thumb2.gif' alt='XRT Light curve of GRB 170906A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 170906B</p><a href='/xrt_curves/00770958/'><img src='/xrt_curves/00770958/thumb2.gif' alt='XRT Light curve of GRB 170906B'/></a></td>
+<td><p class='grb'>GRB 170906C</p><a href='/xrt_curves/00770981/'><img src='/xrt_curves/00770981/thumb2.gif' alt='XRT Light curve of GRB 170906C'/></a></td>
+<td><p class='grb'>GRB 170912A</p><a href='/xrt_curves/00772006/'><img src='/xrt_curves/00772006/thumb2.gif' alt='XRT Light curve of GRB 170912A'/></a></td>
+<td><p class='grb'>GRB 170912B</p><a href='/xrt_curves/00772052/'><img src='/xrt_curves/00772052/thumb2.gif' alt='XRT Light curve of GRB 170912B'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 170921A</p><a href='/xrt_curves/00773509/'><img src='/xrt_curves/00773509/thumb2.gif' alt='XRT Light curve of GRB 170921A'/></a></td>
+<td><p class='grb'>GRB 171001A</p><a href='/xrt_curves/00775553/'><img src='/xrt_curves/00775553/thumb2.gif' alt='XRT Light curve of GRB 171001A'/></a></td>
+<td><p class='grb'>GRB 171004A</p><a href='/xrt_curves/00776347/'><img src='/xrt_curves/00776347/thumb2.gif' alt='XRT Light curve of GRB 171004A'/></a></td>
+<td><p class='grb'>GRB 171007A</p><a href='/xrt_curves/00777215/'><img src='/xrt_curves/00777215/thumb2.gif' alt='XRT Light curve of GRB 171007A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 171020A</p><a href='/xrt_curves/00780845/'><img src='/xrt_curves/00780845/thumb2.gif' alt='XRT Light curve of GRB 171020A'/></a></td>
+<td><p class='grb'>GRB 171027A</p><a href='/xrt_curves/00783479/'><img src='/xrt_curves/00783479/thumb2.gif' alt='XRT Light curve of GRB 171027A'/></a></td>
+<td><p class='grb'>GRB 171102B</p><a href='/xrt_curves/00785510/'><img src='/xrt_curves/00785510/thumb2.gif' alt='XRT Light curve of GRB 171102B'/></a></td>
+<td><p class='grb'>GRB 171115A</p><a href='/xrt_curves/00790053/'><img src='/xrt_curves/00790053/thumb2.gif' alt='XRT Light curve of GRB 171115A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 171120A</p><a href='/xrt_curves/00791201/'><img src='/xrt_curves/00791201/thumb2.gif' alt='XRT Light curve of GRB 171120A'/></a></td>
+<td><p class='grb'>GRB 171123A</p><a href='/xrt_curves/00791922/'><img src='/xrt_curves/00791922/thumb2.gif' alt='XRT Light curve of GRB 171123A'/></a></td>
+<td><p class='grb'>GRB 171205A</p><a href='/xrt_curves/00794972/'><img src='/xrt_curves/00794972/thumb2.gif' alt='XRT Light curve of GRB 171205A'/></a></td>
+<td><p class='grb'>GRB 171209A</p><a href='/xrt_curves/00796100/'><img src='/xrt_curves/00796100/thumb2.gif' alt='XRT Light curve of GRB 171209A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 171211A</p><a href='/xrt_curves/00796469/'><img src='/xrt_curves/00796469/thumb2.gif' alt='XRT Light curve of GRB 171211A'/></a></td>
+<td><p class='grb'>GRB 171212A</p><a href='/xrt_curves/00796778/'><img src='/xrt_curves/00796778/thumb2.gif' alt='XRT Light curve of GRB 171212A'/></a></td>
+<td><p class='grb'>GRB 171216A</p><a href='/xrt_curves/00797441/'><img src='/xrt_curves/00797441/thumb2.gif' alt='XRT Light curve of GRB 171216A'/></a></td>
+<td><p class='grb'>GRB 171222A</p><a href='/xrt_curves/00799669/'><img src='/xrt_curves/00799669/thumb2.gif' alt='XRT Light curve of GRB 171222A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180102A</p><a href='/xrt_curves/00802999/'><img src='/xrt_curves/00802999/thumb2.gif' alt='XRT Light curve of GRB 180102A'/></a></td>
+<td><p class='grb'>GRB 180111A</p><a href='/xrt_curves/00804692/'><img src='/xrt_curves/00804692/thumb2.gif' alt='XRT Light curve of GRB 180111A'/></a></td>
+<td><p class='grb'>GRB 180115A</p><a href='/xrt_curves/00805318/'><img src='/xrt_curves/00805318/thumb2.gif' alt='XRT Light curve of GRB 180115A'/></a></td>
+<td><p class='grb'>GRB 180204A</p><a href='/xrt_curves/00808483/'><img src='/xrt_curves/00808483/thumb2.gif' alt='XRT Light curve of GRB 180204A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180205A</p><a href='/xrt_curves/00808625/'><img src='/xrt_curves/00808625/thumb2.gif' alt='XRT Light curve of GRB 180205A'/></a></td>
+<td><p class='grb'>GRB 180222A</p><a href='/xrt_curves/00811235/'><img src='/xrt_curves/00811235/thumb2.gif' alt='XRT Light curve of GRB 180222A'/></a></td>
+<td><p class='grb'>GRB 180224A</p><a href='/xrt_curves/00811561/'><img src='/xrt_curves/00811561/thumb2.gif' alt='XRT Light curve of GRB 180224A'/></a></td>
+<td><p class='grb'>GRB 180311A</p><a href='/xrt_curves/00813721/'><img src='/xrt_curves/00813721/thumb2.gif' alt='XRT Light curve of GRB 180311A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180314A</p><a href='/xrt_curves/00814129/'><img src='/xrt_curves/00814129/thumb2.gif' alt='XRT Light curve of GRB 180314A'/></a></td>
+<td><p class='grb'>GRB 180314B</p><a href='/xrt_curves/00814305/'><img src='/xrt_curves/00814305/thumb2.gif' alt='XRT Light curve of GRB 180314B'/></a></td>
+<td><p class='grb'>GRB 180316A</p><a href='/xrt_curves/00814677/'><img src='/xrt_curves/00814677/thumb2.gif' alt='XRT Light curve of GRB 180316A'/></a></td>
+<td><p class='grb'>GRB 180324A</p><a href='/xrt_curves/00817345/'><img src='/xrt_curves/00817345/thumb2.gif' alt='XRT Light curve of GRB 180324A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180325A</p><a href='/xrt_curves/00817564/'><img src='/xrt_curves/00817564/thumb2.gif' alt='XRT Light curve of GRB 180325A'/></a></td>
+<td><p class='grb'>GRB 180329B</p><a href='/xrt_curves/00819490/'><img src='/xrt_curves/00819490/thumb2.gif' alt='XRT Light curve of GRB 180329B'/></a></td>
+<td><p class='grb'>GRB 180331A</p><a href='/xrt_curves/00820347/'><img src='/xrt_curves/00820347/thumb2.gif' alt='XRT Light curve of GRB 180331A'/></a></td>
+<td><p class='grb'>GRB 180331B</p><a href='/xrt_curves/00820513/'><img src='/xrt_curves/00820513/thumb2.gif' alt='XRT Light curve of GRB 180331B'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180402A</p><a href='/xrt_curves/00821103/'><img src='/xrt_curves/00821103/thumb2.gif' alt='XRT Light curve of GRB 180402A'/></a></td>
+<td><p class='grb'>GRB 180404A</p><a href='/xrt_curves/00821881/'><img src='/xrt_curves/00821881/thumb2.gif' alt='XRT Light curve of GRB 180404A'/></a></td>
+<td><p class='grb'>GRB 180404B</p><a href='/xrt_curves/00821902/'><img src='/xrt_curves/00821902/thumb2.gif' alt='XRT Light curve of GRB 180404B'/></a></td>
+<td><p class='grb'>GRB 180410A</p><a href='/xrt_curves/00824063/'><img src='/xrt_curves/00824063/thumb2.gif' alt='XRT Light curve of GRB 180410A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180411A</p><a href='/xrt_curves/00824451/'><img src='/xrt_curves/00824451/thumb2.gif' alt='XRT Light curve of GRB 180411A'/></a></td>
+<td><p class='grb'>GRB 180418A</p><a href='/xrt_curves/00826428/'><img src='/xrt_curves/00826428/thumb2.gif' alt='XRT Light curve of GRB 180418A'/></a></td>
+<td><p class='grb'>GRB 180425A</p><a href='/xrt_curves/00828672/'><img src='/xrt_curves/00828672/thumb2.gif' alt='XRT Light curve of GRB 180425A'/></a></td>
+<td><p class='grb'>GRB 180504A</p><a href='/xrt_curves/00830822/'><img src='/xrt_curves/00830822/thumb2.gif' alt='XRT Light curve of GRB 180504A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180510A</p><a href='/xrt_curves/00831810/'><img src='/xrt_curves/00831810/thumb2.gif' alt='XRT Light curve of GRB 180510A'/></a></td>
+<td><p class='grb'>GRB 180510B</p><a href='/xrt_curves/00831816/'><img src='/xrt_curves/00831816/thumb2.gif' alt='XRT Light curve of GRB 180510B'/></a></td>
+<td><p class='grb'>GRB 180512A</p><a href='/xrt_curves/00832119/'><img src='/xrt_curves/00832119/thumb2.gif' alt='XRT Light curve of GRB 180512A'/></a></td>
+<td><p class='grb'>GRB 180514A</p><a href='/xrt_curves/00832368/'><img src='/xrt_curves/00832368/thumb2.gif' alt='XRT Light curve of GRB 180514A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180602A</p><a href='/xrt_curves/00835200/'><img src='/xrt_curves/00835200/thumb2.gif' alt='XRT Light curve of GRB 180602A'/></a></td>
+<td><p class='grb'>GRB 180613A</p><a href='/xrt_curves/00840853/'><img src='/xrt_curves/00840853/thumb2.gif' alt='XRT Light curve of GRB 180613A'/></a></td>
+<td><p class='grb'>GRB 180614A</p><a href='/xrt_curves/00841548/'><img src='/xrt_curves/00841548/thumb2.gif' alt='XRT Light curve of GRB 180614A'/></a></td>
+<td><p class='grb'>GRB 180618A</p><a href='/xrt_curves/00842475/'><img src='/xrt_curves/00842475/thumb2.gif' alt='XRT Light curve of GRB 180618A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180620A</p><a href='/xrt_curves/00843122/'><img src='/xrt_curves/00843122/thumb2.gif' alt='XRT Light curve of GRB 180620A'/></a></td>
+<td><p class='grb'>GRB 180620B</p><a href='/xrt_curves/00843211/'><img src='/xrt_curves/00843211/thumb2.gif' alt='XRT Light curve of GRB 180620B'/></a></td>
+<td><p class='grb'>GRB 180623A</p><a href='/xrt_curves/00844015/'><img src='/xrt_curves/00844015/thumb2.gif' alt='XRT Light curve of GRB 180623A'/></a></td>
+<td><p class='grb'>GRB 180624A</p><a href='/xrt_curves/00844192/'><img src='/xrt_curves/00844192/thumb2.gif' alt='XRT Light curve of GRB 180624A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180626A</p><a href='/xrt_curves/00844615/'><img src='/xrt_curves/00844615/thumb2.gif' alt='XRT Light curve of GRB 180626A'/></a></td>
+<td><p class='grb'>GRB 180630A</p><a href='/xrt_curves/00845443/'><img src='/xrt_curves/00845443/thumb2.gif' alt='XRT Light curve of GRB 180630A'/></a></td>
+<td><p class='grb'>MAXI J1535-57</p><a href='/xrt_curves/00770431/'><img src='/xrt_curves/00770431/thumb2.gif' alt='XRT Light curve of MAXI J1535-57'/></a></td>
+<td><p class='grb'>SGR 1935+2154</p><a href='/xrt_curves/00603488/'><img src='/xrt_curves/00603488/thumb2.gif' alt='XRT Light curve of SGR 1935+2154'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>SWIFT J0045.2+4151</p><a href='/xrt_curves/00633105/'><img src='/xrt_curves/00633105/thumb2.gif' alt='XRT Light curve of SWIFT J0045.2+4151'/></a></td>
+<td><p class='grb'>Swift J0243.6+6124</p><a href='/xrt_curves/00775946/'><img src='/xrt_curves/00775946/thumb2.gif' alt='XRT Light curve of Swift J0243.6+6124'/></a></td>
 <td><p class='grb'>Swift J164449.3+573451</p><a href='/xrt_curves/00450158/'><img src='/xrt_curves/00450158/thumb2.gif' alt='XRT Light curve of Swift J164449.3+573451'/></a></td>
 <td><p class='grb'>Swift J185003.2-005627</p><a href='/xrt_curves/00456014/'><img src='/xrt_curves/00456014/thumb2.gif' alt='XRT Light curve of Swift J185003.2-005627'/></a></td>
   
@@ -1839,7 +1949,8 @@
           UK Swift Science Data Centre<br/>
           Last updated 2011 March 25<br/>  
           Web page maintained by Phil Evans<br/>
-          E-mail: <a href="mailto:swifthelp@le.ac.uk">swift help</a>
+          E-mail: <a href="mailto:swifthelp@le.ac.uk">swift help</a><br/>
+          Please read our <a href='/GDPR.php'>privacy notice</a>.
         </p>
 
       </div>
