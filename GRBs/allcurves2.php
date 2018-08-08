@@ -1928,6 +1928,18 @@
 <tr>
 <td><p class='grb'>GRB 180626A</p><a href='/xrt_curves/00844615/'><img src='/xrt_curves/00844615/thumb2.gif' alt='XRT Light curve of GRB 180626A'/></a></td>
 <td><p class='grb'>GRB 180630A</p><a href='/xrt_curves/00845443/'><img src='/xrt_curves/00845443/thumb2.gif' alt='XRT Light curve of GRB 180630A'/></a></td>
+<td><p class='grb'>GRB 180703A</p><a href='/xrt_curves/00020801/'><img src='/xrt_curves/00020801/thumb2.gif' alt='XRT Light curve of GRB 180703A'/></a></td>
+<td><p class='grb'>GRB 180704A</p><a href='/xrt_curves/00846088/'><img src='/xrt_curves/00846088/thumb2.gif' alt='XRT Light curve of GRB 180704A'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180705A</p><a href='/xrt_curves/00846299/'><img src='/xrt_curves/00846299/thumb2.gif' alt='XRT Light curve of GRB 180705A'/></a></td>
+<td><p class='grb'>GRB 180706A</p><a href='/xrt_curves/00846395/'><img src='/xrt_curves/00846395/thumb2.gif' alt='XRT Light curve of GRB 180706A'/></a></td>
+<td><p class='grb'>GRB 180709A</p><a href='/xrt_curves/00846868/'><img src='/xrt_curves/00846868/thumb2.gif' alt='XRT Light curve of GRB 180709A'/></a></td>
+<td><p class='grb'>GRB 180720B</p><a href='/xrt_curves/00848890/'><img src='/xrt_curves/00848890/thumb2.gif' alt='XRT Light curve of GRB 180720B'/></a></td>
+</tr>
+<tr>
+<td><p class='grb'>GRB 180720C</p><a href='/xrt_curves/00848932/'><img src='/xrt_curves/00848932/thumb2.gif' alt='XRT Light curve of GRB 180720C'/></a></td>
+<td><p class='grb'>GRB 180721A</p><a href='/xrt_curves/00849018/'><img src='/xrt_curves/00849018/thumb2.gif' alt='XRT Light curve of GRB 180721A'/></a></td>
 <td><p class='grb'>MAXI J1535-57</p><a href='/xrt_curves/00770431/'><img src='/xrt_curves/00770431/thumb2.gif' alt='XRT Light curve of MAXI J1535-57'/></a></td>
 <td><p class='grb'>SGR 1935+2154</p><a href='/xrt_curves/00603488/'><img src='/xrt_curves/00603488/thumb2.gif' alt='XRT Light curve of SGR 1935+2154'/></a></td>
 </tr>

@@ -332,7 +332,7 @@ def Norris(x, *p):
 	
 	f = A*L*np.exp(-t1/(x-ts)-(x-ts)/t2)
 	w=np.where(x<=ts)[0]
-	if len(w)>0:
+	if len(w)>1:
 		f[w]=0
 	# if ((type(x)!=float) & (x<=ts)):
 	# 	f[x<=ts]=0
@@ -551,7 +551,7 @@ def intbknpow(xx,*p):
 	break1=p[2]
 	pow2=p[3]
 
-	f=np.zeros(len(xx[0]))
+	f=np.zeros(len(np.atleast_1d(xx[0])))
 	m=logmean(xx)
 
 	f[m<break1]=norm/(1.-pow1)*(xx[1,m<break1]**(1.-pow1)-xx[0,m<break1]**(1.-pow1))
@@ -849,12 +849,18 @@ def intNorris(xx,*p):
 	#pulse decay = t2
 	t2 = p[3]
 
-	f=np.zeros(len(xx[0]))
-	for i in range(len(xx[0])):
+	f=np.zeros(len(np.atleast_1d(xx[0,:])))
+	# if len(f)>1:
+	for i in range(len(np.atleast_1d(xx[0,:]))):
 		if xx[1][i]>ts:
 			if xx[0][i]<ts:
 				xx[0][i]=ts+0.01
 			f[i]=integrate.quad(Norris,xx[0][i],xx[1][i],args=(A,ts,t1,t2))[0]
+	# else:
+	# 	if xx[1]>ts:
+	# 		if xx[0]<ts:
+	# 			xx[0]=ts+0.01
+	# 		f=integrate.quad(Norris,xx[0],xx[1],args=(A,ts,t1,t2))[0]
 
 
 	f=f/(xx[1]-xx[0])

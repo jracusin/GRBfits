@@ -1,5 +1,5 @@
- ! Swift/XRT lightcurve of trigger: 728268, name: Trigger 728268
- ! T0 for this burst is Swift MET=504310432.0 s, = 2016 Dec 24 at 22:13:34.638 UT
+ ! Swift/XRT lightcurve of trigger: 728268, name: GRB 161224A
+ ! T0 for this burst is Swift MET=504310432.0 s, = 2016 Dec 24 at 22:13:34.643 UT
  ! Data covers 0.3-10 keV
  ! The data are in 5 columns:  ! time, time error (+ve), time error (-ve), source count-rate, source error
  ! For a detailed description of light curve production, see Evans et al. 2007 (A&A, 469, 379 )
@@ -11,5 +11,5 @@
 READ TERR 1 2
 ! PC data
 !Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
-31231.479	4040.963	-2925.577	1.437518e-02	3.661759e-03	-3.661759e-03
-43443.832	8803.047	-3173.717	5.717394e-03	1.934025e-03	-1.593289e-03
+31231.479	4040.963	-2925.577	1.436342e-02	3.658278e-03	-3.658278e-03
+43443.832	8807.021	-3173.717	5.955184e-03	2.013574e-03	-1.658824e-03

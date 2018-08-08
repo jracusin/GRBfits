@@ -156,10 +156,10 @@ def fit_the_lc(grbdict=None,lc=None,norris=True,dir=None,ft=None):
  		print('Need to specify either GRB directory or lc')
  		return
 
- 	if dir and (type(lc) == type(None)):
+ 	if dir or (type(lc) == type(None)):
  		lc=read_lc(dir=dir+'/')
 
- 	if not dir:
+ 	if dir==None:
  		dir=''
 
 	p0,model,fmodel,pnames=click_initial_conditions(lc=lc,norris=norris)
@@ -649,6 +649,8 @@ def plot_lcfit(grbdict=None,lc=None,p={},resid=True,noshow=False):
 	if p != {}:
 		if resid: 
 			f,(ax1,ax2) = plot.subplots(2,sharex=True)
+		else: 
+			f,ax1=plot.subplots(1)
 	else: 
 		resid=False
 		f,ax1=plot.subplots(1)
@@ -819,7 +821,7 @@ def load_data(dir=None):
 
 	if dir ==None:
 		dir='/Users/jracusin/GRBs/'
-	grbs,targids=download_UL(dir=dir)
+	grbs,targids=download_UL(dir=dir,nodownload=True)
 	mets=[]
 	trigtimes=[]
 	i=0
@@ -1108,7 +1110,7 @@ def read_lc(dir=''):
 
 	return d
 
-def download_UL(update=False,dir=None):
+def download_UL(update=False,dir=None,nodownload=False):
 
 	import urllib
 
@@ -1162,7 +1164,7 @@ def download_UL(update=False,dir=None):
 			if 'qdp' in file: 
 				lcspec='xrt_curves/'
 			else: lcspec='xrt_spectra/'
-			if fage < 0:  # if file created before reftime
+			if ((fage < 0) & (nodownload==False)):  # if file created before reftime
 				url="http://www.swift.ac.uk/"+lcspec+targid+"/"+file
 				print 'downloading: ', url
 				print dir2+file

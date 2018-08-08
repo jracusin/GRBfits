@@ -1,4 +1,5 @@
  ! Swift/XRT lightcurve of trigger: 20085, name: GRB 081003A
+ ! T0 for this burst is Swift MET=244734373.0 s, = 2008 Oct 03 at 13:46:09.854 UT
  ! Data covers 0.3-10 keV
  ! The data are in 5 columns:  ! time, time error (+ve), time error (-ve), source count-rate, source error
  ! For a detailed description of light curve production, see Evans et al. 2007 (A&A, 469, 379 )
@@ -10,5 +11,5 @@
 READ TERR 1 2
 ! PC data
 !Time    	T_+ve   	T_-ve   	Rate    	Ratepos 	Rateneg
-7815.596	330.041	-196.492	4.712990e-02	1.061252e-02	-1.061252e-02
-9238.958	687.214	-619.098	2.102122e-02	4.485906e-03	-4.485906e-03
+7815.596	330.041	-196.492	4.705780e-02	1.059439e-02	-1.059439e-02
+9238.958	707.272	-619.098	2.069092e-02	4.416829e-03	-4.416829e-03
