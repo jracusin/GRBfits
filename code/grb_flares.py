@@ -92,7 +92,7 @@ def sample_selection(dir='/Users/jracusin/Swift/GRBfits/GRBs/',grblist=None):
 				if datastart>tstart:
 					rise=True
 
-				if ((r>1e7*fl**-1.) & (fl>1e-7*r) & (overlap==False) & (rise==True)): 
+				if ((r>1e4*fl**-1.) & (fl>1e-1*r) & (overlap==False) & (rise==True)): 
 #					print g.lcfit.model,tp,p
 					c.append(i)
 					print g.grb,flux[0], under[0], datastart, tstart, tstop, p[wf-1],t1, t2, tp[0], g.lcfit.model, mo
@@ -110,7 +110,7 @@ def sample_selection(dir='/Users/jracusin/Swift/GRBfits/GRBs/',grblist=None):
 	plot.figure()
 	plot.plot(fluence,ratio,marker='o',linestyle='None')
 	x=np.logspace(-1,6,10)
-	y=1e7*x**-1.
+	y=1e4*x**-1.
 	print x,y
 	plot.plot(x,y)
 	c=np.array(c)
