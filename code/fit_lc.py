@@ -21,18 +21,19 @@ from scipy.optimize import curve_fit
 from scipy import stats
 import glob
 
-def fit_lcs(dir=None,review=False,norris=True,start=0):
+def fit_lcs(dir=None,basedir=None,review=False,norris=True,start=0):
 	# see which GRBs not yet fit and fit them
 	# norris differentiate
 
 	if dir==None:
 		dir=''
-		nd,d=grbfits_status(dir=dir)
+		nd,d=grbfits_status(dir=basedir)
 		if review==True:
 			nd=d
 	else:
 		nd=[dir]
 		g=dir
+
 
 	i=start
 	nd=nd[start:]
@@ -42,7 +43,7 @@ def fit_lcs(dir=None,review=False,norris=True,start=0):
 	for g in nd:
 		print(g)
 		print(i)
-		if dir=='': dir=g+'/'
+		if dir=='': dir=basedir+g+'/'
 		gtitle=re.split('/',g)[0]
 		lc=read_lc(dir=dir)
 		if os.path.exists(dir+'lc_fit_out_py_int1.dat'):
@@ -133,7 +134,7 @@ def fit_faint_lcs(dir='/Users/jracusin/Swift/GRBfits/GRBs/',grblist=None):
 
 		if perr != np.inf:
 			perr=np.append(perr[0],0.)
-			print popt
+			print(popt)
 			yfit=pownorm(t,popt)
 			chisq=sum(((yfit-rate)/lc['Ratepos'][det])**2)
 			dof=len(rate)-1
@@ -156,10 +157,10 @@ def fit_the_lc(grbdict=None,lc=None,norris=True,dir=None,ft=None):
  		print('Need to specify either GRB directory or lc')
  		return
 
- 	if dir or (type(lc) == type(None)):
+	if dir or (type(lc) == type(None)):
  		lc=read_lc(dir=dir+'/')
 
- 	if dir==None:
+	if dir==None:
  		dir=''
 
 	p0,model,fmodel,pnames=click_initial_conditions(lc=lc,norris=norris)
@@ -248,7 +249,7 @@ def lc_linfit(xx,yy,breaks,xflares=None,norris=False):
 			yfit=np.append(yfit,10**b*x[w]**m)
 			p=np.hstack((p,-m,bks[i+1]))
 		else:
-			p=np.array(1.,1.)
+			p=np.array([1.,1.])
 		pnames=np.hstack((pnames,'pow'+str(i+1),'break'+str(i+1)))
 
 	p=p[0:len(p)-1]
@@ -691,7 +692,7 @@ def plot_lcfit(grbdict=None,lc=None,p={},resid=True,noshow=False):
 		print(p.model)
 #		yfit=getattr(importlib.import_module('fit_functions'),p.model)(lc['Time'],p.par)
 		btime=[]
-		print p.numbreaks
+		print(p.numbreaks)
 		if p.numbreaks>1: 
 			t=np.append(np.array(lc['Time']),p.par[2+np.arange(p.numbreaks)*2])
 			btime=np.append(btime,p.par[2+np.arange(p.numbreaks)*2])
@@ -813,7 +814,7 @@ class grb_object:
 	#	self=Table(names=('grb','targid','trigtime','met','z','lcfit','lc')) 
 
 	def keys(self):
-		print(['grb','targid','trigtime','met','lc','p','s'])
+		print(['grb','targid','trigtime','met','lc','lcfit','specfit'])
 
 def load_data(dir=None):
 
@@ -829,6 +830,7 @@ def load_data(dir=None):
 	grbdict={}
 
 	for grb in grbs:
+#		print grb
 		curve_file=dir+grb+'/curve.qdp'
 
 		if os.path.exists(curve_file):
@@ -849,7 +851,7 @@ def load_data(dir=None):
 			targid=targids[i]
 			lc=read_lc(dir+grb+'/')
 			p=read_lcfit(dir+grb+'/')
-			s=read_specfit(dir=dir)
+			s=read_specfit(dir=dir+grb+'/')
 
 			## create GRB object
 			g=grb_object(grb,targid,trigtime,met,lc,p,s)
@@ -923,20 +925,23 @@ def read_specfit(dir=''):
 	spec={}
 	i=0
 	for file in files:
+
 		if os.path.exists(dir+file):
-#			print(file)
 			f=open(dir+file,'r')
 			lines=f.readlines()
 			if len(lines)>0:
 				l=0
 				mode=modes[i]
 				z_abs=0
+				addline=0
 				for line in lines:
-					addline=0
 					tmp=re.split('\n|\t| |,|\(|\)|=|:',line)
 					tmp=filter(None,tmp)
 	#				print tmp
-					if l == 0: galnh=float(tmp[1]) # gal_nh
+					if l == 0: 
+						if tmp[0]=='Corr':
+							return spec
+						galnh=float(tmp[1]) # gal_nh
 					if l == 1:  # excess_nh
 						nh=float(tmp[1])
 						nh_err_neg=0
@@ -978,22 +983,22 @@ def read_specfit(dir=''):
 					if l == 5+addline:
 						cstat=float(tmp[1])
 						dof=float(tmp[3])
+					if tmp[0]=='FitChi': 
+						continue
 					if l == 6+addline:
 						rate=float(tmp[3])
 					if l == 7+addline:
 						corr=float(tmp[2])
 					if l == 8+addline:
 						ontime=tmp[1]
-
 					l=l+1
-
 				s=specfit_params(mode,galnh,nh,nh_err_neg,nh_err_pos,z_abs,gamma,gamma_err_neg,gamma_err_pos,\
 					flux,flux_err_neg,flux_err_pos,unabs_flux,unabs_flux_err_neg,unabs_flux_err_pos,\
 					cstat,dof,rate,corr,ontime)
 				i=i+1
 				#spec.append(s)  ## list
 				spec[mode]=s
-
+			
 	## make list of specfit objects
 
 	return spec
@@ -1110,7 +1115,7 @@ def read_lc(dir=''):
 
 	return d
 
-def download_UL(update=False,dir=None,nodownload=False):
+def download_UL(update=False,dir=None,nodownload=False,start=0,onlygrb=None):
 
 	import urllib
 
@@ -1125,13 +1130,13 @@ def download_UL(update=False,dir=None,nodownload=False):
 	else:
 		reftime=0.
 #	reftime=1484340227.502976 ## Jan 13, 2017 - when this was written  time.time()
-
+	
 	filename=dir+'allcurves2.php'
 	if not os.path.exists(filename) or update:
 		if update: os.remove(filename)	
 		urllib.urlretrieve(url,filename)
 		#wget.download(url,filename)
-		print 'downloading GRB list: ', filename
+		print('downloading GRB list: ', filename)
 	f=open(filename,'r')
 	lines=f.readlines()
 
@@ -1149,9 +1154,19 @@ def download_UL(update=False,dir=None,nodownload=False):
 		'interval0wt_fit.fit','interval0pc_fit.fit','late_timepc_fit.fit'])
 	### figure out spec files logic - right now won't download because curve.qdp exists
 
-	for i in range(len(grbs)):
-		grb=grbs[i]
-		targid=targids[i]
+	ngrbs=len(grbs)
+	if onlygrb !=None:
+		ngrbs=1
+
+	for i in range(start,ngrbs):
+		if onlygrb !=None:
+			grb=onlygrb
+			wtarg=np.where(grb == grbs)[0]
+			print(wtarg)
+			targid=targids[wtarg][0]
+		else: 
+			grb=grbs[i]
+			targid=targids[i]
 		dir2=dir+grb+'/'
 		if not os.path.exists(dir2): os.makedirs(dir2)
 		fage=-1
@@ -1164,10 +1179,10 @@ def download_UL(update=False,dir=None,nodownload=False):
 			if 'qdp' in file: 
 				lcspec='xrt_curves/'
 			else: lcspec='xrt_spectra/'
-			if ((fage < 0) & (nodownload==False)):  # if file created before reftime
+			if ((fage <= 0) & (nodownload==False)):  # if file created before reftime
 				url="http://www.swift.ac.uk/"+lcspec+targid+"/"+file
-				print 'downloading: ', url
-				print dir2+file
+				print('downloading: ', url)
+				print(dir2+file)
 				urllib.urlretrieve(url,dir2+file)
 				#wget.download(url,dir+file)
 			if os.path.exists(dir2+file):
@@ -1177,9 +1192,10 @@ def download_UL(update=False,dir=None,nodownload=False):
 					os.remove(dir2+file)
 
 
-	fref=open(dir+'reftime.dat','w')
-	reftime=time.time()
-	fref.write(str(reftime))
-	fref.close()
+	if nodownload == False:
+		fref=open(dir+'reftime.dat','w')
+		reftime=time.time()
+		fref.write(str(reftime))
+		fref.close()
 
 	return grbs,targids
